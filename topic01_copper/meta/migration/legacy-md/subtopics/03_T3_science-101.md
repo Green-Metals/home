@@ -1,0 +1,124 @@
+# 03 T3 Science 101
+
+- Primary topic ID: `T3`
+
+## T3. Science 101: Technology Primers
+This section provides short primers on the core process technologies and analytical toolchains referenced in this report. The goal is to make the scientific logic legible to a mixed internal audience and to clarify why each technology matters to the two-mission strategy.
+
+### T3.1 Pyrometallurgy and electrorefining (smelting -> converting -> anode -> cathode)
+Most copper metal is produced by treating sulfide concentrates at high temperature to separate metal-rich phases from gangue, then refining to high-purity cathode. In simplified terms, smelting converts concentrate into a copper-rich matte and an oxide slag; converting further oxidizes iron and sulfur to raise copper grade; electrorefining dissolves impure anodes and plates copper cathode that meets tight conductivity and impurity specifications.
+
+The core science is redox control and phase behavior. Operators manage oxygen potential, temperature, and slag chemistry so that copper partitions to the desired phase and impurities are either rejected to slag/dust, captured in dedicated residue streams, or stabilized for safe handling. The electrorefining circuit adds another constraint layer: impurity buildup in electrolyte and the formation of anode slimes and other residues that can be liabilities or value streams.
+
+- Key variables: oxygen potential; temperature; slag chemistry (basicity/viscosity); feed impurity suite; off-gas handling capacity; electrorefining electrolyte chemistry.
+- Typical outputs: copper cathode; slag/dust/residues; SO2-bearing off-gas requiring capture; anode slime and other refining residues.
+- Integration constraints: environmental controls (SO2, dusts); refractory/corrosion; quality assurance for cathode and by-products.
+- Why it matters here: it is the dominant midstream pathway and the main “constraint translator” from feed variability to product specification.
+
+### T3.2 Slag chemistry, partitioning, and copper losses
+In high-temperature copper processing, slag is a controlled phase that governs operability and recovery. Copper can be lost to slag both chemically (dissolved copper species under certain conditions) and physically (entrained matte droplets that do not separate before tapping). Small reductions in these losses can compound at scale, but improvements must remain compatible with furnace stability and impurity capture.
+
+Scientifically, copper losses are shaped by phase equilibria (what is thermodynamically favored), kinetics (how fast phases separate), and transport (mixing, settling, and interfacial behavior). Slag viscosity and microstructure influence droplet settling and entrainment; oxygen potential and slag composition influence dissolved copper levels.
+
+- Key variables: slag composition (e.g., Fe-oxide/silicate balance); oxygen potential; temperature; mixing intensity; settling time.
+- Typical outputs: copper-in-slag measurements (chemical + mechanical); slag viscosity proxies; microstructure/phase identification.
+- Integration constraints: recovery improvements cannot violate tapping/foaming constraints or shift impurities into unstable residues.
+- Why it matters here: it is a practical lever for Mission A (WP-A3) that directly links science to value capture.
+
+### T3.3 Impurities and penalty elements (behavior and control levers)
+Impurities and penalty elements (e.g., As, Sb, Bi, Pb, Zn, Ni, halides) matter because they affect concentrate economics, plant operability, and product quality. They can drive corrosion, dust formation, off-gas constraints, and anode/cathode quality issues, and they often trigger penalties and blend constraints (Lane et al., 2016, p. 2).
+
+The science is speciation and partitioning: where an element goes (matte, slag, gas, electrolyte, residues) depends on oxidation state, temperature, and co-existing chemistry (including halides). Controlling impurities therefore requires a “route-aware” view: what looks like “removal” may simply move the element into another stream that must be stabilized, recovered, or disposed of compliantly.
+
+- Key variables: impurity suite and concentrations; oxygen potential; chloride/halide presence; recycle streams; allowable impurity thresholds for products.
+- Typical outputs: impurity transfer functions; tolerance windows; residue inventories (dust/slag/slime) with speciation.
+- Integration constraints: impurity control can create new waste/residue handling requirements that dominate feasibility.
+- Why it matters here: it is central to Mission A (WP-A1/WP-A4) and to Mission B feed acceptance.
+
+### T3.4 Hydrometallurgy modules (selective leaching, pre-treatment, SX/EW)
+Hydrometallurgy uses aqueous chemistry to dissolve metals into solution and then recover them (often as cathode) using separation and electrochemistry modules. In this report, hydrometallurgy appears mainly as targeted pre-treatment: a “bolt-on” step to remove penalty elements, reduce midstream risk, or enable difficult secondary feeds without full plant redesign.
+
+The core science is controlled dissolution (thermodynamics + kinetics) and selective separation. Selective leaching aims to dissolve an impurity suite while keeping copper largely in solids (or vice versa), then uses precipitation, adsorption, solvent extraction, or electrowinning to recover copper and manage dissolved impurities. Solvent extraction and electrowinning (SX/EW) are widely used modules for producing high-purity copper from leach solutions, but their performance depends strongly on impurity control and electrolyte chemistry.
+
+- Key variables: pH and redox potential; reagent selection; temperature; particle size/liberation; impurity suite; residue stability.
+- Typical outputs: leach selectivity curves; solution impurity profiles; cathode purity indicators; residue characterization and handling options.
+- Integration constraints: residues and solutions must be manageable (filtration, water reuse, stability, and compliant disposal or recovery).
+- Why it matters here: it underpins Mission A WP-A4 and multiple circular routes where partners require spec-compliant outputs.
+
+### T3.5 Bioleaching (heap and stirred routes; scale-up constraints)
+Bioleaching uses microorganisms to accelerate redox cycles that generate ferric iron and acidity, which can leach copper from sulfide minerals. It is often discussed for low-grade ores and certain difficult-to-process mineral systems, and it features in international benchmark consortia (e.g., MiCCuR) as a scale-up pathway (Linnaeus University, 2021).
+
+The science is coupled microbiology and electrochemistry in porous or mixed systems. Industrial viability depends on mass transfer (oxygen and solution distribution), heat balance, and mineralogical effects such as passivation layers. For strategy design, the key point is that bioleaching scale-up is an engineering problem as much as a microbiology problem, and comparative claims are sensitive to system boundaries and energy assumptions (Wu et al., 2025, p. 9).
+
+- Key variables: temperature; aeration/oxygen transfer; pH; ferric/ferrous ratio; mineralogy; permeability and irrigation (heaps).
+- Typical outputs: copper recovery vs time; solution impurity profiles; residue stability; energy and emissions inventories for LCA.
+- Integration constraints: slow kinetics and variability require realistic time-to-recovery and robust monitoring assumptions.
+- Why it matters here: it provides a lower-temperature comparator route and informs decarbonisation and low-grade resource options.
+
+### T3.6 Secondary feed characterization (scrap + e-waste “scrap atlas”)
+Circular copper depends on secondary feeds that are heterogeneous in composition, form, and contamination. Scrap can range from relatively clean copper to multi-material assemblies; e-waste can be copper-rich but is highly composite and variable (Yang, Wu and Zhang, 2024, p. 4). Without standardized characterization and representative sampling, route selection is guesswork.
+
+The core technical issue is representativeness and liberation: what separations are possible depends on how components break and separate under shredding and processing, what fraction becomes fines, and how contamination co-travels with copper-bearing fractions. A “scrap atlas” is therefore a standardized feed library plus protocols that connect feed classes to processing rules and risk flags.
+
+- Key variables: composition distributions; physical form and bonding; liberation; plastics/halogens; fines generation; moisture.
+- Typical outputs: feed classes; sampling protocols; contaminant metrics; a processing-rule playbook linked to feed types.
+- Integration constraints: poor characterization leads to poor downstream chemistry control and unexpected residues/emissions.
+- Why it matters here: it is the enabling layer for Mission B WP-B1/WP-B2 and for partner trust in circular claims.
+
+### T3.7 Pre-treatment and decontamination of complex scrap
+Many circular routes succeed or fail in pre-treatment. Removing organics/plastics and controlling halogens (and their emissions when heated) is often required before integration into a metallurgical process. Mechanical pre-processing can also concentrate copper-bearing fractions and remove components that create downstream liabilities.
+
+Scientifically, pre-treatment is about changing feed chemistry and structure so that downstream thermodynamics, kinetics, and emissions become controllable. Thermal treatment can drive off organics and modify composites, but requires strong off-gas capture and residue management. Mechanical separation depends on density, conductivity, magnetism, and shape, but is limited by liberation and fines behavior.
+
+- Key variables: temperature and atmosphere; residence time; shredding/classification settings; off-gas capture; halogen management; residue stabilization.
+- Typical outputs: upgraded fractions; quantified contaminant removal; emissions profiles and residue streams.
+- Integration constraints: environmental performance and permitting can dominate viability even when metallurgical recovery looks good.
+- Why it matters here: it is core to Mission B WP-B2 and to safe, partner-acceptable integration of secondary feeds.
+
+### T3.8 Alloy-to-alloy recycling and tramp elements
+Alloy-to-alloy recycling aims to keep material in higher-value loops rather than downcycling. The limiting factor is often tramp elements: impurity elements that accumulate with repeated recycling and degrade properties or fail specifications. Once certain elements are dissolved in the melt, removal may be difficult without dilution, targeted refining, or strict sorting.
+
+The science is phase diagrams, solubility, and solidification behavior. Tolerance thresholds depend on the alloy system and application requirements, so quality assurance and acceptance testing become part of the technology. This makes “spec-driven” partner pull essential for defining what a viable alloy loop looks like.
+
+- Key variables: alloy composition; tramp element thresholds; dilution/refining options; melt practice; acceptance testing protocol.
+- Typical outputs: tolerance maps linking composition to properties; QA guidance; at least one demonstrated spec-compliant loop.
+- Integration constraints: the “hardness” of impurity removal can force system-level solutions (sorting + dilution + standards).
+- Why it matters here: it is the main technical barrier to high-value circular loops (Mission B WP-B3).
+
+### T3.9 Co-product recovery and residues (including anode slime)
+Copper processing produces residues that can be liabilities or value streams. Refining residues such as anode slimes can concentrate precious metals and other co-products; recovering these materials can materially change the economics and environmental performance of a route (Dong et al., 2020, pp. 1, 5).
+
+The science is multi-metal separation and stabilization. Residues often contain mixtures of metals in different chemical forms; recovering value requires targeted leaching and separation steps designed around selectivity and residue stability. Even where co-products are not the primary revenue driver, avoiding “stranding” value in unstable residues reduces both cost and risk.
+
+- Key variables: residue mineralogy and speciation; leach selectivity; solid-liquid separation; stabilization requirements; regulatory constraints.
+- Typical outputs: recovered co-products; stabilized residues; route options with mass balances and residue liability accounting.
+- Integration constraints: residues can concentrate hazardous species, making safe handling and compliance non-negotiable.
+- Why it matters here: it is the boundary condition for “copper plus co-products” and for Mission B WP-B4.
+
+### T3.10 Microrecycling and microfactory concepts (distributed circular metallurgy)
+Microfactory approaches aim to process complex waste streams in smaller, modular units rather than relying only on large centralized facilities. The motivation is often practical: local handling of difficult waste, reduced transport, and flexible processing configurations tailored to specific feed classes. The same fundamentals apply (thermodynamics, phase separation, emissions control), but the engineering constraints change: throughput limits, product specification control, and environmental compliance often dominate.
+
+- Key variables: feed class constraints; temperature and atmosphere control; emissions capture; product specification and QA.
+- Typical outputs: recovered metal fractions or intermediate alloys; residues requiring disposal or further processing.
+- Integration constraints: without tight controls, micro-units risk becoming waste treatment devices rather than value-adding processes.
+- Why it matters here: it is a credible pilot-scale engagement pathway for Mission B and aligns with distributed circularity narratives.
+
+### T3.11 Emerging direct electrochemical routes (molten sulfide electrolysis as a comparator)
+Direct electrochemical extraction routes aim to produce copper with fewer conventional smelting steps by using electrolysis in high-temperature molten environments. Molten sulfide electrolysis is a notable early-stage comparator because it targets sulfur handling and emissions by producing elemental sulfur under certain conceptual configurations (MIT News, 2017).
+
+The core science is high-temperature electrochemistry and materials stability. Industrial viability depends on electrode and containment materials, cell efficiency and heat management, and an overall flowsheet that is credible at scale. In strategy terms, these routes are best treated as bounded “option value” work rather than near-term plant retrofits.
+
+- Key variables: electrolyte composition; electrode materials; temperature; current density; sulfur handling pathway.
+- Typical outputs: copper metal; sulfur (or sulfur-containing products) depending on configuration; spent electrolyte handling requirements.
+- Integration constraints: materials durability and scale-up remain the dominant risks.
+- Why it matters here: it defines a long-horizon decarbonisation comparator for a constrained portfolio of higher-risk research.
+
+### T3.12 The analytical toolchain (TEA, LCA, MFA, MRV)
+Strategy claims in copper often depend on comparisons: which route is lower carbon, which integration is lower risk, which change is worth piloting. Those comparisons depend on transparent modeling and measurement. Techno-economic analysis (TEA) quantifies costs and value drivers, life cycle assessment (LCA) quantifies environmental burdens under defined boundaries, material flow analysis (MFA) quantifies system-level stocks and flows, and measurement, reporting and verification (MRV) defines how claims are tested in practice.
+
+Methodologically, results can be sensitive to boundaries, electricity assumptions, co-product treatment, yield and reliability assumptions, and sampling plans. In this report, the analytical toolchain is treated as a technology because it produces reusable templates and protocols that partners can adopt to de-risk pilots and defend claims externally.
+
+- Key variables: boundaries and functional unit; co-product allocation rules; uncertainty treatment; scenario design; measurement and sampling protocols.
+- Typical outputs: comparable TEA/LCA models; scenario sensitivity results; MRV-ready metrics and templates.
+- Integration constraints: partner adoption requires protocols that are feasible to run in operating plants.
+- Why it matters here: it underpins Mission B WP-B5 and makes “low-carbon” and “responsibly recycled” statements defensible.

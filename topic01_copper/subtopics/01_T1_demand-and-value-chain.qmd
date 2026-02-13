@@ -1,0 +1,45 @@
+# 01 T1 Demand and Value Chain
+
+- Primary topic ID: `T1`
+
+## T1. Demand Pull + Australia Value-Chain Structure
+### T1.1 Global demand trajectory (what the analysis must be robust to)
+Multiple outlooks point to structurally tight copper supply relative to electrification-driven demand. For example, S&P Global projects demand rising from **28 Mt (2025)** to **42 Mt (2040)** [@sp-global-2026a, p. 9], while Wood Mackenzie projects **42.7 Mtpa by 2035** in its base case [@woodmackenzie-2025, p. 3]. These figures are not used to produce a single forecast. They justify why Australia and partners will increasingly care about reliable processing, impurity tolerance and quality, and secondary feed availability.
+
+### T1.2 Data centres as a near-term anchor (without narrowing the analysis)
+Data centres are used in this report as a high-urgency, partner-facing anchor because they intensify:
+- grid build and connection assets
+- high-reliability electrical equipment (transformers, switchgear, busbars, cabling)
+- short-cycle procurement and large project pipelines
+
+In Australia, data-centre electricity demand is estimated at **3.9 TWh (FY25)** and projected to rise to **12.0 TWh (FY30)** and **34.5 TWh (FY50)** [@aemo-oxford-2025, p. 4]. The point is not that data centres are the only demand driver. The point is that “reliability and scale” procurement contexts tend to make issues of copper quality, processing capacity, and supply assurance more salient to partners across multiple sectors.
+
+### T1.3 Demand numbers used in this report (traceable)
+| Metric | Value(s) | Source |
+|---|---:|---|
+| Global copper demand (illustrative outlook) | 28 Mt (2025) -> 42 Mt (2040) | S&P Global (2026a, p. 9) |
+| Global copper demand (base case) | 42.7 Mtpa (2035) | Wood Mackenzie (2025, p. 3) |
+| AU data-centre electricity demand | 3.9 TWh (FY25); 12.0 TWh (FY30); 34.5 TWh (FY50) | AEMO and Oxford Economics (2025, p. 4) |
+
+### T1.4 Australia Copper Value Chain: Baseline and Structural Nodes
+#### T1.4.1 Why the Australia baseline matters
+An Australia-focused research strategy becomes much stronger when it can point to a harmonised baseline describing:
+- where concentrates flow (domestic vs export)
+- midstream capacities and constraints (smelting/refining)
+- secondary copper availability and quality (scrap and e-waste)
+- downstream specifications that drive procurement and acceptance testing
+
+This report provides a first-pass structural-node map and identifies the baseline tables required to quantify the hypotheses in `T2`.
+
+#### T1.4.2 Public baseline signal (export value)
+A public Australian baseline provides an outlook for copper export value (nominal) rising from **A$12.565b (2024-25)** to **A$17.648b (2026-27f)** [@disr-2025, p. 60]. This supports urgency, but it does not answer where value is captured (or lost) across processing, refining, and circular upgrading steps.
+
+#### T1.4.3 Structural nodes (analysis-facing, non-exhaustive)
+| Node | Why it matters for the research strategy | Evidence |
+|---|---|---|
+| **Midstream anchor (QLD)**: Mount Isa smelter and Townsville copper refinery | Partnership gravity well for impurity tolerance, feed flexibility, low-carbon process energy, and environmental performance | Glencore (2025) |
+| **Integrated chain (SA)**: Olympic Dam and SA processing/refining pathway | End-to-end pilot opportunities; signals and pathways for domestic processing/refining capability | BHP (2024) |
+| **Circular system (AU-wide)**: scrap and e-waste flows | Feed quality and contamination determine viable routes and specifications; opportunity for onshore value retention | Yang, Wu and Zhang (2024, p. 4) |
+
+#### T1.4.4 Benchmark architecture targets (EU example)
+The EU CRMA provides a governance template by stating explicit capacity benchmarks (for strategic raw materials) including extraction capacity for at least **10%**, processing for at least **40%**, and recycling for at least **25%** of annual consumption [@eu-2024, p. 3]. These numbers should not be imported directly into Australia’s context. Their value in this report is architectural: they highlight that extraction, processing, and recycling are distinct capacity topics that can be governed and resourced separately, which is consistent with the two-mission framing used here.

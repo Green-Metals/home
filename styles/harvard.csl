@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-GB">
+  <info>
+    <title>Simple Harvard Author-Date</title>
+    <id>http://www.zotero.org/styles/simple-harvard-author-date</id>
+    <category citation-format="author-date"/>
+    <updated>2026-02-13T00:00:00+00:00</updated>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " delimiter-precedes-last="always" initialize-with=". "/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" collapse="year">
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="year"/>
+        <text variable="locator"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography et-al-min="10" et-al-use-first="1" hanging-indent="true">
+    <sort>
+      <key macro="author"/>
+      <key macro="year"/>
+      <key variable="title"/>
+    </sort>
+    <layout suffix=".">
+      <group delimiter=" ">
+        <text macro="author"/>
+        <text macro="year"/>
+        <text variable="title" font-style="italic"/>
+        <text variable="container-title"/>
+        <group delimiter=": ">
+          <text variable="volume"/>
+          <text variable="page"/>
+        </group>
+        <text variable="DOI" prefix="https://doi.org/"/>
+        <text variable="URL"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>

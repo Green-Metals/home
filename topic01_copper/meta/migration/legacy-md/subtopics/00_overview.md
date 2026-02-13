@@ -1,0 +1,96 @@
+# 00 Overview
+
+This file is the overview module for the split writeup pack.
+
+## Reading Order
+1. `00_overview.md`
+2. `01_T1_demand-and-value-chain.md`
+3. `02_T2_processing-pathways.md`
+4. `03_T3_science-101.md`
+5. `04_T4_research-and-collaboration-landscape.md`
+6. `05_T5_policy-funding-programs.md`
+7. `06_T6_evidence-quality-gaps-confidence.md`
+8. `90_references-and-appendices.md`
+
+## Topic Map
+- `T1`: Demand Pull + Australia Value-Chain Structure
+- `T2`: Processing Pathways Across Primary/Secondary Feeds and Co-products
+- `T3`: Science 101 Technology Primer
+- `T4`: Research and Collaboration Landscape
+- `T5`: Policy, Funding, and Programs
+- `T6`: Evidence Quality, Gaps, and Confidence
+
+# Australia-Focused Copper Evidence Review: Research Report
+
+**Version:** 2026-02-09  
+**Status:** Internal draft  
+**Audience:** Internal research group  
+**Primary goals:** (a) research prioritisation, (b) industry partnership landscape positioning (Australia-first)  
+**Scope note:** Digital process control / sensing is out of scope for this report (deferred).
+
+## Abstract
+This report provides an Australia-first copper evidence review, oriented to future copper use and end-to-end value capture across mining and concentration, smelting/refining (midstream), alloys and semi-fabrication, manufacturing/end use, and circularity. A scoping review was conducted over a bounded corpus of public baselines, operator disclosures, and peer-reviewed technical literature (Appendix B). Retained quantitative claims used in the narrative are page-anchored and traceable through Appendix A. The evidence supports a two-mission analytical framing: (Mission A) low-carbon, impurity-tolerant processing and refining competitiveness; and (Mission B) circular copper and alloy loops from complex scrap and e-waste with explicit contamination and co-product-aware route design. Data centres are used as a near-term demand-side anchor for partner pull, supported by projected Australian data-centre electricity demand growth (AEMO and Oxford Economics, 2025, p. 4). The report closes by identifying evidence gaps and baseline work that would strengthen Australia-specific capacity, flow, and cost understanding.
+
+## Executive Summary
+### Purpose and scope (summary)
+The purpose of this report is to summarise the most defensible evidence and logic for an Australia-first copper analysis. The framing is end-to-end value capture: what Australia can not only mine, but also **process, refine, specify, and circularly upgrade**. The scope spans the full copper chain and uses **copper plus co-products** as a boundary condition where co-products materially affect route viability and environmental performance (Dong et al., 2020, pp. 1, 5).
+
+Two observations drive the research logic. First, multiple outlooks indicate tightening copper supply-demand conditions under electrification. Second, Australia’s value capture is shaped by a small number of domestic midstream nodes and by the difficulty of upgrading complex secondary feeds into specification-compliant products. These observations map naturally to two research missions: midstream competitiveness and circular copper/alloys.
+
+### Key facts and findings (with page anchors for quantitative claims)
+- **Global demand outlooks are materially higher than current levels.** S&P Global projects copper demand rising from **28 Mt (2025)** to **42 Mt (2040)** (S&P Global, 2026a, p. 9). Wood Mackenzie projects **42.7 Mtpa by 2035** in its base case (Wood Mackenzie, 2025, p. 3).
+- **Australian data-centre electricity demand is projected to rise substantially**, which strengthens the case for strategy framing that emphasises reliable processing capacity, quality, and circular feed availability. AEMO/Oxford estimates **3.9 TWh (FY25)** rising to **12.0 TWh (FY30)** and **34.5 TWh (FY50)** (AEMO and Oxford Economics, 2025, p. 4).
+- **Public Australian baseline signals show copper export value growth**, rising from **A$12.565b (2024-25)** to **A$17.648b (2026-27f)** nominal (DISR, 2025, p. 60). However, export value alone does not resolve how value is captured across processing and circular flows.
+- **Impurity and penalty element management is central to concentrate economics and operability** and influences concentrate value and negotiated terms (Lane et al., 2016, p. 2).
+- **Secondary-feed upgrading is technically and environmentally route-dependent.** Printed circuit boards (PCBs) can reach copper contents of **20-25%** (Yang, Wu and Zhang, 2024, p. 4), but route choice drives tradeoffs in contamination, energy use, and emissions (Torrubia et al., 2024, pp. 1, 7-8).
+- **“Low-carbon” claims require explicit modelling and measurement.** Wu et al. report an **18% reduction** in global warming potential for their bioleaching pathway compared to pyrometallurgical production (Wu et al., 2025, p. 7), and show strong sensitivity to electricity-transition scenarios (Wu et al., 2025, p. 9).
+
+### Research missions (logic, not a topic list)
+**Mission A: Low-carbon, high-resilience midstream processing and refining.** The central logic is that midstream nodes translate ore and secondary feeds into specification-compliant products, and their economics are sensitive to impurities, energy, reliability, and environmental constraints. A university contribution is to make these constraints measurable and predictable (impurity transfer functions, operating windows, abatement curves) using lab evidence and partner data.
+
+**Mission B: Circular copper and alloys from complex secondary feeds.** The central logic is that circular value capture depends on feed quality and contamination control, plus route design that is co-product-aware and environmentally defensible. A university contribution is to build the enabling evidence base (scrap characterisation, pre-treatment protocols, alloy tolerance thresholds, comparative TEA/LCA and MRV protocols) that reduces integration risk for partners.
+
+## Topic Interface (T1-T6)
+The thematic structure of this report is fixed to six topic IDs:
+- `T1`: Demand Pull + Australia Value-Chain Structure
+- `T2`: Processing Pathways Across Primary/Secondary Feeds and Co-products
+- `T3`: Science 101 Technology Primer
+- `T4`: Research and Collaboration Landscape
+- `T5`: Policy, Funding, and Programs
+- `T6`: Evidence Quality, Gaps, and Confidence
+
+Boundary controls:
+- `T3` contains technology fundamentals only (no policy/program framing).
+- `T6` contains confidence, evidence quality, and gap status only (no new thematic arguments).
+- `T1` and `T2` are separated as structure/demand versus processing-route mechanics.
+
+## 1. Introduction
+### 1.1 Australia-first framing
+Australia’s copper position cannot be reduced to mining tonnage. Copper value is created and retained when material can be processed into consistent, specification-compliant products and when secondary copper can be upgraded without unacceptable contamination or emissions. This report therefore emphasises research themes that influence value capture across the chain, with particular attention to midstream resilience and circular feed upgrading.
+
+### 1.2 Scope and exclusions
+Scope covers: mining and concentration, smelting/refining, alloys/semi-fabrication, manufacturing/end use, and recycling/circularity.
+
+Explicit exclusions for this report:
+- digital process control / sensing / ore sorting (deferred)
+- a complete owner/operator census for all Australian mines and downstream manufacturers (treated as baseline work)
+
+### 1.3 Boundary condition: copper plus co-products
+Economic realism requires a boundary of **copper plus co-products** where project viability depends on co-product value and/or environmental constraints (for example, refining residues/anode slime pathways with multi-metal interactions) (Dong et al., 2020, pp. 1, 5).
+
+## 2. Methods
+### 2.1 Review approach (scoping review)
+This report is based on a scoping review over a bounded corpus of:
+- public baselines (Australia and global)
+- operator disclosures and public announcements relevant to Australian midstream nodes
+- peer-reviewed technical literature relevant to impurity management, circular routes, and decarbonisation pathways
+
+The intent is not a full systematic review. It is a strategy-focused synthesis designed to keep core claims traceable while remaining useful for program design and partner engagement.
+
+### 2.2 Evidence handling and traceability
+Retained quantitative claims used in the narrative are page-anchored. Appendix A lists the claim-to-evidence mapping for retained quantitative claims used in the report.
+
+### 2.3 Limitations
+The main limitations are practical and affect interpretation:
+- Some datasets and market intelligence products are subscription-only (not in this corpus).
+- Several Australia-specific capacity, flow, and cost views are not harmonised into a single dataset; developing a harmonised baseline is part of the recommended near-term work.
