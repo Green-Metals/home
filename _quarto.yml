@@ -76,7 +76,7 @@ format:
       - styles/site.css
     toc: true
     toc-location: right
-    toc-depth: 3
+    toc-depth: 2
     link-external-icon: true
     smooth-scroll: true
     include-before-body:
