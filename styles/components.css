@@ -48,35 +48,9 @@
 }
 
 #quarto-search .aa-DetachedSearchButton:focus-visible,
-#quarto-search .aa-Input:focus-visible,
-.quarto-color-scheme-toggle:focus-visible {
+#quarto-search .aa-Input:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
-}
-
-.quarto-color-scheme-toggle {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  color: var(--text-muted);
-  min-height: 2.1rem;
-  min-width: 2.1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: none;
-  transition: border-color 120ms ease, color 120ms ease, background-color 120ms ease;
-}
-
-.quarto-color-scheme-toggle i {
-  font-size: 0.98rem;
-  line-height: 1;
-}
-
-.quarto-color-scheme-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent-soft) 18%, var(--surface) 82%);
 }
 
 .table,
