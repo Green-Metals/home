@@ -14,15 +14,12 @@ project:
   post-render: ./scripts/sync_writeup_pdfs.sh
 
 website:
-  title: "Critical Raw Materials Knowledge Hub"
+  title: "CRM Hub"
   page-navigation: true
   search:
     location: navbar
     type: textbox
-  navbar:
-    left:
-      - href: index.qmd
-        text: Critical Raw Materials Knowledge Hub
+  navbar: {}
   sidebar:
     style: docked
     search: false

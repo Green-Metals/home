@@ -2,9 +2,9 @@
 
 html,
 body {
-  background: linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 92%, black 8%) 100%);
+  background: var(--bg);
   color: var(--text);
-  font-family: "Atkinson Hyperlegible", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+  font-family: "Inter", "Atkinson Hyperlegible", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
   font-size: var(--step-0);
   line-height: var(--line-height);
   text-rendering: optimizeLegibility;
@@ -27,7 +27,7 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
@@ -56,32 +56,35 @@ h3,
 h4 {
   font-family: "Alegreya Sans", "Atkinson Hyperlegible", "Inter", sans-serif;
   color: var(--text);
-  line-height: 1.25;
-  letter-spacing: 0.01em;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
 h1 {
-  font-size: clamp(var(--step-3), 1.8rem + 1vw, var(--step-4));
-  margin-top: var(--space-2);
-  margin-bottom: var(--space-4);
+  font-size: clamp(2rem, 1.7rem + 1.25vw, 2.8rem);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-5);
+  font-weight: 700;
 }
 
 h2 {
-  font-size: var(--step-2);
-  margin-top: var(--space-6);
-  margin-bottom: var(--space-3);
+  font-size: clamp(1.35rem, 1.2rem + 0.4vw, 1.7rem);
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-4);
   border-top: 1px solid var(--border);
-  padding-top: var(--space-4);
+  padding-top: var(--space-5);
+  font-weight: 700;
 }
 
 h3 {
-  font-size: var(--step-1);
+  font-size: 1.15rem;
   margin-top: var(--space-5);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
+  font-weight: 700;
 }
 
 h4 {
-  font-size: var(--step-0);
+  font-size: 1rem;
   margin-top: var(--space-4);
   margin-bottom: var(--space-2);
   font-weight: 700;
