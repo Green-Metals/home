@@ -1,0 +1,9 @@
+.DS_Store
+**/.DS_Store
+_site/
+.quarto/
+.sass-cache/
+topic*/refs/*
+!topic*/refs/.gitkeep
+topic*/meta/migration/legacy-md/
+topic*/meta/migration/legacy-md-manifest.csv

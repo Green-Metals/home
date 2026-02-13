@@ -1,0 +1,19 @@
+---
+title: "Critical Raw Materials Knowledge Hub"
+format:
+  html:
+    toc: false
+---
+
+A minimal, research-first knowledge website for topic-based evidence synthesis.
+
+## Topics
+
+- [Landscape Briefing](landscape-briefing/landscape-summary.qmd)
+- [Topic 01 Copper](topic01_copper/WRITEUP.qmd)
+- [Topic 02 Iron-Steel](topic02_iron-steel/WRITEUP.qmd)
+- [Topic 03 Alumina-Aluminium](topic03_alumina-aluminium/WRITEUP.qmd)
+
+## Export Artifacts
+
+- Topic PDFs are generated from `WRITEUP.qmd` and published with the site.

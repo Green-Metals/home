@@ -1,0 +1,127 @@
+# 02 T2 Processing Pathways
+
+- Primary topic ID: `T2`
+
+## T2. Processing Pathways Across Primary/Secondary Feeds and Co-products
+This section states hypotheses that structure the mission design and clarify what evidence is required to refine the program.
+
+### T2.1 Midstream resilience and competitiveness is a high-leverage bottleneck
+Hypothesis: A large share of Australia’s value-capture leverage sits in midstream competitiveness, defined as the ability to process varied feeds, manage impurities, deliver consistent product quality, and decarbonise without losing reliability.
+
+Logic chain (why this follows from the facts): Midstream is where feed complexity becomes operational reality. Impurities and penalty elements are not abstract; they influence concentrate value, negotiated terms, and operability constraints [@lane-2016, p. 2]. When domestic midstream nodes are few and strategically important, research that improves predictability (impurity transfer functions, operating windows) and decarbonisation realism (abatement curves under reliability constraints) has high partner pull.
+
+### T2.2 Circular copper and alloy loops are a high-leverage capability wedge
+Hypothesis: Additional value capture can be created by upgrading complex secondary copper domestically into specification-compliant feed and products, avoiding downcycling.
+
+Logic chain (why this follows from the facts): Secondary feeds can be copper-rich (for example, PCBs reaching **20-25%** copper) [@yang-2024, p. 4], but they are heterogeneous and contamination-sensitive. Route choices therefore dominate outcomes, including decarbonisation tradeoffs [@torrubia-2024, pp. 1, 7-8]. Even when process routes appear “low carbon”, comparative results and scenario studies show strong sensitivity to inventory boundaries and electricity transitions [@wu-2025, pp. 7, 9]. This implies that circular value capture requires explicit route selection logic, contamination management, and measurement protocols rather than generic “recycling is better” claims.
+
+### T2.3 Research missions and work packages
+This section describes the research program as two missions with work packages. The emphasis is on explainable logic and on outputs that can be validated in labs and pilots with industry partners.
+
+#### Mission A: Low-carbon, high-resilience copper processing and refining (midstream)
+Mission A targets predictable and competitive processing under tighter constraints (impurities, energy and carbon, quality, and reliability). The work packages are designed so that a university can generate publishable science while producing partner-usable tools (models, protocols, operating windows).
+
+#### WP-A1. Impurities and penalty elements (prediction, control, and removal)
+Penalty elements and impurity suites influence both concentrate value and the operational envelope of downstream processing [@lane-2016, p. 2]. The objective of WP-A1 is to turn this constraint into a predictive capability: Australia-relevant impurity behavior models and operating windows that can be used for blending, feed acceptance, and pre-treatment decisions.
+
+Scientific 101 pointers: `T3.3` (impurities) and `T3.1` (where impurities end up in midstream routes).
+
+- Core questions: how do As/Sb/Bi/halides and other suites partition into matte/slag/gas/residues and propagate into anode/cathode quality risk under realistic blend families?
+- Partner inputs: representative blend compositions; penalty thresholds and quality limits; operational boundary conditions (recycles, dust handling, key constraints).
+- Deliverables: impurity transfer functions; documented operating windows; a simple blend-decision prototype and a publishable impurity dataset.
+- Validation pathway: bench experiments + partner data reconciliation -> one pilotable measurement protocol for a partner-relevant impurity suite.
+
+#### WP-A2. Retrofit decarbonisation pathways (unit-operation abatement under constraints)
+Decarbonisation options in midstream are often evaluated in general terms. The research need is to quantify plausible retrofit pathways at the unit-operation level and to make explicit the reliability and quality constraints that limit “theoretical” options.
+WP-A2 reframes decarbonisation as a unit-operation engineering problem with explicit constraints. The objective is to produce retrofit option sets that remain credible under reliability and product-quality requirements, and to quantify where abatement is realistically achievable versus “theoretical”.
+
+Scientific 101 pointers: `T3.1` (midstream constraints) and `T3.12` (TEA/LCA/MRV sensitivity and measurement).
+
+- Core questions: which abatement levers are feasible per unit operation, and what constraints (off-gas, materials, downtime) dominate feasibility?
+- Partner inputs: unit-operation energy and off-gas baselines; reliability/downtime modes; retrofit windows and “do not break” quality constraints.
+- Deliverables: abatement curves under constraints; a short retrofit shortlist for one site-relevant target; a measurement plan for a pilot trial.
+- Validation pathway: mass/energy + TEA/LCA scenario envelopes -> partner review -> pilotable protocol (what to measure and how often).
+
+#### WP-A3. Slag chemistry and metal losses (value recovery under operability constraints)
+Small recovery improvements compound at scale, but slag design interacts with viscosity/foaming constraints and impurity capture. The research need is to quantify metal losses and operability interactions for realistic feed blends, not idealised compositions.
+WP-A3 targets a direct value-capture lever: reducing copper losses while staying inside operability constraints. The objective is to produce slag design envelopes and test protocols that are transferable to partner contexts, including realistic impurity suites.
+
+Scientific 101 pointers: `T3.2` (slag chemistry and losses) and `T3.1` (pyro route context).
+
+- Core questions: what combinations of slag chemistry and operating conditions minimize dissolved copper and entrainment losses without destabilizing furnace operation?
+- Partner inputs: representative feed compositions; current loss metrics; known operability constraints (foaming, tapping, accretions).
+- Deliverables: slag design envelopes; quantified recovery gains; a reproducible lab protocol that maps to partner KPIs.
+- Validation pathway: bench slag/matte experiments + microstructure -> partner review -> one pilotable slag-control hypothesis.
+
+#### WP-A4. Bolt-on hydromet pre-treatment for risk reduction and secondary feeds
+Selective leaching and targeted pre-treatment can act as “bolt-on” risk reduction measures, particularly when impurity suites or secondary feeds constrain existing routes. The research need is to identify where such steps are technically credible and environmentally defensible in an Australian context.
+WP-A4 identifies and tests “bolt-on” pre-treatment steps that can improve feed flexibility and impurity tolerance without demanding a full plant redesign. The objective is a ranked set of pre-treatment flowsheets with bench evidence for selectivity and residue handling, grounded in partner integration constraints.
+
+Scientific 101 pointers: `T3.4` (hydromet modules) and `T3.3` (impurity behavior and why “removal” can shift liabilities).
+
+- Core questions: which selective leaching and separation steps can remove (or immobilize) target impurities while preserving copper value and producing manageable residues?
+- Partner inputs: candidate feed samples (complex concentrates and/or secondary feeds); integration constraints; residue acceptance requirements.
+- Deliverables: ranked “bolt-on” flowsheets with bench proof-of-concept; residue stability evidence; a partner-ready integration checklist.
+- Validation pathway: bench selectivity + residue handling -> one pilotable pre-treatment recipe for a defined feed class.
+
+#### Mission B: Circular copper and alloy loops (complex scrap and e-waste)
+Mission B targets the capability stack required to upgrade complex secondary feeds into spec-compliant copper and alloys. The research emphasis is on feed characterisation, contamination control, route selection, and measurement protocols that make circular claims defensible.
+
+#### WP-B1. Scrap atlas (characterisation to processing rules)
+Complex scrap and e-waste streams are heterogeneous; without a feed library and classification scheme, route selection is guesswork. The research need is to connect Australian-relevant feed characterisation to practical processing rules.
+WP-B1 builds the enabling evidence base for circular copper: a standardized Australian “scrap atlas” that connects real feed variability to processing rules and risk flags. The objective is not just characterization; it is a library and protocol set that partners can reuse when they decide whether a feed is “integratable” (and on what terms).
+
+Scientific 101 pointers: `T3.6` (secondary feed characterization) and `T3.3` (contamination as an impurity-suite problem).
+
+- Core questions: which feed attributes (composition distributions, form, liberation, contaminants) predict downstream compatibility and product-spec risk?
+- Evidence anchor: PCBs can reach copper contents of **20-25%** [@yang-2024, p. 4], but heterogeneity and contamination dominate route choice.
+- Partner inputs: representative scrap and e-waste streams; access to sampling points and logistics constraints; downstream acceptance thresholds where available.
+- Deliverables: a first-version scrap library; standardized characterization protocols; a feed classification scheme with “processing rules” for at least one priority stream.
+
+#### WP-B2. Decontamination and pre-treatment before integration
+Secondary feeds often carry plastics, halogens, organics, and problematic metals that can dominate environmental risk and downstream compatibility. The research need is to validate pre-treatment recipes and measure emissions and contaminant removal in a way that partners can trust.
+WP-B2 makes pre-treatment “real”: validated recipes with measured contaminant removal and emissions evidence. The objective is to produce partner-usable pre-treatment protocols that improve downstream compatibility and reduce environmental risk, with clear documentation of what was measured and what was assumed.
+
+Scientific 101 pointers: `T3.7` (pre-treatment and decontamination) and `T3.12` (MRV discipline for defensible claims).
+
+- Core questions: which mechanical/thermal steps remove plastics/halogens/organics at lowest cost and risk, and what emissions controls are required?
+- Evidence anchor: route choice and decarbonisation outcomes vary strongly by pathway [@torrubia-2024, pp. 1, 7-8].
+- Partner inputs: representative feed materials; access to pre-treatment equipment; target specifications for “smelter-compatible” or “hydromet-compatible” feed.
+- Deliverables: pre-treatment recipes + emissions characterization; compatibility specifications; a measurement protocol suitable for partner adoption.
+
+#### WP-B3. Alloy-to-alloy loops and tramp element management
+Avoiding downcycling requires quantified tolerance thresholds and quality assurance methods for tramp elements. The research need is to identify feasible alloy-to-alloy windows that match downstream specifications.
+WP-B3 turns alloy recycling into a spec-anchored engineering problem. The objective is to quantify tramp-element thresholds and develop quality assurance and refining/dilution strategies that keep material in higher-value loops rather than downcycling.
+
+Scientific 101 pointers: `T3.8` (alloy loops and tramp elements).
+
+- Core questions: what tramp-element thresholds define “no downcycling” for one priority alloy system, and what refining/dilution strategies are feasible?
+- Partner inputs: alloy scrap compositions; downstream specifications and acceptance tests; realistic melt practice constraints.
+- Deliverables: tolerance thresholds; a candidate refining/dilution strategy; QA guidance and one demonstrated spec-compliant loop (bench or pilot scale).
+
+#### WP-B4. Co-product-aware circular metallurgy (including residues/anode slime)
+Route viability can depend on co-product recovery and residue handling. The research need is to design circular flowsheets that do not strand value in residues and that remain environmentally defensible.
+WP-B4 ensures Mission B is economically and environmentally realistic under a “copper plus co-products” boundary. The objective is to design circular flowsheets that account for co-product value and residue liabilities explicitly, rather than treating residues as an afterthought.
+
+Scientific 101 pointers: `T3.9` (co-products and residues) and `T3.1` (refining residues and where value concentrates).
+
+- Core questions: what co-products materially affect viability for a chosen route, and what residue handling/stabilization makes the route defensible?
+- Evidence anchor: multi-metal recovery from anode slime demonstrates co-product-sensitive route importance [@dong-2020, pp. 1, 5].
+- Partner inputs: representative residue streams (or simulated equivalents); regulatory constraints; partner risk and acceptance thresholds.
+- Deliverables: co-product-sensitive flowsheet options; residue handling pathways; a route-selection checklist that includes residue liability accounting.
+
+#### WP-B5. Decarbonisation scenarios for circular routes (TEA/LCA + measurement)
+Circular routes are not automatically low-carbon; credible comparison requires consistent boundaries, scenario analysis, and measurement protocols. The research need is to make “low-carbon circular copper” a measurable claim rather than a label.
+WP-B5 makes “low-carbon circular copper” defensible by building comparative TEA/LCA models with scenario and uncertainty treatment, and by producing MRV-ready measurement protocols. The objective is reusable templates and a partner-adoptable measurement plan for at least one circular route.
+
+Scientific 101 pointers: `T3.12` (TEA/LCA/MFA/MRV) and `T3.6/T3.7` (secondary feed variability and pre-treatment impacts).
+
+- Core questions: what boundaries and assumptions dominate conclusions for a chosen circular route, and how should measurement be designed to support credible claims?
+- Evidence anchor: comparative results and scenario analysis show meaningful sensitivity to boundaries and electricity transitions [@wu-2025, pp. 7, 9].
+- Partner inputs: route parameters and yields; energy assumptions; access to pilot measurement data where available; partner reporting requirements.
+- Deliverables: reusable TEA/LCA models; scenario sensitivity results; MRV-ready metrics and sampling plans; a partner-ready protocol.
+
+#### Mission outputs (what gets built, in practice)
+Mission A builds: impurity transfer functions and operating windows; retrofit abatement curves under constraints; slag design protocols; bolt-on pre-treatment proof points.
+
+Mission B builds: an Australian scrap library and classification scheme; validated pre-treatment recipes and emissions evidence; alloy tolerance thresholds and QA guidance; co-product-aware circular flowsheet options; TEA/LCA and MRV templates that allow defensible comparison.
