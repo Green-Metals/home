@@ -13,8 +13,6 @@ format:
 
 [Download PDF](WRITEUP.pdf)
 
-# Topic 02 Iron and Steel
-
 This writeup is intentionally lightweight for phase 1. Use this file as the canonical publishable source.
 
 ## Module Source Map

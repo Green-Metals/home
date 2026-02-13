@@ -14,8 +14,6 @@ format:
 
 [Download PDF](WRITEUP.pdf)
 
-# Australia-Focused Copper Evidence Review: Research Report
-
 **Version:** 2026-02-09  
 **Status:** Internal draft  
 **Audience:** Internal research group  

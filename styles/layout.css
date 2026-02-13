@@ -14,9 +14,9 @@
 }
 
 .navbar {
-  min-height: 2.6rem;
-  padding-top: 0.15rem;
-  padding-bottom: 0.15rem;
+  min-height: 2.75rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
   border: 0;
 }
 
@@ -26,11 +26,11 @@
 }
 
 .navbar-title {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-soft);
+  color: var(--text-muted);
 }
 
 .navbar-brand-container.mx-auto {
@@ -83,27 +83,27 @@
 }
 
 .sidebar-title {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--text-soft);
 }
 
 .sidebar-navigation .sidebar-item {
-  font-size: var(--step--1);
+  font-size: 0.98rem;
 }
 
 .sidebar-navigation .sidebar-section {
-  margin-top: var(--space-3);
+  margin-top: var(--space-2);
 }
 
 .sidebar-navigation .sidebar-section .sidebar-item-text {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+  font-size: 0.95rem;
+  text-transform: none;
 }
 
 .sidebar-navigation .sidebar-item-container {
@@ -117,8 +117,9 @@
   border-radius: var(--radius-sm);
   padding-left: var(--space-2);
   padding-right: var(--space-2);
-  padding-top: 0.15rem;
-  padding-bottom: 0.15rem;
+  padding-top: 0.22rem;
+  padding-bottom: 0.22rem;
+  line-height: 1.35;
 }
 
 .sidebar-navigation .sidebar-link:hover {
@@ -134,11 +135,11 @@
 }
 
 main.content {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  padding: clamp(var(--space-4), 2.2vw, var(--space-6));
+  background: color-mix(in srgb, var(--surface) 95%, transparent 5%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(var(--space-4), 2vw, var(--space-6));
 }
 
 #quarto-document-content > * {
@@ -147,6 +148,24 @@ main.content {
 
 .home-page #quarto-document-content > * {
   max-width: min(98ch, 100%);
+}
+
+#title-block-header.quarto-title-block {
+  margin-bottom: var(--space-4);
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+#title-block-header .quarto-title .title {
+  font-size: clamp(1.3rem, 1.05rem + 0.9vw, 1.8rem);
+  line-height: 1.18;
+  margin-bottom: 0.15rem;
+  letter-spacing: -0.01em;
+}
+
+#title-block-header .subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
 }
 
 #quarto-document-content > pre,
@@ -166,6 +185,14 @@ nav[role="doc-toc"] {
   border-radius: var(--radius-sm);
   box-shadow: none;
   padding: var(--space-3) var(--space-4);
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+#TOC .nav-link,
+nav[role="doc-toc"] .nav-link {
+  padding-top: 0.14rem;
+  padding-bottom: 0.14rem;
 }
 
 #TOC .active,
