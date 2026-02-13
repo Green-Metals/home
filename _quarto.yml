@@ -70,9 +70,8 @@ website:
 
 format:
   html:
-    theme:
-      light: cosmo
-      dark: darkly
+    theme: cosmo
+    theme-toggle: false
     css:
       - styles/site.css
     toc: true

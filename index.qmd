@@ -1,6 +1,7 @@
 ---
 title: "Home"
 body-classes: home-page
+page-navigation: false
 format:
   html:
     toc: false

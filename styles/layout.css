@@ -73,6 +73,10 @@
   display: none;
 }
 
+.home-page .page-navigation {
+  display: none;
+}
+
 #quarto-sidebar {
   background: var(--surface-soft);
   border-right: 1px solid var(--border);
