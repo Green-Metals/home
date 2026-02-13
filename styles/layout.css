@@ -21,6 +21,7 @@
 }
 
 .navbar-container {
+  align-items: center;
   gap: var(--space-3);
 }
 
@@ -38,7 +39,8 @@
 }
 
 .quarto-navbar-tools.tools-end {
-  margin-right: var(--space-2);
+  margin-right: var(--space-1);
+  margin-left: auto;
 }
 
 .quarto-title-breadcrumbs,
