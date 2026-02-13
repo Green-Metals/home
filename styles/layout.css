@@ -191,14 +191,42 @@ nav[role="doc-toc"] {
 
 #TOC .nav-link,
 nav[role="doc-toc"] .nav-link {
-  padding-top: 0.14rem;
-  padding-bottom: 0.14rem;
+  display: block;
+  padding-top: 0.16rem;
+  padding-bottom: 0.16rem;
+  padding-left: 0.45rem;
+  padding-right: 0.2rem;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
 }
 
 #TOC .active,
 nav[role="doc-toc"] .active {
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
+  border-left: 2px solid var(--accent);
+}
+
+#TOC ul,
+nav[role="doc-toc"] ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+#TOC > ul > li > ul,
+nav[role="doc-toc"] > ul > li > ul {
+  margin-top: 0.2rem;
+  margin-left: 0.55rem;
+  padding-left: 0.45rem;
+  border-left: 1px solid var(--border);
+}
+
+@media (min-width: 1200px) {
+  #quarto-margin-sidebar {
+    min-width: 17rem;
+  }
 }
 
 .page-navigation {
