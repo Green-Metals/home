@@ -20,7 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -43,54 +42,465 @@ div.csl-indent {
 }</style>
 
 
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../topic01_copper/subtopics/02_T2_processing-pathways.html" rel="next">
+<link href="../../topic01_copper/subtopics/00_overview.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-html-6b66b95abd978ad436a633db2cf312ca.min.css" rel="stylesheet" append-hash="true" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c2184ee79b4189700a07fecab5507ffb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6b74d00bf9800a17f7fea13582486bf4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-c2184ee79b4189700a07fecab5507ffb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="../../styles/site.css">
 </head>
 
-<body>
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
-
-
-
-<nav id="TOC" role="doc-toc">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Critical Raw Materials Knowledge Hub</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+<span class="menu-text">Critical Raw Materials Knowledge Hub</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../topic01_copper/WRITEUP.html">Topic 01 Copper</a></li><li class="breadcrumb-item"><a href="../../topic01_copper/subtopics/01_T1_demand-and-value-chain.html">01 T1 Demand and Value Chain</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/sample-page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Design Demo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/qa-checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QA Checklist</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../landscape-briefing/landscape-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Landscape Briefing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Topic 01 Copper</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/WRITEUP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writeup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/00_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00 Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/01_T1_demand-and-value-chain.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">01 T1 Demand and Value Chain</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/02_T2_processing-pathways.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 T2 Processing Pathways</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/03_T3_science-101.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 T3 Science 101</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/04_T4_research-and-collaboration-landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 T4 Research and Collaboration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/05_T5_policy-funding-programs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 T5 Policy and Funding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/06_T6_evidence-quality-gaps-confidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 T6 Evidence and Gaps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/90_references-and-appendices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">90 References and Appendices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Topic 02 Iron-Steel</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic02_iron-steel/WRITEUP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writeup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic02_iron-steel/subtopics/00_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00 Overview</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Topic 03 Alumina-Aluminium</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic03_alumina-aluminium/WRITEUP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writeup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic03_alumina-aluminium/subtopics/00_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00 Overview</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#t1-demand-and-value-chain" id="toc-t1-demand-and-value-chain">01 T1 Demand and Value Chain</a>
-  <ul>
-  <li><a href="#t1.-demand-pull-australia-value-chain-structure" id="toc-t1.-demand-pull-australia-value-chain-structure">T1. Demand Pull + Australia Value-Chain Structure</a>
-  <ul>
-  <li><a href="#t1.1-global-demand-trajectory-what-the-analysis-must-be-robust-to" id="toc-t1.1-global-demand-trajectory-what-the-analysis-must-be-robust-to">T1.1 Global demand trajectory (what the analysis must be robust to)</a></li>
-  <li><a href="#t1.2-data-centres-as-a-near-term-anchor-without-narrowing-the-analysis" id="toc-t1.2-data-centres-as-a-near-term-anchor-without-narrowing-the-analysis">T1.2 Data centres as a near-term anchor (without narrowing the analysis)</a></li>
-  <li><a href="#t1.3-demand-numbers-used-in-this-report-traceable" id="toc-t1.3-demand-numbers-used-in-this-report-traceable">T1.3 Demand numbers used in this report (traceable)</a></li>
-  <li><a href="#t1.4-australia-copper-value-chain-baseline-and-structural-nodes" id="toc-t1.4-australia-copper-value-chain-baseline-and-structural-nodes">T1.4 Australia Copper Value Chain: Baseline and Structural Nodes</a></li>
+  <li><a href="#t1-demand-and-value-chain" id="toc-t1-demand-and-value-chain" class="nav-link active" data-scroll-target="#t1-demand-and-value-chain">01 T1 Demand and Value Chain</a>
+  <ul class="collapse">
+  <li><a href="#t1.-demand-pull-australia-value-chain-structure" id="toc-t1.-demand-pull-australia-value-chain-structure" class="nav-link" data-scroll-target="#t1.-demand-pull-australia-value-chain-structure">T1. Demand Pull + Australia Value-Chain Structure</a>
+  <ul class="collapse">
+  <li><a href="#t1.1-global-demand-trajectory-what-the-analysis-must-be-robust-to" id="toc-t1.1-global-demand-trajectory-what-the-analysis-must-be-robust-to" class="nav-link" data-scroll-target="#t1.1-global-demand-trajectory-what-the-analysis-must-be-robust-to">T1.1 Global demand trajectory (what the analysis must be robust to)</a></li>
+  <li><a href="#t1.2-data-centres-as-a-near-term-anchor-without-narrowing-the-analysis" id="toc-t1.2-data-centres-as-a-near-term-anchor-without-narrowing-the-analysis" class="nav-link" data-scroll-target="#t1.2-data-centres-as-a-near-term-anchor-without-narrowing-the-analysis">T1.2 Data centres as a near-term anchor (without narrowing the analysis)</a></li>
+  <li><a href="#t1.3-demand-numbers-used-in-this-report-traceable" id="toc-t1.3-demand-numbers-used-in-this-report-traceable" class="nav-link" data-scroll-target="#t1.3-demand-numbers-used-in-this-report-traceable">T1.3 Demand numbers used in this report (traceable)</a></li>
+  <li><a href="#t1.4-australia-copper-value-chain-baseline-and-structural-nodes" id="toc-t1.4-australia-copper-value-chain-baseline-and-structural-nodes" class="nav-link" data-scroll-target="#t1.4-australia-copper-value-chain-baseline-and-structural-nodes">T1.4 Australia Copper Value Chain: Baseline and Structural Nodes</a></li>
   </ul></li>
   </ul></li>
   </ul>
 </nav>
-<h1 id="t1-demand-and-value-chain">01 T1 Demand and Value Chain</h1>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../topic01_copper/WRITEUP.html">Topic 01 Copper</a></li><li class="breadcrumb-item"><a href="../../topic01_copper/subtopics/01_T1_demand-and-value-chain.html">01 T1 Demand and Value Chain</a></li></ol></nav></header>
+
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+
+
+
+<section id="t1-demand-and-value-chain" class="level1">
+<h1>01 T1 Demand and Value Chain</h1>
 <ul>
 <li>Primary topic ID: <code>T1</code></li>
 </ul>
-<h2 id="t1.-demand-pull-australia-value-chain-structure" class="anchored">T1. Demand Pull + Australia Value-Chain Structure</h2>
-<h3 id="t1.1-global-demand-trajectory-what-the-analysis-must-be-robust-to" class="anchored">T1.1 Global demand trajectory (what the analysis must be robust to)</h3>
-<p>Multiple outlooks point to structurally tight copper supply relative to electrification-driven demand. For example, S&amp;P Global projects demand rising from <strong>28 Mt (2025)</strong> to <strong>42 Mt (2040)</strong> <span class="citation" data-cites="sp-global-2026a">(S&amp;P Global, 2026, 9)</span>, while Wood Mackenzie projects <strong>42.7 Mtpa by 2035</strong> in its base case <span class="citation" data-cites="woodmackenzie-2025">(Wood Mackenzie, 2025, 3)</span>. These figures are not used to produce a single forecast. They justify why Australia and partners will increasingly care about reliable processing, impurity tolerance and quality, and secondary feed availability.</p>
-<h3 id="t1.2-data-centres-as-a-near-term-anchor-without-narrowing-the-analysis" class="anchored">T1.2 Data centres as a near-term anchor (without narrowing the analysis)</h3>
+<section id="t1.-demand-pull-australia-value-chain-structure" class="level2">
+<h2 class="anchored" data-anchor-id="t1.-demand-pull-australia-value-chain-structure">T1. Demand Pull + Australia Value-Chain Structure</h2>
+<section id="t1.1-global-demand-trajectory-what-the-analysis-must-be-robust-to" class="level3">
+<h3 class="anchored" data-anchor-id="t1.1-global-demand-trajectory-what-the-analysis-must-be-robust-to">T1.1 Global demand trajectory (what the analysis must be robust to)</h3>
+<p>Multiple outlooks point to structurally tight copper supply relative to electrification-driven demand. For example, S&amp;P Global projects demand rising from <strong>28 Mt (2025)</strong> to <strong>42 Mt (2040)</strong> <span class="citation" data-cites="sp-global-2026a">(<a href="#ref-sp-global-2026a" role="doc-biblioref">S&amp;P Global, 2026, 9</a>)</span>, while Wood Mackenzie projects <strong>42.7 Mtpa by 2035</strong> in its base case <span class="citation" data-cites="woodmackenzie-2025">(<a href="#ref-woodmackenzie-2025" role="doc-biblioref">Wood Mackenzie, 2025, 3</a>)</span>. These figures are not used to produce a single forecast. They justify why Australia and partners will increasingly care about reliable processing, impurity tolerance and quality, and secondary feed availability.</p>
+</section>
+<section id="t1.2-data-centres-as-a-near-term-anchor-without-narrowing-the-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="t1.2-data-centres-as-a-near-term-anchor-without-narrowing-the-analysis">T1.2 Data centres as a near-term anchor (without narrowing the analysis)</h3>
 <p>Data centres are used in this report as a high-urgency, partner-facing anchor because they intensify: - grid build and connection assets - high-reliability electrical equipment (transformers, switchgear, busbars, cabling) - short-cycle procurement and large project pipelines</p>
-<p>In Australia, data-centre electricity demand is estimated at <strong>3.9 TWh (FY25)</strong> and projected to rise to <strong>12.0 TWh (FY30)</strong> and <strong>34.5 TWh (FY50)</strong> <span class="citation" data-cites="aemo-oxford-2025">(AEMO and Oxford Economics, 2025, 4)</span>. The point is not that data centres are the only demand driver. The point is that “reliability and scale” procurement contexts tend to make issues of copper quality, processing capacity, and supply assurance more salient to partners across multiple sectors.</p>
-<h3 id="t1.3-demand-numbers-used-in-this-report-traceable" class="anchored">T1.3 Demand numbers used in this report (traceable)</h3>
-<table class="caption-top">
+<p>In Australia, data-centre electricity demand is estimated at <strong>3.9 TWh (FY25)</strong> and projected to rise to <strong>12.0 TWh (FY30)</strong> and <strong>34.5 TWh (FY50)</strong> <span class="citation" data-cites="aemo-oxford-2025">(<a href="#ref-aemo-oxford-2025" role="doc-biblioref">AEMO and Oxford Economics, 2025, 4</a>)</span>. The point is not that data centres are the only demand driver. The point is that “reliability and scale” procurement contexts tend to make issues of copper quality, processing capacity, and supply assurance more salient to partners across multiple sectors.</p>
+</section>
+<section id="t1.3-demand-numbers-used-in-this-report-traceable" class="level3">
+<h3 class="anchored" data-anchor-id="t1.3-demand-numbers-used-in-this-report-traceable">T1.3 Demand numbers used in this report (traceable)</h3>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 30%">
 <col style="width: 40%">
@@ -121,14 +531,21 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<h3 id="t1.4-australia-copper-value-chain-baseline-and-structural-nodes" class="anchored">T1.4 Australia Copper Value Chain: Baseline and Structural Nodes</h3>
-<h4 id="t1.4.1-why-the-australia-baseline-matters" class="anchored">T1.4.1 Why the Australia baseline matters</h4>
+</section>
+<section id="t1.4-australia-copper-value-chain-baseline-and-structural-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="t1.4-australia-copper-value-chain-baseline-and-structural-nodes">T1.4 Australia Copper Value Chain: Baseline and Structural Nodes</h3>
+<section id="t1.4.1-why-the-australia-baseline-matters" class="level4">
+<h4 class="anchored" data-anchor-id="t1.4.1-why-the-australia-baseline-matters">T1.4.1 Why the Australia baseline matters</h4>
 <p>An Australia-focused research strategy becomes much stronger when it can point to a harmonised baseline describing: - where concentrates flow (domestic vs export) - midstream capacities and constraints (smelting/refining) - secondary copper availability and quality (scrap and e-waste) - downstream specifications that drive procurement and acceptance testing</p>
 <p>This report provides a first-pass structural-node map and identifies the baseline tables required to quantify the hypotheses in <code>T2</code>.</p>
-<h4 id="t1.4.2-public-baseline-signal-export-value" class="anchored">T1.4.2 Public baseline signal (export value)</h4>
-<p>A public Australian baseline provides an outlook for copper export value (nominal) rising from <strong>A$12.565b (2024-25)</strong> to <strong>A$17.648b (2026-27f)</strong> <span class="citation" data-cites="disr-2025">(Department of Industry, Science and Resources, 2025, 60)</span>. This supports urgency, but it does not answer where value is captured (or lost) across processing, refining, and circular upgrading steps.</p>
-<h4 id="t1.4.3-structural-nodes-analysis-facing-non-exhaustive" class="anchored">T1.4.3 Structural nodes (analysis-facing, non-exhaustive)</h4>
-<table class="caption-top">
+</section>
+<section id="t1.4.2-public-baseline-signal-export-value" class="level4">
+<h4 class="anchored" data-anchor-id="t1.4.2-public-baseline-signal-export-value">T1.4.2 Public baseline signal (export value)</h4>
+<p>A public Australian baseline provides an outlook for copper export value (nominal) rising from <strong>A$12.565b (2024-25)</strong> to <strong>A$17.648b (2026-27f)</strong> <span class="citation" data-cites="disr-2025">(<a href="#ref-disr-2025" role="doc-biblioref">Department of Industry, Science and Resources, 2025, 60</a>)</span>. This supports urgency, but it does not answer where value is captured (or lost) across processing, refining, and circular upgrading steps.</p>
+</section>
+<section id="t1.4.3-structural-nodes-analysis-facing-non-exhaustive" class="level4">
+<h4 class="anchored" data-anchor-id="t1.4.3-structural-nodes-analysis-facing-non-exhaustive">T1.4.3 Structural nodes (analysis-facing, non-exhaustive)</h4>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -159,10 +576,19 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<h4 id="t1.4.4-benchmark-architecture-targets-eu-example" class="anchored">T1.4.4 Benchmark architecture targets (EU example)</h4>
-<p>The EU CRMA provides a governance template by stating explicit capacity benchmarks (for strategic raw materials) including extraction capacity for at least <strong>10%</strong>, processing for at least <strong>40%</strong>, and recycling for at least <strong>25%</strong> of annual consumption <span class="citation" data-cites="eu-2024">(European Union, 2024, 3)</span>. These numbers should not be imported directly into Australia’s context. Their value in this report is architectural: they highlight that extraction, processing, and recycling are distinct capacity topics that can be governed and resourced separately, which is consistent with the two-mission framing used here.</p>
+</section>
+<section id="t1.4.4-benchmark-architecture-targets-eu-example" class="level4">
+<h4 class="anchored" data-anchor-id="t1.4.4-benchmark-architecture-targets-eu-example">T1.4.4 Benchmark architecture targets (EU example)</h4>
+<p>The EU CRMA provides a governance template by stating explicit capacity benchmarks (for strategic raw materials) including extraction capacity for at least <strong>10%</strong>, processing for at least <strong>40%</strong>, and recycling for at least <strong>25%</strong> of annual consumption <span class="citation" data-cites="eu-2024">(<a href="#ref-eu-2024" role="doc-biblioref">European Union, 2024, 3</a>)</span>. These numbers should not be imported directly into Australia’s context. Their value in this report is architectural: they highlight that extraction, processing, and recycling are distinct capacity topics that can be governed and resourced separately, which is consistent with the two-mission framing used here.</p>
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+
+
+</section>
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-aemo-oxford-2025" class="csl-entry" role="listitem">
 AEMO and Oxford Economics 2025 <em>Data centre energy demand: Final report (july 2025)</em>.
 </div>
@@ -178,14 +604,22 @@ S&amp;P Global 2026 <em>Copper in the age of AI: Challenges of electrification</
 <div id="ref-woodmackenzie-2025" class="csl-entry" role="listitem">
 Wood Mackenzie 2025 <em>High-wire act: Is soaring copper demand an obstacle to future growth?</em>
 </div>
-</div>
-
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-    tabsets.forEach(function(tabset) {
-      const tabby = new Tabby('#' + tabset.id);
-    });
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -286,7 +720,7 @@ Wood Mackenzie 2025 <em>High-wire act: Is soaring copper demand an obstacle to f
         },
         interactive: true,
         interactiveBorder: 10,
-        theme: 'light-border',
+        theme: 'quarto',
         placement: 'bottom-start',
       };
       if (contentFn) {
@@ -586,6 +1020,19 @@ Wood Mackenzie 2025 <em>High-wire act: Is soaring copper demand an obstacle to f
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../topic01_copper/subtopics/00_overview.html" class="pagination-link" aria-label="00 Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">00 Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../topic01_copper/subtopics/02_T2_processing-pathways.html" class="pagination-link" aria-label="02 T2 Processing Pathways">
+        <span class="nav-page-text">02 T2 Processing Pathways</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
 
 
 

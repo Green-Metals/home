@@ -20,7 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -43,59 +42,473 @@ div.csl-indent {
 }</style>
 
 
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../topic01_copper/subtopics/03_T3_science-101.html" rel="next">
+<link href="../../topic01_copper/subtopics/01_T1_demand-and-value-chain.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-html-6b66b95abd978ad436a633db2cf312ca.min.css" rel="stylesheet" append-hash="true" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c2184ee79b4189700a07fecab5507ffb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6b74d00bf9800a17f7fea13582486bf4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-c2184ee79b4189700a07fecab5507ffb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="../../styles/site.css">
 </head>
 
-<body>
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
-
-
-
-<nav id="TOC" role="doc-toc">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Critical Raw Materials Knowledge Hub</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+<span class="menu-text">Critical Raw Materials Knowledge Hub</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../topic01_copper/WRITEUP.html">Topic 01 Copper</a></li><li class="breadcrumb-item"><a href="../../topic01_copper/subtopics/02_T2_processing-pathways.html">02 T2 Processing Pathways</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/sample-page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Design Demo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/qa-checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QA Checklist</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../landscape-briefing/landscape-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Landscape Briefing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Topic 01 Copper</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/WRITEUP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writeup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/00_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00 Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/01_T1_demand-and-value-chain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 T1 Demand and Value Chain</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/02_T2_processing-pathways.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">02 T2 Processing Pathways</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/03_T3_science-101.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 T3 Science 101</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/04_T4_research-and-collaboration-landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 T4 Research and Collaboration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/05_T5_policy-funding-programs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 T5 Policy and Funding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/06_T6_evidence-quality-gaps-confidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 T6 Evidence and Gaps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic01_copper/subtopics/90_references-and-appendices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">90 References and Appendices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Topic 02 Iron-Steel</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic02_iron-steel/WRITEUP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writeup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic02_iron-steel/subtopics/00_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00 Overview</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Topic 03 Alumina-Aluminium</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic03_alumina-aluminium/WRITEUP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writeup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topic03_alumina-aluminium/subtopics/00_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00 Overview</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#t2-processing-pathways" id="toc-t2-processing-pathways">02 T2 Processing Pathways</a>
-  <ul>
-  <li><a href="#t2.-processing-pathways-across-primarysecondary-feeds-and-co-products" id="toc-t2.-processing-pathways-across-primarysecondary-feeds-and-co-products">T2. Processing Pathways Across Primary/Secondary Feeds and Co-products</a>
-  <ul>
-  <li><a href="#t2.1-midstream-resilience-and-competitiveness-is-a-high-leverage-bottleneck" id="toc-t2.1-midstream-resilience-and-competitiveness-is-a-high-leverage-bottleneck">T2.1 Midstream resilience and competitiveness is a high-leverage bottleneck</a></li>
-  <li><a href="#t2.2-circular-copper-and-alloy-loops-are-a-high-leverage-capability-wedge" id="toc-t2.2-circular-copper-and-alloy-loops-are-a-high-leverage-capability-wedge">T2.2 Circular copper and alloy loops are a high-leverage capability wedge</a></li>
-  <li><a href="#t2.3-research-missions-and-work-packages" id="toc-t2.3-research-missions-and-work-packages">T2.3 Research missions and work packages</a></li>
+  <li><a href="#t2-processing-pathways" id="toc-t2-processing-pathways" class="nav-link active" data-scroll-target="#t2-processing-pathways">02 T2 Processing Pathways</a>
+  <ul class="collapse">
+  <li><a href="#t2.-processing-pathways-across-primarysecondary-feeds-and-co-products" id="toc-t2.-processing-pathways-across-primarysecondary-feeds-and-co-products" class="nav-link" data-scroll-target="#t2.-processing-pathways-across-primarysecondary-feeds-and-co-products">T2. Processing Pathways Across Primary/Secondary Feeds and Co-products</a>
+  <ul class="collapse">
+  <li><a href="#t2.1-midstream-resilience-and-competitiveness-is-a-high-leverage-bottleneck" id="toc-t2.1-midstream-resilience-and-competitiveness-is-a-high-leverage-bottleneck" class="nav-link" data-scroll-target="#t2.1-midstream-resilience-and-competitiveness-is-a-high-leverage-bottleneck">T2.1 Midstream resilience and competitiveness is a high-leverage bottleneck</a></li>
+  <li><a href="#t2.2-circular-copper-and-alloy-loops-are-a-high-leverage-capability-wedge" id="toc-t2.2-circular-copper-and-alloy-loops-are-a-high-leverage-capability-wedge" class="nav-link" data-scroll-target="#t2.2-circular-copper-and-alloy-loops-are-a-high-leverage-capability-wedge">T2.2 Circular copper and alloy loops are a high-leverage capability wedge</a></li>
+  <li><a href="#t2.3-research-missions-and-work-packages" id="toc-t2.3-research-missions-and-work-packages" class="nav-link" data-scroll-target="#t2.3-research-missions-and-work-packages">T2.3 Research missions and work packages</a></li>
   </ul></li>
   </ul></li>
   </ul>
 </nav>
-<h1 id="t2-processing-pathways">02 T2 Processing Pathways</h1>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../topic01_copper/WRITEUP.html">Topic 01 Copper</a></li><li class="breadcrumb-item"><a href="../../topic01_copper/subtopics/02_T2_processing-pathways.html">02 T2 Processing Pathways</a></li></ol></nav></header>
+
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+
+
+
+<section id="t2-processing-pathways" class="level1">
+<h1>02 T2 Processing Pathways</h1>
 <ul>
 <li>Primary topic ID: <code>T2</code></li>
 </ul>
-<h2 id="t2.-processing-pathways-across-primarysecondary-feeds-and-co-products" class="anchored">T2. Processing Pathways Across Primary/Secondary Feeds and Co-products</h2>
+<section id="t2.-processing-pathways-across-primarysecondary-feeds-and-co-products" class="level2">
+<h2 class="anchored" data-anchor-id="t2.-processing-pathways-across-primarysecondary-feeds-and-co-products">T2. Processing Pathways Across Primary/Secondary Feeds and Co-products</h2>
 <p>This section states hypotheses that structure the mission design and clarify what evidence is required to refine the program.</p>
-<h3 id="t2.1-midstream-resilience-and-competitiveness-is-a-high-leverage-bottleneck" class="anchored">T2.1 Midstream resilience and competitiveness is a high-leverage bottleneck</h3>
+<section id="t2.1-midstream-resilience-and-competitiveness-is-a-high-leverage-bottleneck" class="level3">
+<h3 class="anchored" data-anchor-id="t2.1-midstream-resilience-and-competitiveness-is-a-high-leverage-bottleneck">T2.1 Midstream resilience and competitiveness is a high-leverage bottleneck</h3>
 <p>Hypothesis: A large share of Australia’s value-capture leverage sits in midstream competitiveness, defined as the ability to process varied feeds, manage impurities, deliver consistent product quality, and decarbonise without losing reliability.</p>
-<p>Logic chain (why this follows from the facts): Midstream is where feed complexity becomes operational reality. Impurities and penalty elements are not abstract; they influence concentrate value, negotiated terms, and operability constraints <span class="citation" data-cites="lane-2016">(D. J. Lane et al., 2016, 2)</span>. When domestic midstream nodes are few and strategically important, research that improves predictability (impurity transfer functions, operating windows) and decarbonisation realism (abatement curves under reliability constraints) has high partner pull.</p>
-<h3 id="t2.2-circular-copper-and-alloy-loops-are-a-high-leverage-capability-wedge" class="anchored">T2.2 Circular copper and alloy loops are a high-leverage capability wedge</h3>
+<p>Logic chain (why this follows from the facts): Midstream is where feed complexity becomes operational reality. Impurities and penalty elements are not abstract; they influence concentrate value, negotiated terms, and operability constraints <span class="citation" data-cites="lane-2016">(<a href="#ref-lane-2016" role="doc-biblioref">D. J. Lane et al., 2016, 2</a>)</span>. When domestic midstream nodes are few and strategically important, research that improves predictability (impurity transfer functions, operating windows) and decarbonisation realism (abatement curves under reliability constraints) has high partner pull.</p>
+</section>
+<section id="t2.2-circular-copper-and-alloy-loops-are-a-high-leverage-capability-wedge" class="level3">
+<h3 class="anchored" data-anchor-id="t2.2-circular-copper-and-alloy-loops-are-a-high-leverage-capability-wedge">T2.2 Circular copper and alloy loops are a high-leverage capability wedge</h3>
 <p>Hypothesis: Additional value capture can be created by upgrading complex secondary copper domestically into specification-compliant feed and products, avoiding downcycling.</p>
-<p>Logic chain (why this follows from the facts): Secondary feeds can be copper-rich (for example, PCBs reaching <strong>20-25%</strong> copper) <span class="citation" data-cites="yang-2024">(F. Yang et al., 2024, 4)</span>, but they are heterogeneous and contamination-sensitive. Route choices therefore dominate outcomes, including decarbonisation tradeoffs <span class="citation" data-cites="torrubia-2024">(J. Torrubia et al., 2024, 1, 7–8)</span>. Even when process routes appear “low carbon”, comparative results and scenario studies show strong sensitivity to inventory boundaries and electricity transitions <span class="citation" data-cites="wu-2025">(X. Wu et al., 2025, 7, 9)</span>. This implies that circular value capture requires explicit route selection logic, contamination management, and measurement protocols rather than generic “recycling is better” claims.</p>
-<h3 id="t2.3-research-missions-and-work-packages" class="anchored">T2.3 Research missions and work packages</h3>
+<p>Logic chain (why this follows from the facts): Secondary feeds can be copper-rich (for example, PCBs reaching <strong>20-25%</strong> copper) <span class="citation" data-cites="yang-2024">(<a href="#ref-yang-2024" role="doc-biblioref">F. Yang et al., 2024, 4</a>)</span>, but they are heterogeneous and contamination-sensitive. Route choices therefore dominate outcomes, including decarbonisation tradeoffs <span class="citation" data-cites="torrubia-2024">(<a href="#ref-torrubia-2024" role="doc-biblioref">J. Torrubia et al., 2024, 1, 7–8</a>)</span>. Even when process routes appear “low carbon”, comparative results and scenario studies show strong sensitivity to inventory boundaries and electricity transitions <span class="citation" data-cites="wu-2025">(<a href="#ref-wu-2025" role="doc-biblioref">X. Wu et al., 2025, 7, 9</a>)</span>. This implies that circular value capture requires explicit route selection logic, contamination management, and measurement protocols rather than generic “recycling is better” claims.</p>
+</section>
+<section id="t2.3-research-missions-and-work-packages" class="level3">
+<h3 class="anchored" data-anchor-id="t2.3-research-missions-and-work-packages">T2.3 Research missions and work packages</h3>
 <p>This section describes the research program as two missions with work packages. The emphasis is on explainable logic and on outputs that can be validated in labs and pilots with industry partners.</p>
-<h4 id="mission-a-low-carbon-high-resilience-copper-processing-and-refining-midstream" class="anchored">Mission A: Low-carbon, high-resilience copper processing and refining (midstream)</h4>
+<section id="mission-a-low-carbon-high-resilience-copper-processing-and-refining-midstream" class="level4">
+<h4 class="anchored" data-anchor-id="mission-a-low-carbon-high-resilience-copper-processing-and-refining-midstream">Mission A: Low-carbon, high-resilience copper processing and refining (midstream)</h4>
 <p>Mission A targets predictable and competitive processing under tighter constraints (impurities, energy and carbon, quality, and reliability). The work packages are designed so that a university can generate publishable science while producing partner-usable tools (models, protocols, operating windows).</p>
-<h4 id="wp-a1.-impurities-and-penalty-elements-prediction-control-and-removal" class="anchored">WP-A1. Impurities and penalty elements (prediction, control, and removal)</h4>
-<p>Penalty elements and impurity suites influence both concentrate value and the operational envelope of downstream processing <span class="citation" data-cites="lane-2016">(D. J. Lane et al., 2016, 2)</span>. The objective of WP-A1 is to turn this constraint into a predictive capability: Australia-relevant impurity behavior models and operating windows that can be used for blending, feed acceptance, and pre-treatment decisions.</p>
+</section>
+<section id="wp-a1.-impurities-and-penalty-elements-prediction-control-and-removal" class="level4">
+<h4 class="anchored" data-anchor-id="wp-a1.-impurities-and-penalty-elements-prediction-control-and-removal">WP-A1. Impurities and penalty elements (prediction, control, and removal)</h4>
+<p>Penalty elements and impurity suites influence both concentrate value and the operational envelope of downstream processing <span class="citation" data-cites="lane-2016">(<a href="#ref-lane-2016" role="doc-biblioref">D. J. Lane et al., 2016, 2</a>)</span>. The objective of WP-A1 is to turn this constraint into a predictive capability: Australia-relevant impurity behavior models and operating windows that can be used for blending, feed acceptance, and pre-treatment decisions.</p>
 <p>Scientific 101 pointers: <code>T3.3</code> (impurities) and <code>T3.1</code> (where impurities end up in midstream routes).</p>
 <ul>
 <li>Core questions: how do As/Sb/Bi/halides and other suites partition into matte/slag/gas/residues and propagate into anode/cathode quality risk under realistic blend families?</li>
@@ -103,7 +516,9 @@ div.csl-indent {
 <li>Deliverables: impurity transfer functions; documented operating windows; a simple blend-decision prototype and a publishable impurity dataset.</li>
 <li>Validation pathway: bench experiments + partner data reconciliation -&gt; one pilotable measurement protocol for a partner-relevant impurity suite.</li>
 </ul>
-<h4 id="wp-a2.-retrofit-decarbonisation-pathways-unit-operation-abatement-under-constraints" class="anchored">WP-A2. Retrofit decarbonisation pathways (unit-operation abatement under constraints)</h4>
+</section>
+<section id="wp-a2.-retrofit-decarbonisation-pathways-unit-operation-abatement-under-constraints" class="level4">
+<h4 class="anchored" data-anchor-id="wp-a2.-retrofit-decarbonisation-pathways-unit-operation-abatement-under-constraints">WP-A2. Retrofit decarbonisation pathways (unit-operation abatement under constraints)</h4>
 <p>Decarbonisation options in midstream are often evaluated in general terms. The research need is to quantify plausible retrofit pathways at the unit-operation level and to make explicit the reliability and quality constraints that limit “theoretical” options. WP-A2 reframes decarbonisation as a unit-operation engineering problem with explicit constraints. The objective is to produce retrofit option sets that remain credible under reliability and product-quality requirements, and to quantify where abatement is realistically achievable versus “theoretical”.</p>
 <p>Scientific 101 pointers: <code>T3.1</code> (midstream constraints) and <code>T3.12</code> (TEA/LCA/MRV sensitivity and measurement).</p>
 <ul>
@@ -112,7 +527,9 @@ div.csl-indent {
 <li>Deliverables: abatement curves under constraints; a short retrofit shortlist for one site-relevant target; a measurement plan for a pilot trial.</li>
 <li>Validation pathway: mass/energy + TEA/LCA scenario envelopes -&gt; partner review -&gt; pilotable protocol (what to measure and how often).</li>
 </ul>
-<h4 id="wp-a3.-slag-chemistry-and-metal-losses-value-recovery-under-operability-constraints" class="anchored">WP-A3. Slag chemistry and metal losses (value recovery under operability constraints)</h4>
+</section>
+<section id="wp-a3.-slag-chemistry-and-metal-losses-value-recovery-under-operability-constraints" class="level4">
+<h4 class="anchored" data-anchor-id="wp-a3.-slag-chemistry-and-metal-losses-value-recovery-under-operability-constraints">WP-A3. Slag chemistry and metal losses (value recovery under operability constraints)</h4>
 <p>Small recovery improvements compound at scale, but slag design interacts with viscosity/foaming constraints and impurity capture. The research need is to quantify metal losses and operability interactions for realistic feed blends, not idealised compositions. WP-A3 targets a direct value-capture lever: reducing copper losses while staying inside operability constraints. The objective is to produce slag design envelopes and test protocols that are transferable to partner contexts, including realistic impurity suites.</p>
 <p>Scientific 101 pointers: <code>T3.2</code> (slag chemistry and losses) and <code>T3.1</code> (pyro route context).</p>
 <ul>
@@ -121,7 +538,9 @@ div.csl-indent {
 <li>Deliverables: slag design envelopes; quantified recovery gains; a reproducible lab protocol that maps to partner KPIs.</li>
 <li>Validation pathway: bench slag/matte experiments + microstructure -&gt; partner review -&gt; one pilotable slag-control hypothesis.</li>
 </ul>
-<h4 id="wp-a4.-bolt-on-hydromet-pre-treatment-for-risk-reduction-and-secondary-feeds" class="anchored">WP-A4. Bolt-on hydromet pre-treatment for risk reduction and secondary feeds</h4>
+</section>
+<section id="wp-a4.-bolt-on-hydromet-pre-treatment-for-risk-reduction-and-secondary-feeds" class="level4">
+<h4 class="anchored" data-anchor-id="wp-a4.-bolt-on-hydromet-pre-treatment-for-risk-reduction-and-secondary-feeds">WP-A4. Bolt-on hydromet pre-treatment for risk reduction and secondary feeds</h4>
 <p>Selective leaching and targeted pre-treatment can act as “bolt-on” risk reduction measures, particularly when impurity suites or secondary feeds constrain existing routes. The research need is to identify where such steps are technically credible and environmentally defensible in an Australian context. WP-A4 identifies and tests “bolt-on” pre-treatment steps that can improve feed flexibility and impurity tolerance without demanding a full plant redesign. The objective is a ranked set of pre-treatment flowsheets with bench evidence for selectivity and residue handling, grounded in partner integration constraints.</p>
 <p>Scientific 101 pointers: <code>T3.4</code> (hydromet modules) and <code>T3.3</code> (impurity behavior and why “removal” can shift liabilities).</p>
 <ul>
@@ -130,27 +549,35 @@ div.csl-indent {
 <li>Deliverables: ranked “bolt-on” flowsheets with bench proof-of-concept; residue stability evidence; a partner-ready integration checklist.</li>
 <li>Validation pathway: bench selectivity + residue handling -&gt; one pilotable pre-treatment recipe for a defined feed class.</li>
 </ul>
-<h4 id="mission-b-circular-copper-and-alloy-loops-complex-scrap-and-e-waste" class="anchored">Mission B: Circular copper and alloy loops (complex scrap and e-waste)</h4>
+</section>
+<section id="mission-b-circular-copper-and-alloy-loops-complex-scrap-and-e-waste" class="level4">
+<h4 class="anchored" data-anchor-id="mission-b-circular-copper-and-alloy-loops-complex-scrap-and-e-waste">Mission B: Circular copper and alloy loops (complex scrap and e-waste)</h4>
 <p>Mission B targets the capability stack required to upgrade complex secondary feeds into spec-compliant copper and alloys. The research emphasis is on feed characterisation, contamination control, route selection, and measurement protocols that make circular claims defensible.</p>
-<h4 id="wp-b1.-scrap-atlas-characterisation-to-processing-rules" class="anchored">WP-B1. Scrap atlas (characterisation to processing rules)</h4>
+</section>
+<section id="wp-b1.-scrap-atlas-characterisation-to-processing-rules" class="level4">
+<h4 class="anchored" data-anchor-id="wp-b1.-scrap-atlas-characterisation-to-processing-rules">WP-B1. Scrap atlas (characterisation to processing rules)</h4>
 <p>Complex scrap and e-waste streams are heterogeneous; without a feed library and classification scheme, route selection is guesswork. The research need is to connect Australian-relevant feed characterisation to practical processing rules. WP-B1 builds the enabling evidence base for circular copper: a standardized Australian “scrap atlas” that connects real feed variability to processing rules and risk flags. The objective is not just characterization; it is a library and protocol set that partners can reuse when they decide whether a feed is “integratable” (and on what terms).</p>
 <p>Scientific 101 pointers: <code>T3.6</code> (secondary feed characterization) and <code>T3.3</code> (contamination as an impurity-suite problem).</p>
 <ul>
 <li>Core questions: which feed attributes (composition distributions, form, liberation, contaminants) predict downstream compatibility and product-spec risk?</li>
-<li>Evidence anchor: PCBs can reach copper contents of <strong>20-25%</strong> <span class="citation" data-cites="yang-2024">(F. Yang et al., 2024, 4)</span>, but heterogeneity and contamination dominate route choice.</li>
+<li>Evidence anchor: PCBs can reach copper contents of <strong>20-25%</strong> <span class="citation" data-cites="yang-2024">(<a href="#ref-yang-2024" role="doc-biblioref">F. Yang et al., 2024, 4</a>)</span>, but heterogeneity and contamination dominate route choice.</li>
 <li>Partner inputs: representative scrap and e-waste streams; access to sampling points and logistics constraints; downstream acceptance thresholds where available.</li>
 <li>Deliverables: a first-version scrap library; standardized characterization protocols; a feed classification scheme with “processing rules” for at least one priority stream.</li>
 </ul>
-<h4 id="wp-b2.-decontamination-and-pre-treatment-before-integration" class="anchored">WP-B2. Decontamination and pre-treatment before integration</h4>
+</section>
+<section id="wp-b2.-decontamination-and-pre-treatment-before-integration" class="level4">
+<h4 class="anchored" data-anchor-id="wp-b2.-decontamination-and-pre-treatment-before-integration">WP-B2. Decontamination and pre-treatment before integration</h4>
 <p>Secondary feeds often carry plastics, halogens, organics, and problematic metals that can dominate environmental risk and downstream compatibility. The research need is to validate pre-treatment recipes and measure emissions and contaminant removal in a way that partners can trust. WP-B2 makes pre-treatment “real”: validated recipes with measured contaminant removal and emissions evidence. The objective is to produce partner-usable pre-treatment protocols that improve downstream compatibility and reduce environmental risk, with clear documentation of what was measured and what was assumed.</p>
 <p>Scientific 101 pointers: <code>T3.7</code> (pre-treatment and decontamination) and <code>T3.12</code> (MRV discipline for defensible claims).</p>
 <ul>
 <li>Core questions: which mechanical/thermal steps remove plastics/halogens/organics at lowest cost and risk, and what emissions controls are required?</li>
-<li>Evidence anchor: route choice and decarbonisation outcomes vary strongly by pathway <span class="citation" data-cites="torrubia-2024">(J. Torrubia et al., 2024, 1, 7–8)</span>.</li>
+<li>Evidence anchor: route choice and decarbonisation outcomes vary strongly by pathway <span class="citation" data-cites="torrubia-2024">(<a href="#ref-torrubia-2024" role="doc-biblioref">J. Torrubia et al., 2024, 1, 7–8</a>)</span>.</li>
 <li>Partner inputs: representative feed materials; access to pre-treatment equipment; target specifications for “smelter-compatible” or “hydromet-compatible” feed.</li>
 <li>Deliverables: pre-treatment recipes + emissions characterization; compatibility specifications; a measurement protocol suitable for partner adoption.</li>
 </ul>
-<h4 id="wp-b3.-alloy-to-alloy-loops-and-tramp-element-management" class="anchored">WP-B3. Alloy-to-alloy loops and tramp element management</h4>
+</section>
+<section id="wp-b3.-alloy-to-alloy-loops-and-tramp-element-management" class="level4">
+<h4 class="anchored" data-anchor-id="wp-b3.-alloy-to-alloy-loops-and-tramp-element-management">WP-B3. Alloy-to-alloy loops and tramp element management</h4>
 <p>Avoiding downcycling requires quantified tolerance thresholds and quality assurance methods for tramp elements. The research need is to identify feasible alloy-to-alloy windows that match downstream specifications. WP-B3 turns alloy recycling into a spec-anchored engineering problem. The objective is to quantify tramp-element thresholds and develop quality assurance and refining/dilution strategies that keep material in higher-value loops rather than downcycling.</p>
 <p>Scientific 101 pointers: <code>T3.8</code> (alloy loops and tramp elements).</p>
 <ul>
@@ -158,29 +585,42 @@ div.csl-indent {
 <li>Partner inputs: alloy scrap compositions; downstream specifications and acceptance tests; realistic melt practice constraints.</li>
 <li>Deliverables: tolerance thresholds; a candidate refining/dilution strategy; QA guidance and one demonstrated spec-compliant loop (bench or pilot scale).</li>
 </ul>
-<h4 id="wp-b4.-co-product-aware-circular-metallurgy-including-residuesanode-slime" class="anchored">WP-B4. Co-product-aware circular metallurgy (including residues/anode slime)</h4>
+</section>
+<section id="wp-b4.-co-product-aware-circular-metallurgy-including-residuesanode-slime" class="level4">
+<h4 class="anchored" data-anchor-id="wp-b4.-co-product-aware-circular-metallurgy-including-residuesanode-slime">WP-B4. Co-product-aware circular metallurgy (including residues/anode slime)</h4>
 <p>Route viability can depend on co-product recovery and residue handling. The research need is to design circular flowsheets that do not strand value in residues and that remain environmentally defensible. WP-B4 ensures Mission B is economically and environmentally realistic under a “copper plus co-products” boundary. The objective is to design circular flowsheets that account for co-product value and residue liabilities explicitly, rather than treating residues as an afterthought.</p>
 <p>Scientific 101 pointers: <code>T3.9</code> (co-products and residues) and <code>T3.1</code> (refining residues and where value concentrates).</p>
 <ul>
 <li>Core questions: what co-products materially affect viability for a chosen route, and what residue handling/stabilization makes the route defensible?</li>
-<li>Evidence anchor: multi-metal recovery from anode slime demonstrates co-product-sensitive route importance <span class="citation" data-cites="dong-2020">(Z. Dong et al., 2020, 1, 5)</span>.</li>
+<li>Evidence anchor: multi-metal recovery from anode slime demonstrates co-product-sensitive route importance <span class="citation" data-cites="dong-2020">(<a href="#ref-dong-2020" role="doc-biblioref">Z. Dong et al., 2020, 1, 5</a>)</span>.</li>
 <li>Partner inputs: representative residue streams (or simulated equivalents); regulatory constraints; partner risk and acceptance thresholds.</li>
 <li>Deliverables: co-product-sensitive flowsheet options; residue handling pathways; a route-selection checklist that includes residue liability accounting.</li>
 </ul>
-<h4 id="wp-b5.-decarbonisation-scenarios-for-circular-routes-tealca-measurement" class="anchored">WP-B5. Decarbonisation scenarios for circular routes (TEA/LCA + measurement)</h4>
+</section>
+<section id="wp-b5.-decarbonisation-scenarios-for-circular-routes-tealca-measurement" class="level4">
+<h4 class="anchored" data-anchor-id="wp-b5.-decarbonisation-scenarios-for-circular-routes-tealca-measurement">WP-B5. Decarbonisation scenarios for circular routes (TEA/LCA + measurement)</h4>
 <p>Circular routes are not automatically low-carbon; credible comparison requires consistent boundaries, scenario analysis, and measurement protocols. The research need is to make “low-carbon circular copper” a measurable claim rather than a label. WP-B5 makes “low-carbon circular copper” defensible by building comparative TEA/LCA models with scenario and uncertainty treatment, and by producing MRV-ready measurement protocols. The objective is reusable templates and a partner-adoptable measurement plan for at least one circular route.</p>
 <p>Scientific 101 pointers: <code>T3.12</code> (TEA/LCA/MFA/MRV) and <code>T3.6/T3.7</code> (secondary feed variability and pre-treatment impacts).</p>
 <ul>
 <li>Core questions: what boundaries and assumptions dominate conclusions for a chosen circular route, and how should measurement be designed to support credible claims?</li>
-<li>Evidence anchor: comparative results and scenario analysis show meaningful sensitivity to boundaries and electricity transitions <span class="citation" data-cites="wu-2025">(X. Wu et al., 2025, 7, 9)</span>.</li>
+<li>Evidence anchor: comparative results and scenario analysis show meaningful sensitivity to boundaries and electricity transitions <span class="citation" data-cites="wu-2025">(<a href="#ref-wu-2025" role="doc-biblioref">X. Wu et al., 2025, 7, 9</a>)</span>.</li>
 <li>Partner inputs: route parameters and yields; energy assumptions; access to pilot measurement data where available; partner reporting requirements.</li>
 <li>Deliverables: reusable TEA/LCA models; scenario sensitivity results; MRV-ready metrics and sampling plans; a partner-ready protocol.</li>
 </ul>
-<h4 id="mission-outputs-what-gets-built-in-practice" class="anchored">Mission outputs (what gets built, in practice)</h4>
+</section>
+<section id="mission-outputs-what-gets-built-in-practice" class="level4">
+<h4 class="anchored" data-anchor-id="mission-outputs-what-gets-built-in-practice">Mission outputs (what gets built, in practice)</h4>
 <p>Mission A builds: impurity transfer functions and operating windows; retrofit abatement curves under constraints; slag design protocols; bolt-on pre-treatment proof points.</p>
 <p>Mission B builds: an Australian scrap library and classification scheme; validated pre-treatment recipes and emissions evidence; alloy tolerance thresholds and QA guidance; co-product-aware circular flowsheet options; TEA/LCA and MRV templates that allow defensible comparison.</p>
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+
+
+</section>
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-dong-2020" class="csl-entry" role="listitem">
 Z. Dong, T. Jiang, B. Xu, J. Yang, Y. Chen, Q. Li, and Y. Yang 2020 <em>Comprehensive recoveries of selenium, copper, gold, silver and lead from a copper anode slime with a clean and economical hydrometallurgical process</em> Chemical Engineering Journal 395: 124762 <a href="https://doi.org/10.1016/j.cej.2020.124762">https://doi.org/10.1016/j.cej.2020.124762</a>.
 </div>
@@ -196,14 +636,22 @@ X. Wu, X. Yang, and F. Zhao 2025 <em>Scaling bioleaching from lab to industry: A
 <div id="ref-yang-2024" class="csl-entry" role="listitem">
 F. Yang, Y. Wu, and Q. Zhang 2024 <em>Towards resource regeneration: A focus on copper recovery from electronic waste</em> Journal of Cleaner Production 474: 144286 <a href="https://doi.org/10.1016/j.jclepro.2024.144286">https://doi.org/10.1016/j.jclepro.2024.144286</a>.
 </div>
-</div>
-
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-    tabsets.forEach(function(tabset) {
-      const tabby = new Tabby('#' + tabset.id);
-    });
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -304,7 +752,7 @@ F. Yang, Y. Wu, and Q. Zhang 2024 <em>Towards resource regeneration: A focus on 
         },
         interactive: true,
         interactiveBorder: 10,
-        theme: 'light-border',
+        theme: 'quarto',
         placement: 'bottom-start',
       };
       if (contentFn) {
@@ -604,6 +1052,19 @@ F. Yang, Y. Wu, and Q. Zhang 2024 <em>Towards resource regeneration: A focus on 
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../topic01_copper/subtopics/01_T1_demand-and-value-chain.html" class="pagination-link" aria-label="01 T1 Demand and Value Chain">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">01 T1 Demand and Value Chain</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../topic01_copper/subtopics/03_T3_science-101.html" class="pagination-link" aria-label="03 T3 Science 101">
+        <span class="nav-page-text">03 T3 Science 101</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
 
 
 
