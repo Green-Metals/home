@@ -3,6 +3,7 @@ project:
   output-dir: _site
   render:
     - index.qmd
+    - docs/*.qmd
     - landscape-briefing/*.qmd
     - topic01_copper/WRITEUP.qmd
     - topic01_copper/subtopics/*.qmd
@@ -14,26 +15,76 @@ project:
 
 website:
   title: "Critical Raw Materials Knowledge Hub"
+  page-navigation: true
+  search:
+    location: navbar
+    type: textbox
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - href: landscape-briefing/landscape-summary.qmd
-        text: Landscape Briefing
-      - href: topic01_copper/WRITEUP.qmd
-        text: Topic 01 Copper
-      - href: topic02_iron-steel/WRITEUP.qmd
-        text: Topic 02 Iron-Steel
-      - href: topic03_alumina-aluminium/WRITEUP.qmd
-        text: Topic 03 Alumina-Aluminium
+        text: Critical Raw Materials Knowledge Hub
+  sidebar:
+    style: docked
+    search: false
+    collapse-level: 1
+    contents:
+      - section: "Overview"
+        contents:
+          - href: index.qmd
+            text: Home
+          - href: docs/sample-page.qmd
+            text: Design Demo
+          - href: docs/qa-checklist.qmd
+            text: QA Checklist
+          - href: landscape-briefing/landscape-summary.qmd
+            text: Landscape Briefing
+      - section: "Topic 01 Copper"
+        contents:
+          - href: topic01_copper/WRITEUP.qmd
+            text: Writeup
+          - href: topic01_copper/subtopics/00_overview.qmd
+            text: 00 Overview
+          - href: topic01_copper/subtopics/01_T1_demand-and-value-chain.qmd
+            text: 01 T1 Demand and Value Chain
+          - href: topic01_copper/subtopics/02_T2_processing-pathways.qmd
+            text: 02 T2 Processing Pathways
+          - href: topic01_copper/subtopics/03_T3_science-101.qmd
+            text: 03 T3 Science 101
+          - href: topic01_copper/subtopics/04_T4_research-and-collaboration-landscape.qmd
+            text: 04 T4 Research and Collaboration
+          - href: topic01_copper/subtopics/05_T5_policy-funding-programs.qmd
+            text: 05 T5 Policy and Funding
+          - href: topic01_copper/subtopics/06_T6_evidence-quality-gaps-confidence.qmd
+            text: 06 T6 Evidence and Gaps
+          - href: topic01_copper/subtopics/90_references-and-appendices.qmd
+            text: 90 References and Appendices
+      - section: "Topic 02 Iron-Steel"
+        contents:
+          - href: topic02_iron-steel/WRITEUP.qmd
+            text: Writeup
+          - href: topic02_iron-steel/subtopics/00_overview.qmd
+            text: 00 Overview
+      - section: "Topic 03 Alumina-Aluminium"
+        contents:
+          - href: topic03_alumina-aluminium/WRITEUP.qmd
+            text: Writeup
+          - href: topic03_alumina-aluminium/subtopics/00_overview.qmd
+            text: 00 Overview
 
 format:
   html:
-    theme: none
-    css: styles/site.css
+    theme:
+      light: cosmo
+      dark: darkly
+    css:
+      - styles/site.css
     toc: true
+    toc-location: right
+    toc-depth: 3
     link-external-icon: true
     smooth-scroll: true
+    include-before-body:
+      - includes/skip-link.html
 
 bibliography: references/references.bib
 csl: styles/harvard.csl

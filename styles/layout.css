@@ -1,0 +1,141 @@
+#quarto-header {
+  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--surface) 88%, transparent 12%);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  min-height: 3.5rem;
+  border: 0;
+}
+
+.navbar-title {
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+#quarto-sidebar {
+  background: color-mix(in srgb, var(--surface-soft) 90%, var(--bg) 10%);
+  border-right: 1px solid var(--border);
+}
+
+.sidebar-title {
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.sidebar-navigation .sidebar-item {
+  font-size: var(--step--1);
+}
+
+.sidebar-navigation .sidebar-section {
+  margin-top: var(--space-3);
+}
+
+.sidebar-navigation .sidebar-section .sidebar-item-text {
+  font-weight: 700;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.76rem;
+}
+
+.sidebar-navigation .sidebar-item-container {
+  border-left: 2px solid color-mix(in srgb, var(--border) 88%, transparent 12%);
+  margin-left: var(--space-1);
+  padding-left: var(--space-3);
+}
+
+.sidebar-navigation .sidebar-link {
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+}
+
+.sidebar-navigation .sidebar-link:hover {
+  color: var(--text);
+  background: var(--surface-muted);
+}
+
+.sidebar-navigation .active {
+  color: var(--text);
+  font-weight: 700;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+}
+
+main.content {
+  background: color-mix(in srgb, var(--surface) 94%, var(--bg) 6%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: clamp(var(--space-4), 2.2vw, var(--space-6));
+}
+
+#quarto-document-content > * {
+  max-width: var(--measure);
+}
+
+#quarto-document-content > pre,
+#quarto-document-content > .sourceCode,
+#quarto-document-content > table,
+#quarto-document-content > .callout,
+#quarto-document-content > .cell,
+#quarto-document-content > .quarto-layout-panel,
+#quarto-document-content > div[class*="column"] {
+  max-width: 100%;
+}
+
+#TOC,
+nav[role="doc-toc"] {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-3) var(--space-4);
+}
+
+#TOC .active,
+nav[role="doc-toc"] .active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.page-navigation {
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-7);
+  padding-top: var(--space-4);
+}
+
+.page-navigation .nav-page {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.page-navigation .nav-page:hover {
+  border-color: var(--accent);
+}
+
+@media (max-width: 991px) {
+  main.content {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    padding: var(--space-4);
+  }
+
+  #quarto-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  #TOC,
+  nav[role="doc-toc"] {
+    margin-top: var(--space-4);
+  }
+}
