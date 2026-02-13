@@ -1,5 +1,6 @@
 #quarto-search {
-  min-width: clamp(13rem, 26vw, 19rem);
+  flex: 0 1 18rem;
+  min-width: 11rem;
 }
 
 #quarto-search .aa-DetachedSearchButton,
@@ -10,8 +11,8 @@
   background: var(--surface) !important;
   color: var(--text) !important;
   box-shadow: none;
-  min-height: 2.1rem;
-  padding-inline: 0.2rem;
+  min-height: 2.15rem;
+  padding-inline: 0.3rem;
   transition: border-color 120ms ease, color 120ms ease, background-color 120ms ease;
 }
 
@@ -22,9 +23,13 @@
 }
 
 #quarto-search .aa-DetachedSearchButtonPlaceholder {
-  position: relative;
   font-size: 0.86rem;
-  color: transparent !important;
+  color: var(--text-soft) !important;
+}
+
+#quarto-search .aa-DetachedSearchButtonQuery {
+  color: var(--text) !important;
+  font-size: 0.88rem;
 }
 
 #quarto-search .aa-Input {
@@ -33,11 +38,6 @@
 }
 
 #quarto-search .aa-Input::placeholder {
-  color: var(--text-soft);
-}
-
-#quarto-search .aa-DetachedSearchButtonPlaceholder::before {
-  content: "Search";
   color: var(--text-soft);
 }
 
@@ -66,6 +66,11 @@
   justify-content: center;
   box-shadow: none;
   transition: border-color 120ms ease, color 120ms ease, background-color 120ms ease;
+}
+
+.quarto-color-scheme-toggle i {
+  font-size: 0.98rem;
+  line-height: 1;
 }
 
 .quarto-color-scheme-toggle:hover {
@@ -239,8 +244,9 @@ pre,
 
 @media (max-width: 991px) {
   #quarto-search {
-    min-width: 0;
-    width: 100%;
+    flex: 1 1 auto;
+    min-width: 8.5rem;
+    width: min(14rem, calc(100vw - 8.5rem));
   }
 
   .home-hero {
