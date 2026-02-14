@@ -136,6 +136,7 @@ RUN_UI_SMOKE=1 SAVE_UI_SMOKE_SCREENSHOTS=1 ./scripts/check_all.sh
 - Keep subtopic numbering ordered (`00...`, `01...`, ..., `90...`).
 - Do not introduce stale legacy paths.
 - Keep refs and evidence-bearing files under each topic contract.
+- Refs source corpus may be private/untracked; preserve `refs/` folder contract with `.gitkeep`.
 - Keep `ops/*` internal-only (not in public site nav/render list).
 
 ## 10) Session Closeout Checklist

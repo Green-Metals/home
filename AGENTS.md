@@ -51,6 +51,7 @@ Topic-specific metadata files are stored in `meta/` (for example crosswalks, aud
   - Edit modules first, then synchronize `WRITEUP.qmd`.
 - `refs/`
   - External source corpus (PDFs and reference files used for analysis).
+  - May be intentionally untracked in git (private corpus policy); keep folder contract via `.gitkeep`.
 - `meta/sources.csv`
   - Source index for the topic.
 

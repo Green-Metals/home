@@ -88,6 +88,9 @@ for p in sorted(root.glob("content/topics/*/meta/sources.csv")):
             if rel and not rel.startswith(("http://", "https://")):
                 target = root / rel
                 if not target.exists():
+                    # Refs corpus can be intentionally untracked (private source corpus policy).
+                    if rel.startswith("content/topics/") and "/refs/" in rel:
+                        continue
                     errors.append((str(p), f"ROW_{i}_MISSING_PATH:{rel}"))
 
 if errors:
