@@ -41,6 +41,10 @@ This file is intentionally **not** part of public website rendering.
 | 2026-02-14 17:58 AEDT | ci | publish-run failure hotfix for missing ripgrep on runner | workflow edits | `.github/workflows/quality-checks.yml`, `.github/workflows/quarto-publish.yml` | added explicit ripgrep install step before strict checks to satisfy script runtime dependency | closed | `.github/workflows/quarto-publish.yml` | keep runner dependency list explicit in workflows |
 | 2026-02-14 18:08 AEDT | ci | strict-check sources validation aligned with private refs policy | script + docs updates | `scripts/check_content_contracts.sh`, `AGENTS.md`, `ops/WORKFLOW_QUICKSTART.md` | refs paths in `sources.csv` now validated structurally without requiring private corpus files in clean CI checkouts | closed | `scripts/check_content_contracts.sh` | keep refs-folder contract via `.gitkeep`; do not require corpus files in CI |
 | 2026-02-14 18:08 AEDT | qa | strict harness rerun after refs-policy update | quarto + shell + playwright | `RUN_UI_SMOKE=1 ./scripts/check_all.sh` | strict checks passed end-to-end after CI policy alignment | closed | `ops/qa-artifacts/screenshots/latest/ui-smoke-report.json` | maintain strict gate in publish workflow |
+| 2026-02-14 18:10 AEDT | ci | publish failure diagnosis on run `22013246626` | gh cli + workflow logs | `.github/workflows/quarto-publish.yml` | identified strict content check failure in meta csv `path/file` validation for private refs entries | closed | `https://github.com/Green-Metals/home/actions/runs/22013246626/job/63610813707` | patch meta path/file checker with private refs exception parity |
+| 2026-02-14 18:13 AEDT | qa | checker parity fix for meta csv path/file fields | bash + python checks | `scripts/check_content_contracts.sh` | private refs policy now applied consistently in both sources and generic meta path validators | closed | `scripts/check_content_contracts.sh` | keep this parity on future checker refactors |
+| 2026-02-14 18:16 AEDT | structure | include symlink removal trial and rollback | shell + strict harness | `content/topics/includes` mount | removal reproduced include injection breakage (`include-before/after` fatal) and menu trigger failures; symlink restored | closed | `RUN_UI_SMOKE=1 ./scripts/check_all.sh` output at 18:16 | treat symlink as required compatibility mount until Quarto include path model is redesigned |
+| 2026-02-14 18:18 AEDT | qa | post-fix strict closeout rerun | quarto + shell + playwright | `RUN_UI_SMOKE=1 ./scripts/check_all.sh` | all checks passed after checker fix and symlink restore | closed | `ops/qa-artifacts/screenshots/latest/ui-smoke-report.json` | commit/push and verify publish workflow status |
 
 ## 3) Decision Changelog
 | decision_id | date | decision | context | options_considered | chosen_option | consequences | supersedes |
@@ -63,10 +67,10 @@ This file is intentionally **not** part of public website rendering.
 ## 5) Topic Verification Snapshot
 | topic | writeup_source | pdf_status | last_verified | notes |
 | --- | --- | --- | --- | --- |
-| topic00_landscape-briefing | `content/topics/topic00_landscape-briefing/WRITEUP.qmd` | synced | 2026-02-14 17:30 AEDT | baseline structure in contract |
-| topic01_copper | `content/topics/topic01_copper/WRITEUP.qmd` | synced | 2026-02-14 17:30 AEDT | strict harness + UI smoke revalidated |
-| topic02_iron-steel | `content/topics/topic02_iron-steel/WRITEUP.qmd` | synced | 2026-02-14 17:30 AEDT | placeholder structure remains intentional |
-| topic03_alumina-aluminium | `content/topics/topic03_alumina-aluminium/WRITEUP.qmd` | synced | 2026-02-14 17:30 AEDT | placeholder structure remains intentional |
+| topic00_landscape-briefing | `content/topics/topic00_landscape-briefing/WRITEUP.qmd` | synced | 2026-02-14 18:18 AEDT | strict harness revalidated after checker/symlink changes |
+| topic01_copper | `content/topics/topic01_copper/WRITEUP.qmd` | synced | 2026-02-14 18:18 AEDT | strict harness + UI smoke revalidated |
+| topic02_iron-steel | `content/topics/topic02_iron-steel/WRITEUP.qmd` | synced | 2026-02-14 18:18 AEDT | placeholder structure remains intentional |
+| topic03_alumina-aluminium | `content/topics/topic03_alumina-aluminium/WRITEUP.qmd` | synced | 2026-02-14 18:18 AEDT | placeholder structure remains intentional |
 
 ## 6) New Entry Template
 | date_time | area | activity | tools | target | result | status | evidence | follow_up |

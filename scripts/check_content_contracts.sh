@@ -125,6 +125,9 @@ for p in sorted((root / "content/topics").glob("*/meta/*.csv")):
                     continue
                 target = Path(val) if val.startswith("/") else (root / val)
                 if not target.exists():
+                    # Refs corpus can be intentionally untracked (private source corpus policy).
+                    if val.startswith("content/topics/") and "/refs/" in val:
+                        continue
                     errors.append((str(p.relative_to(root)), str(i), c, val))
 
 if errors:
