@@ -1,6 +1,6 @@
 # Session Handoff
 
-Updated: 2026-02-14 18:35 AEDT
+Updated: 2026-02-14 18:41 AEDT
 
 ## Current Baseline
 
@@ -11,6 +11,7 @@ Updated: 2026-02-14 18:35 AEDT
   - `tools/` runtime deps
 - Render status: `quarto render site` passes.
 - Deploy status: `Quarto Publish` run `22013555142` passed on `main`.
+- Branch protection status: `main` now requires `quality` status check + 1 approval + CODEOWNER review.
 - Topic outputs verified:
   - `site/_site/topic00_landscape-briefing/WRITEUP.html`
   - `site/_site/topic01_copper/WRITEUP.html`
