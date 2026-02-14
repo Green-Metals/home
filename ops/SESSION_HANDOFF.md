@@ -1,6 +1,6 @@
 # Session Handoff
 
-Updated: 2026-02-14 18:18 AEDT
+Updated: 2026-02-14 18:22 AEDT
 
 ## Current Baseline
 
@@ -10,6 +10,7 @@ Updated: 2026-02-14 18:18 AEDT
   - `ops/` internal tracker and QA artifacts
   - `tools/` runtime deps
 - Render status: `quarto render site` passes.
+- Deploy status: `Quarto Publish` run `22013387463` passed on `main`.
 - Topic outputs verified:
   - `site/_site/topic00_landscape-briefing/WRITEUP.html`
   - `site/_site/topic01_copper/WRITEUP.html`
