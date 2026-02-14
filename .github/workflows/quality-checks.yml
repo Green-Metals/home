@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install ripgrep
         run: |
@@ -37,6 +39,6 @@ jobs:
           npm ci
           npx playwright install chromium
 
-      - name: Run strict checks
+      - name: Run fast checks
         run: |
-          RUN_UI_SMOKE=1 ./scripts/check_all.sh
+          RUN_UI_SMOKE=1 ./scripts/check_fast.sh

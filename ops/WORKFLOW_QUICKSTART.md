@@ -59,6 +59,24 @@ Outputs:
 - Topic rendered PDFs in site output: `site/_site/topicXX_.../WRITEUP.pdf`
 - Synced canonical topic PDFs: `content/topics/topicXX_.../WRITEUP.pdf` (via `scripts/sync_writeup_pdfs.sh`)
 
+## 4.1) Fast vs Strict Checks
+
+Command matrix:
+
+- Fast local/PR gate (changed-only with automatic full fallback):
+  - `RUN_UI_SMOKE=1 ./scripts/check_fast.sh`
+- Strict local/release gate (full render + full integrity):
+  - `RUN_UI_SMOKE=1 ./scripts/check_all.sh`
+- Best-effort non-strict local runs:
+  - `./scripts/check_fast.sh`
+  - `./scripts/check_all.sh`
+
+Fast-check behavior:
+
+- Runs content contracts first.
+- Detects changed scope and targets render/UI routes accordingly.
+- Falls back to strict/full behavior when shared/core files changed.
+
 ## 5) Website Publishing
 
 GitHub workflow:
@@ -75,6 +93,11 @@ Typical flow:
 2. Commit content/site changes.
 3. Push and/or trigger workflow according to current CI policy.
 4. Verify live site after deployment.
+
+CI policy:
+
+- PR/manual quality workflow: `RUN_UI_SMOKE=1 ./scripts/check_fast.sh`
+- Main publish workflow: `RUN_UI_SMOKE=1 ./scripts/check_all.sh`
 
 ## 5.1) Review Workflow (Required)
 
@@ -154,8 +177,8 @@ RUN_UI_SMOKE=1 SAVE_UI_SMOKE_SCREENSHOTS=1 ./scripts/check_all.sh
 Before ending a substantial work session:
 
 1. Run consolidated checks:
-   - `./scripts/check_all.sh`
-   - For strict local UI gate: `RUN_UI_SMOKE=1 ./scripts/check_all.sh`
+   - recommended quick gate: `RUN_UI_SMOKE=1 ./scripts/check_fast.sh`
+   - required release-closeout gate: `RUN_UI_SMOKE=1 ./scripts/check_all.sh`
 2. Confirm outputs:
    - `site/_site/index.html`
    - `site/_site/topicXX_.../WRITEUP.html`

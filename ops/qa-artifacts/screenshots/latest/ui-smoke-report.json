@@ -1,52 +1,8 @@
 {
-  "generated_at": "2026-02-14T07:31:24.073Z",
+  "generated_at": "2026-02-14T08:59:52.802Z",
   "base_url": "http://127.0.0.1:8960",
   "screenshot_policy": "failures-only",
   "desktop": [
-    {
-      "route": "/index.html",
-      "status": "pass",
-      "http_status": 200,
-      "menu_present": true,
-      "menu_open_ok": true,
-      "menu_close_ok": true,
-      "menu_links_total": 7,
-      "menu_qmd_links": 0,
-      "toc_links": 0
-    },
-    {
-      "route": "/docs/sample-page.html",
-      "status": "pass",
-      "http_status": 200,
-      "menu_present": true,
-      "menu_open_ok": true,
-      "menu_close_ok": true,
-      "menu_links_total": 7,
-      "menu_qmd_links": 0,
-      "toc_links": 22
-    },
-    {
-      "route": "/docs/qa-checklist.html",
-      "status": "pass",
-      "http_status": 200,
-      "menu_present": true,
-      "menu_open_ok": true,
-      "menu_close_ok": true,
-      "menu_links_total": 7,
-      "menu_qmd_links": 0,
-      "toc_links": 14
-    },
-    {
-      "route": "/topic00_landscape-briefing/WRITEUP.html",
-      "status": "pass",
-      "http_status": 200,
-      "menu_present": true,
-      "menu_open_ok": true,
-      "menu_close_ok": true,
-      "menu_links_total": 8,
-      "menu_qmd_links": 0,
-      "toc_links": 24
-    },
     {
       "route": "/topic01_copper/WRITEUP.html",
       "status": "pass",
@@ -57,38 +13,9 @@
       "menu_links_total": 8,
       "menu_qmd_links": 0,
       "toc_links": 108
-    },
-    {
-      "route": "/topic02_iron-steel/WRITEUP.html",
-      "status": "pass",
-      "http_status": 200,
-      "menu_present": true,
-      "menu_open_ok": true,
-      "menu_close_ok": true,
-      "menu_links_total": 8,
-      "menu_qmd_links": 0,
-      "toc_links": 14
-    },
-    {
-      "route": "/topic03_alumina-aluminium/WRITEUP.html",
-      "status": "pass",
-      "http_status": 200,
-      "menu_present": true,
-      "menu_open_ok": true,
-      "menu_close_ok": true,
-      "menu_links_total": 8,
-      "menu_qmd_links": 0,
-      "toc_links": 14
     }
   ],
   "mobile": [
-    {
-      "route": "/index.html",
-      "status": "pass",
-      "http_status": 200,
-      "menu_present": true,
-      "toc_links": 0
-    },
     {
       "route": "/topic01_copper/WRITEUP.html",
       "status": "pass",

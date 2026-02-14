@@ -52,7 +52,7 @@ fs.mkdirSync(outDir, { recursive: true });
 const saveAllScreenshots = process.env.SAVE_ALL_SCREENSHOTS === "1";
 
 const base = process.env.BASE_URL;
-const pages = [
+const defaultPages = [
   "/index.html",
   "/docs/sample-page.html",
   "/docs/qa-checklist.html",
@@ -61,6 +61,34 @@ const pages = [
   "/topic02_iron-steel/WRITEUP.html",
   "/topic03_alumina-aluminium/WRITEUP.html",
 ];
+const routesFile = process.env.UI_SMOKE_ROUTES_FILE || "";
+const routesCsv = process.env.UI_SMOKE_ROUTES || "";
+let pages = [...defaultPages];
+const normalizeRoutes = (routes) =>
+  routes.map((route) => (route.startsWith("/") ? route : `/${route}`));
+
+if (routesFile) {
+  if (!fs.existsSync(routesFile)) {
+    console.error(`[ui][fail] UI_SMOKE_ROUTES_FILE not found: ${routesFile}`);
+    process.exit(1);
+  }
+  const parsed = fs
+    .readFileSync(routesFile, "utf8")
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith("#"));
+  if (parsed.length > 0) {
+    pages = normalizeRoutes(parsed);
+  }
+} else if (routesCsv) {
+  const parsed = routesCsv
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+  if (parsed.length > 0) {
+    pages = normalizeRoutes(parsed);
+  }
+}
 
 function keyFromRoute(route, suffix) {
   return `ui-smoke-${route.replace(/^\//, "").replace(/[\/]/g, "__").replace(/\.html$/, "")}-${suffix}.png`;
@@ -162,9 +190,21 @@ async function checkDrawer(page, route) {
     report.desktop.push(row);
   }
 
+  const mobileRoutes = [];
+  if (pages.includes("/index.html")) {
+    mobileRoutes.push("/index.html");
+  }
+  const firstTopicRoute = pages.find((r) => /^\/topic[0-9]{2}[^/]+\/WRITEUP\.html$/.test(r));
+  if (firstTopicRoute) {
+    mobileRoutes.push(firstTopicRoute);
+  } else {
+    mobileRoutes.push("/topic01_copper/WRITEUP.html");
+  }
+  const uniqueMobileRoutes = [...new Set(mobileRoutes)];
+
   const mobileCtx = await browser.newContext({ ...devices["iPhone 13"] });
   const mobile = await mobileCtx.newPage();
-  for (const route of ["/index.html", "/topic01_copper/WRITEUP.html"]) {
+  for (const route of uniqueMobileRoutes) {
     const row = { route, status: "pass" };
     try {
       const resp = await mobile.goto(base + route, { waitUntil: "networkidle", timeout: 30000 });

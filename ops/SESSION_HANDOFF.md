@@ -1,6 +1,6 @@
 # Session Handoff
 
-Updated: 2026-02-14 18:41 AEDT
+Updated: 2026-02-14 19:21 AEDT
 
 ## Current Baseline
 
@@ -10,8 +10,13 @@ Updated: 2026-02-14 18:41 AEDT
   - `ops/` internal tracker and QA artifacts
   - `tools/` runtime deps
 - Render status: `quarto render site` passes.
-- Deploy status: `Quarto Publish` run `22013555142` passed on `main`.
+- Deploy status:
+  - latest successful publish: `22013555142`
+  - latest strict publish failure: `22013673921` (TinyTeX package/class resolution issue: `scrartcl.cls`)
 - Branch protection status: `main` now requires `quality` status check + 1 approval + CODEOWNER review.
+- Fast-check lane status: `scripts/check_fast.sh` is the PR-speed gate; strict gate remains `scripts/check_all.sh`.
+- Local validation status: both `RUN_UI_SMOKE=1 ./scripts/check_fast.sh` and `RUN_UI_SMOKE=1 ./scripts/check_all.sh` pass.
+- Working tree status: fast-check implementation changes are present locally and need commit/PR to land on protected `main`.
 - Topic outputs verified:
   - `site/_site/topic00_landscape-briefing/WRITEUP.html`
   - `site/_site/topic01_copper/WRITEUP.html`
@@ -54,22 +59,28 @@ Artifacts:
   - `.github/CODEOWNERS` for auto-assignment,
   - `.github/PULL_REQUEST_TEMPLATE.md` checklist,
   - risk-based approval gate documented in `AGENTS.md`.
+- PR quality workflow now runs fast-check:
+  - `RUN_UI_SMOKE=1 ./scripts/check_fast.sh`
+  - changed-only scope detection with auto full fallback
 
 ## Start-Next-Session Command Set
 
 ```bash
 cd /Users/yuxiangw/Insync/2024_Monash-L/2026-02_Critical-Raw-Materials-Flagship
-./scripts/check_all.sh
-# strict local UI gate:
-# RUN_UI_SMOKE=1 ./scripts/check_all.sh
+# fast local/PR gate:
+RUN_UI_SMOKE=1 ./scripts/check_fast.sh
+# strict local/release gate:
+RUN_UI_SMOKE=1 ./scripts/check_all.sh
 # full screenshot evidence (opt-in):
 # RUN_UI_SMOKE=1 SAVE_UI_SMOKE_SCREENSHOTS=1 ./scripts/check_all.sh
 ```
 
 Fast verification:
 
-1. Run `RUN_UI_SMOKE=1 ./scripts/check_all.sh`.
+1. Run `RUN_UI_SMOKE=1 ./scripts/check_fast.sh`.
 2. Open `ops/qa-artifacts/screenshots/latest/ui-smoke-report.json`.
+3. If release-bound, run `RUN_UI_SMOKE=1 ./scripts/check_all.sh`.
+4. Commit and open PR for pending local fast-check changes (direct push to `main` is blocked by protection rules).
 
 Then open and continue from:
 

@@ -89,13 +89,21 @@ For topic content updates:
 - If a topic uses quantitative audit files, keep them in `meta/` and ensure file-path fields point to current topic paths.
 
 ## 8) Quality Gates (Run Before Closing Work)
-Run the consolidated checks from workspace root:
+Run the check commands from workspace root:
+
+Fast developer check (changed-only with full fallback):
+
+```bash
+RUN_UI_SMOKE=1 ./scripts/check_fast.sh
+```
+
+Strict release check (full render + full integrity):
 
 ```bash
 ./scripts/check_all.sh
 ```
 
-Strict UI mode (required in CI, optional locally):
+Strict UI mode:
 
 ```bash
 RUN_UI_SMOKE=1 ./scripts/check_all.sh
@@ -103,6 +111,9 @@ RUN_UI_SMOKE=1 ./scripts/check_all.sh
 
 Script responsibilities:
 - `scripts/check_content_contracts.sh`
+- `scripts/detect_changed_scope.sh`
+- `scripts/check_site_fast.sh`
+- `scripts/check_fast.sh`
 - `scripts/check_site_integrity.sh`
 - `scripts/check_ui_smoke.sh`
 - `scripts/check_all.sh`
@@ -133,7 +144,8 @@ If any check fails, fix it before concluding the task.
 
 ## 12) Code Review Discipline (Mandatory)
 - Use pull requests for all non-trivial changes.
-- Keep `RUN_UI_SMOKE=1 ./scripts/check_all.sh` as the technical gate before merge.
+- Keep `RUN_UI_SMOKE=1 ./scripts/check_fast.sh` as the PR technical gate.
+- Keep `RUN_UI_SMOKE=1 ./scripts/check_all.sh` as the release truth gate on `main`.
 - Use `.github/CODEOWNERS` for reviewer auto-assignment.
 - Apply risk-based review depth:
   - infrastructure/UI/automation changes (`scripts/*`, `.github/workflows/*`, `site/includes/*`, `site/styles/*`, `site/_quarto.yml`) require at least one reviewer approval before merge;

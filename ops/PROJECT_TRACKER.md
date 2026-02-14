@@ -50,6 +50,10 @@ This file is intentionally **not** part of public website rendering.
 | 2026-02-14 18:32 AEDT | qa | strict gate validation after review-policy rollout | quarto + shell + playwright | `RUN_UI_SMOKE=1 ./scripts/check_all.sh` | all checks passed after governance changes; report and PDF sync refreshed | closed | `ops/qa-artifacts/screenshots/latest/ui-smoke-report.json` | keep strict gate as required PR/merge contract |
 | 2026-02-14 18:35 AEDT | deployment | publish verification after review-policy commit | gh cli + github actions | `Quarto Publish` run `22013555142` | strict gate and publish both succeeded on `main` | closed | `https://github.com/Green-Metals/home/actions/runs/22013555142` | keep logging run IDs for each deploy |
 | 2026-02-14 18:41 AEDT | governance | branch protection enforced on `main` | gh api | `Green-Metals/home` branch protection | required status check `quality` + 1 approving review + CODEOWNER review now active | closed | `https://api.github.com/repos/Green-Metals/home/branches/main/protection` | maintain check name stability (`quality`) in workflow config |
+| 2026-02-14 19:16 AEDT | governance | fast-check pipeline implemented (changed-only + full fallback) | bash + python + playwright + workflow updates | `scripts/check_fast.sh`, `scripts/detect_changed_scope.sh`, `scripts/check_site_fast.sh`, `scripts/check_ui_smoke.sh`, `quality-checks.yml`, ops docs | PR gate now uses fast-check while main publish remains strict-check | closed | `scripts/check_fast.sh` | keep strict gate on main as release truth |
+| 2026-02-14 19:16 AEDT | qa | fast-check validation matrix executed | quarto + shell + playwright | fallback-full path, targeted path, strict regression path | `RUN_UI_SMOKE=1 ./scripts/check_fast.sh` passed in both modes; `RUN_UI_SMOKE=1 ./scripts/check_all.sh` remained green locally; both `UI_SMOKE_ROUTES_FILE` and `UI_SMOKE_ROUTES` inputs validated | closed | `/tmp/crm-fast-scope.json` and `ops/qa-artifacts/screenshots/latest/ui-smoke-report.json` | monitor CI runtime and fallback frequency |
+| 2026-02-14 19:16 AEDT | ci | PR quality workflow switched to fast-check gate | workflow edit | `.github/workflows/quality-checks.yml` | PR/manual checks now run `RUN_UI_SMOKE=1 ./scripts/check_fast.sh` with fetch-depth 0 for base diff detection | closed | `.github/workflows/quality-checks.yml` | keep main publish workflow strict (`check_all.sh`) |
+| 2026-02-14 19:21 AEDT | qa | pre-closeout thorough review and consistency sweep | shell + quarto + playwright + static scan | scripts/workflows/docs + fast/strict gates | syntax scans clean; docs/workflows consistent with fast-vs-strict contract; fast and strict gates pass locally | closed | `RUN_UI_SMOKE=1 ./scripts/check_fast.sh` and `RUN_UI_SMOKE=1 ./scripts/check_all.sh` | finalize via commit + PR because branch protection is enforced |
 
 ## 3) Decision Changelog
 | decision_id | date | decision | context | options_considered | chosen_option | consequences | supersedes |
@@ -63,6 +67,7 @@ This file is intentionally **not** part of public website rendering.
 | D-007 | 2026-02-14 | Refs corpus checks are CI-structural, not file-presence strict | source corpus files may be intentionally private/untracked | enforce full path existence vs enforce schema + folder contract | enforce schema/path format with refs-folder contract (`.gitkeep`) while allowing missing private corpus files in CI | strict automation without exposing private source files in repo | prior file-presence strictness for refs rows |
 | D-008 | 2026-02-14 | Code review is a mandatory workflow gate | reduce regressions while keeping delivery speed | ad-hoc review vs universal heavy review vs risk-based review | risk-based mandatory review with CODEOWNERS + PR checklist + strict checks | better change safety for scripts/CI/UI while keeping content edits fast | informal review-only practice |
 | D-009 | 2026-02-14 | Enforce review gate at GitHub branch level | documentation-only policy was insufficiently enforceable | rely on team discipline vs protected branch enforcement | protected `main` with required `quality` check and mandatory review settings | merge safety now enforced by platform controls | unprotected main branch |
+| D-010 | 2026-02-14 | Split validation into fast PR gate vs strict main gate | strict-only checks were too slow for iterative PR feedback | keep strict everywhere vs introduce fast-check with safety fallback | fast-check for PR/manual (`check_fast.sh`), strict-check for main publish (`check_all.sh`) | faster iteration without changing release truth gate | strict-only PR workflow |
 
 ## 4) Open Issues and Risk Register
 | issue_id | opened_date | area | description | impact | likelihood | owner | mitigation | status | target_date |
@@ -70,14 +75,15 @@ This file is intentionally **not** part of public website rendering.
 | R-001 | 2026-02-14 | tooling | MCP screenshot capture times out in current environment | low | medium | codex | rely on snapshot + click logs; retry after tooling updates | open | next tooling refresh |
 | R-002 | 2026-02-14 | deployment traceability | historical GitHub Actions run IDs not consistently recorded | low | medium | workspace maintainer | mandatory run-id entry for every future deploy action | open | immediate |
 | R-003 | 2026-02-14 | publishing scope | subtopic pages are mounted as source and currently not emitted as standalone HTML pages in `site/_site`; website navigation is writeup-first | low | medium | workspace maintainer | keep menu/sidebar navigation writeup-first; if standalone subtopic pages are required, do a dedicated render-path/citation-path refactor | open | next IA/publish iteration |
+| R-004 | 2026-02-14 | ci-reliability | strict publish run `22013673921` failed due TinyTeX package fetch/class resolution (`scrartcl.cls`) during PDF compile | medium | medium | workspace maintainer | retry publish; if persistent, pin/install required TeX packages in workflow before render | open | next publish cycle |
 
 ## 5) Topic Verification Snapshot
 | topic | writeup_source | pdf_status | last_verified | notes |
 | --- | --- | --- | --- | --- |
-| topic00_landscape-briefing | `content/topics/topic00_landscape-briefing/WRITEUP.qmd` | synced | 2026-02-14 18:18 AEDT | strict harness revalidated after checker/symlink changes |
-| topic01_copper | `content/topics/topic01_copper/WRITEUP.qmd` | synced | 2026-02-14 18:18 AEDT | strict harness + UI smoke revalidated |
-| topic02_iron-steel | `content/topics/topic02_iron-steel/WRITEUP.qmd` | synced | 2026-02-14 18:18 AEDT | placeholder structure remains intentional |
-| topic03_alumina-aluminium | `content/topics/topic03_alumina-aluminium/WRITEUP.qmd` | synced | 2026-02-14 18:18 AEDT | placeholder structure remains intentional |
+| topic00_landscape-briefing | `content/topics/topic00_landscape-briefing/WRITEUP.qmd` | synced | 2026-02-14 19:16 AEDT | fast-check + strict-check validated locally |
+| topic01_copper | `content/topics/topic01_copper/WRITEUP.qmd` | synced | 2026-02-14 19:16 AEDT | targeted fast-check route baseline validated |
+| topic02_iron-steel | `content/topics/topic02_iron-steel/WRITEUP.qmd` | synced | 2026-02-14 19:16 AEDT | placeholder structure remains intentional |
+| topic03_alumina-aluminium | `content/topics/topic03_alumina-aluminium/WRITEUP.qmd` | synced | 2026-02-14 19:16 AEDT | placeholder structure remains intentional |
 
 ## 6) New Entry Template
 | date_time | area | activity | tools | target | result | status | evidence | follow_up |
