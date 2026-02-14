@@ -1,6 +1,6 @@
 # Session Handoff
 
-Updated: 2026-02-14 18:22 AEDT
+Updated: 2026-02-14 18:29 AEDT
 
 ## Current Baseline
 
@@ -49,6 +49,10 @@ Artifacts:
 - Subtopic pages are not currently emitted as standalone HTML outputs in `site/_site`; website is writeup-first.
 - Deployment run IDs should continue being logged consistently in `ops/PROJECT_TRACKER.md`.
 - Keep compatibility symlink `content/topics/includes -> ../../site/includes`; removing it breaks include injection on mounted topic pages.
+- Code review workflow is now formalized:
+  - `.github/CODEOWNERS` for auto-assignment,
+  - `.github/PULL_REQUEST_TEMPLATE.md` checklist,
+  - risk-based approval gate documented in `AGENTS.md`.
 
 ## Start-Next-Session Command Set
 

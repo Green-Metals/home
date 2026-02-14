@@ -76,6 +76,16 @@ Typical flow:
 3. Push and/or trigger workflow according to current CI policy.
 4. Verify live site after deployment.
 
+## 5.1) Review Workflow (Required)
+
+- Open a PR for non-trivial changes.
+- Use `.github/PULL_REQUEST_TEMPLATE.md` and complete every relevant checkbox.
+- CODEOWNERS auto-assignment comes from `.github/CODEOWNERS`.
+- Risk-based review rule:
+  - infra/UI/automation (`scripts/*`, `.github/workflows/*`, `site/includes/*`, `site/styles/*`, `site/_quarto.yml`) needs at least one approval before merge;
+  - content-only changes still require checklist completion and should get one review when practical.
+- Keep branch protection configured in GitHub to require at least one PR approval and passing checks.
+
 ## 6) Human-Agent Collaboration Pattern
 
 Use prompts like:
@@ -157,6 +167,7 @@ Before ending a substantial work session:
 4. Update `ops/PROJECT_TRACKER.md` with:
    - tool runs,
    - QA/test outcomes,
+   - review outcome and approval status (if PR-based),
    - open issues/risks,
    - topic verification snapshot.
 

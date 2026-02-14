@@ -1,0 +1,9 @@
+# Default owner for all paths.
+* @yuxiangw
+
+# Higher-risk change areas (infra, CI, UI shell).
+/scripts/ @yuxiangw
+/.github/workflows/ @yuxiangw
+/site/includes/ @yuxiangw
+/site/styles/ @yuxiangw
+/site/_quarto.yml @yuxiangw

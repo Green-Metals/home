@@ -130,3 +130,13 @@ If any check fails, fix it before concluding the task.
 - Any topic-impacting change must update the topic verification snapshot in `ops/PROJECT_TRACKER.md`.
 - Delivery closeout requires passing `./scripts/check_all.sh` and tracker updates before sign-off.
 - Keep tracker files internal-only (do not add `ops/*.md` to Quarto render/sidebar).
+
+## 12) Code Review Discipline (Mandatory)
+- Use pull requests for all non-trivial changes.
+- Keep `RUN_UI_SMOKE=1 ./scripts/check_all.sh` as the technical gate before merge.
+- Use `.github/CODEOWNERS` for reviewer auto-assignment.
+- Apply risk-based review depth:
+  - infrastructure/UI/automation changes (`scripts/*`, `.github/workflows/*`, `site/includes/*`, `site/styles/*`, `site/_quarto.yml`) require at least one reviewer approval before merge;
+  - content-only changes should still include PR checklist completion and at least one review when practical.
+- Use `.github/PULL_REQUEST_TEMPLATE.md` checklist on every PR.
+- Log review outcome in `ops/PROJECT_TRACKER.md` (scope, reviewer status, gate result).
