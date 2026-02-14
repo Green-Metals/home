@@ -1,0 +1,11 @@
+---
+title: "Topic 00 Overview"
+---
+
+# Overview
+
+This module summarizes the cross-topic landscape framing and points to the canonical writeup.
+
+- Canonical writeup: `topic00_landscape-briefing/WRITEUP.qmd`
+- Source index: `topic00_landscape-briefing/meta/sources.csv`
+- Evidence register: `topic00_landscape-briefing/meta/crm_evidence_register.csv`

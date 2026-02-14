@@ -6,17 +6,24 @@ No `README.md` is required.
 ## 1) Scope
 - Workspace root: `/Users/yuxiangw/Insync/2024_Monash-L/2026-02_Critical-Raw-Materials-Flagship`
 - Topics currently in scope:
-  - `topic01_copper`
-  - `topic02_iron-steel`
-  - `topic03_alumina-aluminium`
+  - `content/topics/topic00_landscape-briefing`
+  - `content/topics/topic01_copper`
+  - `content/topics/topic02_iron-steel`
+  - `content/topics/topic03_alumina-aluminium`
 - Cross-topic synthesis folder:
-  - `landscape-briefing`
+  - `content/topics/topic00_landscape-briefing`
+
+## 1.1) Lane Separation
+- `content/` is the research and writing source-of-truth lane.
+- `site/` is the Quarto website shell and render lane.
+- `ops/` is internal tracking and QA artifact lane.
+- `tools/` is runtime/tooling lane (for example Playwright dependencies).
 
 ## 2) Folder Contract
 Each topic folder must follow this structure:
 
 ```text
-topicXX_<name>/
+content/topics/topicXX_<name>/
   WORKING_NOTE.md
   WRITEUP.qmd
   WRITEUP.pdf
@@ -64,15 +71,16 @@ For topic content updates:
 1. Edit `subtopics/*.qmd` first.
 2. Sync corresponding sections into `WRITEUP.qmd`.
 3. Regenerate/update `WRITEUP.pdf` from current `WRITEUP.qmd` when output is needed.
-   - Standard command: `quarto render` (auto-syncs topic PDFs via `scripts/sync_writeup_pdfs.sh`).
+   - Standard command: `quarto render site` (auto-syncs topic PDFs via `scripts/sync_writeup_pdfs.sh`).
 4. Update `meta/*` artifacts (for example `sources.csv`, audit files, crosswalks).
 5. Run quality checks before finalizing.
 
 ## 6) Path and Reference Rules
 - Use current workspace paths only.
 - Do not introduce stale references to removed roots (for example `Literature-Review/`).
-- Keep paths repo-relative where possible (for example `topic01_copper/refs/...`).
-- Historical migration artifacts inside `landscape-briefing/*.csv` may retain old paths and should not be rewritten unless explicitly requested.
+- Keep paths repo-relative where possible (for example `content/topics/topic01_copper/refs/...`).
+- Migration history is retained only as manifests in `ops/migration/`.
+- Keep compatibility mount `content/topics/includes -> ../../site/includes` for Quarto include resolution from mounted topic sources.
 
 ## 7) Metadata Schema Rules
 - `meta/sources.csv` required header:
@@ -80,30 +88,44 @@ For topic content updates:
 - If a topic uses quantitative audit files, keep them in `meta/` and ensure file-path fields point to current topic paths.
 
 ## 8) Quality Gates (Run Before Closing Work)
-Run these checks from workspace root:
+Run the consolidated checks from workspace root:
 
 ```bash
-# 1) Deprecated filenames must not exist
-find topic02_iron-steel topic03_alumina-aluminium -maxdepth 1 -type f \( -name 'deep-dive.md' -o -name 'working-note.md' \)
-
-# 2) Topic sequence in copper writeup
-rg -n '^## T[1-6]\.' topic01_copper/WRITEUP.qmd
-
-# 3) No stale root references in active topic docs
-rg -n 'Literature-Review/' topic01_copper/WORKING_NOTE.md topic01_copper/WRITEUP.qmd topic01_copper/subtopics/*.qmd topic01_copper/meta/*.csv
-
-# 4) Basic placeholder scan
-rg -n 'TBD|CITATION NEEDED|to be added' topic01_copper topic02_iron-steel topic03_alumina-aluminium
+./scripts/check_all.sh
 ```
 
-If a check fails, fix it before concluding the task.
+Strict UI mode (required in CI, optional locally):
+
+```bash
+RUN_UI_SMOKE=1 ./scripts/check_all.sh
+```
+
+Script responsibilities:
+- `scripts/check_content_contracts.sh`
+- `scripts/check_site_integrity.sh`
+- `scripts/check_ui_smoke.sh`
+- `scripts/check_all.sh`
+
+If any check fails, fix it before concluding the task.
 
 ## 9) Hygiene
 - Keep `.DS_Store` ignored and out of content folders.
 - Avoid duplicate copies across topic root vs `refs/` vs `subtopics/`.
 - Keep exactly one canonical `WRITEUP.pdf` at topic root and keep it in sync with `WRITEUP.qmd`.
+- Keep QA evidence under `ops/qa-artifacts/screenshots/latest/` with this policy:
+  - always keep JSON smoke reports (`ui-smoke-report.json`),
+  - keep failure screenshots by default,
+  - full screenshot capture is opt-in only via `SAVE_UI_SMOKE_SCREENSHOTS=1`.
 
 ## 10) Change Discipline
 - Prefer small, reversible edits.
 - Preserve evidence-bearing content when restructuring.
 - If cleanup removes files, ensure information is retained in canonical locations first.
+
+## 11) Tracking Discipline (Minimal and Mandatory)
+- Use one internal tracker only:
+  - `ops/PROJECT_TRACKER.md`
+- Log non-trivial tool runs, QA/testing outcomes, UI regressions, deployment notes, decisions, and open risks in that file.
+- Any topic-impacting change must update the topic verification snapshot in `ops/PROJECT_TRACKER.md`.
+- Delivery closeout requires passing `./scripts/check_all.sh` and tracker updates before sign-off.
+- Keep tracker files internal-only (do not add `ops/*.md` to Quarto render/sidebar).

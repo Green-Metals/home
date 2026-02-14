@@ -1,0 +1,5 @@
+topic_id,topic_slug,topic_name,status,priority_rank,notes
+topic00,topic00_landscape-briefing,Landscape Briefing,ACTIVE,0,Canonical cross-topic synthesis topic
+topic01,topic01_copper,Copper,ACTIVE,1,Migrated from original Literature-Review root
+topic02,topic02_iron-steel,Iron and Steel,PLANNED,2,Scaffold created
+topic03,topic03_alumina-aluminium,Alumina and Aluminium,PLANNED,3,Scaffold created

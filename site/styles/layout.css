@@ -1,0 +1,309 @@
+#quarto-header {
+  background: #fff;
+  border-bottom: 1px solid transparent;
+  transition: border-color 120ms ease;
+}
+
+.app-shell {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.topbar {
+  min-height: 4rem;
+  background: #fff;
+}
+
+#quarto-header.is-scrolled {
+  border-bottom-color: var(--divider);
+}
+
+#quarto-header .navbar[data-bs-theme="dark"] {
+  --bs-navbar-color: var(--muted);
+  --bs-navbar-hover-color: var(--text);
+  --bs-navbar-active-color: var(--text);
+  --bs-navbar-brand-color: var(--text);
+  --bs-navbar-brand-hover-color: var(--text);
+  background: #fff;
+}
+
+.navbar {
+  min-height: 4rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-container {
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 4rem;
+}
+
+.navbar-title {
+  font-size: var(--small);
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.navbar-brand-container.mx-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.quarto-navbar-tools.tools-end {
+  margin-left: auto;
+  gap: 0.75rem;
+}
+
+.quarto-title-breadcrumbs,
+.quarto-page-breadcrumbs {
+  display: none !important;
+}
+
+#quarto-sidebar {
+  background: #fff;
+  border-right: 1px solid var(--divider);
+}
+
+.sidebar-title {
+  font-size: var(--small);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  font-weight: 600;
+}
+
+.sidebar-navigation .sidebar-item {
+  font-size: var(--body);
+}
+
+.sidebar-navigation .sidebar-section {
+  margin-top: var(--space-1);
+}
+
+.sidebar-navigation .sidebar-section .sidebar-item-text {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: var(--body);
+}
+
+.sidebar-navigation .sidebar-item-container {
+  margin-left: 0;
+  padding-left: 0.75rem;
+}
+
+.sidebar-navigation .sidebar-link {
+  color: var(--muted);
+  border-left: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.5rem;
+  line-height: 1.35;
+  background: transparent;
+}
+
+.sidebar-navigation .sidebar-link:hover {
+  color: var(--text);
+  background: rgba(10, 10, 11, 0.02);
+}
+
+.sidebar-navigation .active {
+  color: var(--text);
+  font-weight: 600;
+  border-left-color: var(--accent);
+  background: transparent;
+}
+
+main.content {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: var(--space-3) var(--page-gutter-desktop) var(--space-6);
+}
+
+#quarto-document-content > * {
+  max-width: var(--measure);
+}
+
+#quarto-document-content > pre,
+#quarto-document-content > .sourceCode,
+#quarto-document-content > table,
+#quarto-document-content > .callout,
+#quarto-document-content > .cell,
+#quarto-document-content > .quarto-layout-panel,
+#quarto-document-content > div[class*="column"] {
+  max-width: 100%;
+}
+
+#title-block-header.quarto-title-block {
+  margin-bottom: var(--space-3);
+  border-bottom: 0;
+}
+
+#title-block-header .quarto-title .title {
+  font-size: var(--h1);
+  line-height: var(--line-height-heading);
+  margin-bottom: 0.25rem;
+}
+
+#title-block-header .subtitle {
+  font-size: var(--body);
+  color: var(--muted);
+}
+
+#quarto-margin-sidebar {
+  width: clamp(13rem, 16vw, 15rem);
+  max-width: 100%;
+}
+
+#TOC,
+nav[role="doc-toc"] {
+  background: transparent;
+  border: 0;
+  border-left: 1px solid var(--divider);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 0 0 0.75rem;
+  font-size: var(--small) !important;
+  line-height: 1.5 !important;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+
+#TOC .nav-link,
+nav[role="doc-toc"] .nav-link {
+  display: block !important;
+  font-size: var(--small) !important;
+  line-height: 1.5 !important;
+  font-weight: 500 !important;
+  padding: 0.18rem 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  color: var(--muted);
+}
+
+#TOC .active,
+nav[role="doc-toc"] .active {
+  color: var(--accent);
+  font-weight: 600 !important;
+}
+
+#TOC ul,
+nav[role="doc-toc"] ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+#TOC .collapse,
+nav[role="doc-toc"] .collapse {
+  display: block !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+#TOC > ul > li > ul,
+nav[role="doc-toc"] > ul > li > ul {
+  margin-top: 0.15rem;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--divider);
+}
+
+#TOC > ul > li + li,
+nav[role="doc-toc"] > ul > li + li {
+  margin-top: 0.16rem;
+}
+
+/* Quarto's TOC toggle strip overlays top links on desktop layouts. */
+#quarto-toc-toggle {
+  display: none !important;
+}
+
+.page-navigation {
+  border-top: 1px solid var(--divider);
+  margin-top: var(--space-4);
+  padding-top: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.page-navigation .nav-page {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.page-navigation .pagination-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.45rem !important;
+  border: 1px solid var(--divider) !important;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--muted);
+  font-size: var(--small) !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.page-navigation .pagination-link:hover {
+  color: var(--text);
+  border-color: rgba(10, 10, 11, 0.18);
+  background: rgba(10, 10, 11, 0.02);
+}
+
+.home-page #quarto-sidebar,
+.home-page #quarto-margin-sidebar,
+.home-page .quarto-secondary-nav {
+  display: none !important;
+}
+
+.home-page main.content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: calc(var(--content-max) + (2 * var(--page-gutter-desktop)));
+  padding: var(--space-4) var(--page-gutter-desktop) var(--space-6);
+}
+
+.home-page #quarto-document-content > * {
+  max-width: var(--content-max);
+}
+
+.home-page .quarto-title-block,
+.home-page .page-navigation {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  .quarto-secondary-nav {
+    display: block;
+  }
+
+  main.content {
+    padding: var(--space-2) var(--page-gutter-mobile) var(--space-5);
+  }
+
+  #quarto-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  #TOC,
+  nav[role="doc-toc"] {
+    margin-top: var(--space-2);
+  }
+
+  .home-page main.content {
+    max-width: 100%;
+    padding: var(--space-3) var(--page-gutter-mobile) var(--space-5);
+  }
+}

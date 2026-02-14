@@ -1,0 +1,68 @@
+# Project Tracker
+
+Internal operations ledger for tool use, testing, QA, UI checks, deployment notes, decisions, and open issues.
+This file is intentionally **not** part of public website rendering.
+
+## 1) Logging Contract
+- Log all non-trivial runs that affect structure, content, UI, or deployment.
+- Use `date_only` when exact timestamp is unavailable.
+- Mark historical rows as `backfilled`.
+- Keep one row per meaningful action; avoid duplicates.
+
+## 2) Unified Activity Ledger
+| date_time | area | activity | tools | target | result | status | evidence | follow_up |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-02-09 (date_only) | restructure | zero-loss pre-migration manifests and hashes | shell | copper legacy and migrated paths | parity verified | closed (backfilled) | retained as historical summary; detailed files retired under lean policy | maintain manifest-level traceability |
+| 2026-02-09 (date_only) | restructure | mirror-first copy and path normalization | shell | topic-aligned copper folder model | no data loss confirmed | closed (backfilled) | retained as historical summary; detailed files retired under lean policy | maintain manifest-level traceability |
+| 2026-02-10 (date_only) | consistency | canonical naming/path cleanup | shell | topic01/topic02/topic03 | deprecated names removed and paths aligned | closed (backfilled) | `AGENTS.md` and topic files | maintain naming contract |
+| 2026-02-10 (date_only) | build | QMD-first full render and PDF sync | quarto + shell | full workspace | render success, PDFs synced | closed (backfilled) | `scripts/sync_writeup_pdfs.sh` | rerun after content/UI edits |
+| 2026-02-11 (date_only) | web-ui | redesign iterations (monochrome/mint/marketing-minimal) | shell + css edits | global styles and home shell | iterative visual improvements applied | closed (backfilled) | `styles/site-v2.css` | continue regression checks |
+| 2026-02-12 (date_only) | ui-regression | MENU reliability defect investigation | mcp_playwright | topic pages drawer interactions | overlay interception reproduced | closed (backfilled) | `includes/nav-drawer.js` | keep click-through checks in future patches |
+| 2026-02-12 (date_only) | ui-regression | TOC readability/interaction defects | mcp_playwright + css checks | right TOC on long pages | spacing tuned and TOC obstruction reduced | closed (backfilled) | `styles/layout.css` | verify on desktop + mobile each release |
+| 2026-02-13 (date_only) | deployment | GitHub Pages publish/visibility operations | shell + gh | `Green-Metals/home` | deployment operational | closed (backfilled) | workflow and repo settings history | log future run IDs explicitly |
+| 2026-02-14 (date_only) | qa | post-fix drawer + link + TOC flow verification | mcp_playwright + quarto | home and topic01 pages | link checks passed, key interactions stable | closed (backfilled) | local QA run notes | keep monitoring TOC click edge cases |
+| 2026-02-14 (date_only) | tooling | screenshot API limitation encountered | mcp_playwright | screenshot capture | timeout persisted; fallback used | open (backfilled) | MCP timeout logs | use snapshot/click evidence until resolved |
+| 2026-02-14 (date_only) | restructure | hard cutover to content/site/ops/tools lanes | shell + quarto + workflow edits | workspace root | folder split completed, site path contracts updated, post-cutover render verified | closed | `ops/migration/pre_cutover_manifest_20260214-130326.txt` | monitor external links after deployment refresh |
+| 2026-02-14 (date_only) | qa | post-cutover manifest and integrity verification | shell + quarto | content/site deployment paths | render succeeded; topic HTML/PDF + PDF sync checks passed | closed | `ops/migration/post_cutover_manifest_20260214-155501.txt` | keep pre/post manifests for rollback audit |
+| 2026-02-14 (date_only) | streamline | lean retention cleanup (latest QA + minimal history) | shell + scripts + quarto | ops artifacts and topic migration history | noise reduced; latest QA canonicalized; detailed migration files pruned | closed | `ops/migration/pre_streamline_manifest_20260214-160800.txt` and `ops/migration/post_streamline_manifest_20260214-161333.txt` | keep retention policy enforced with `scripts/qa_artifacts_rotate.sh` |
+| 2026-02-14 (date_only) | qa | post-streamline render and sync verification | quarto + shell | site render outputs and topic PDFs | `quarto render site` passed; all topic WRITEUP HTML/PDF and synced PDFs present | closed | `site/_site/index.html` | continue latest-only QA artifact policy |
+| 2026-02-14 17:17 AEDT | qa | full closeout consistency sweep across content/site/ops | shell + quarto + python checks | all topic folders, site output, source registries | all mandatory contracts and quality gates passed; no stale `Literature-Review/` refs in active topic docs; sources path/header checks passed | closed | `ops/qa-artifacts/screenshots/latest/closeout-ui-report-2.json` | carry checks as standard pre-closeout gate |
+| 2026-02-14 17:17 AEDT | ui-regression | menu drawer reliability hardening for mounted-source setup | js patch + browser qa | `site/includes/nav-drawer.js` | drawer now excludes source-only `.qmd` links and serves stable HTML-only navigation in menu | closed | `ops/qa-artifacts/screenshots/latest/closeout-ui-report-3.json` | if subtopic pages are later rendered, menu can re-include them via `.html` routes |
+| 2026-02-14 17:17 AEDT | qa | browser click-through + screenshot verification | playwright (headless) + local http server | home, docs pages, topic writeups (desktop+mobile) | all checked routes returned 200; menu open/close passed; TOC present on writeup pages; no menu `.qmd` links remain | closed | `ops/qa-artifacts/screenshots/latest/closeout3-topic01_copper__WRITEUP-desktop.png` | repeat after any nav/TOC/css shell changes |
+| 2026-02-14 17:17 AEDT | ops-docs | next-session handoff and quickstart closeout checklist refreshed | markdown edits | `ops/WORKFLOW_QUICKSTART.md`, `ops/SESSION_HANDOFF.md` | runbook and resume path are explicit for next session start | closed | `ops/SESSION_HANDOFF.md` | keep handoff updated at each major closeout |
+| 2026-02-14 17:30 AEDT | governance | strict executable checks harness implemented | shell + bash + python + playwright | `scripts/check_*.sh`, CI workflows, AGENTS/quickstart contracts | consolidated checks now enforce content contracts, site integrity, and UI smoke via single command | closed | `scripts/check_all.sh` | keep scripts as single source of truth for QA gates |
+| 2026-02-14 17:30 AEDT | qa | strict harness validation run passed end-to-end | quarto + shell + playwright | full workspace (`RUN_UI_SMOKE=1 ./scripts/check_all.sh`) | all layers passed (content/site/UI) with report output | closed | `ops/qa-artifacts/screenshots/latest/ui-smoke-report.json` | use this command before each delivery closeout |
+| 2026-02-14 17:50 AEDT | governance | UI smoke evidence policy tightened to failure-only by default | bash + node + docs updates | `scripts/check_ui_smoke.sh`, `.gitignore`, ops docs | default runs now keep JSON report and failure screenshots only; full screenshot mode remains explicit opt-in | closed | `scripts/check_ui_smoke.sh` | retain opt-in full evidence mode for release audits |
+| 2026-02-14 17:50 AEDT | qa | 3-mode harness matrix executed | quarto + shell + playwright | `check_all` default + strict + strict full-capture + strict lean-reset | all modes passed; final lean state restored with 0 PNG screenshots retained | closed | `ops/qa-artifacts/screenshots/latest/ui-smoke-report.json` | keep periodic full-capture runs only when explicitly requested |
+| 2026-02-14 17:50 AEDT | ci | quality workflow trigger streamlined | workflow updates | `.github/workflows/quality-checks.yml` | quality checks now run on PR/manual only; publish workflow remains strict gate on main | closed | `.github/workflows/quality-checks.yml` | monitor CI duration and failure signal quality |
+| 2026-02-14 17:50 AEDT | structure | include mount dependency confirmed and documented | shell + docs | `content/topics/includes` compatibility symlink | Quarto include injection for mounted topic sources requires this mount; retained and documented | closed | `AGENTS.md` | revisit only if mount model changes away from symlinked topic sources |
+
+## 3) Decision Changelog
+| decision_id | date | decision | context | options_considered | chosen_option | consequences | supersedes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| D-001 | 2026-02-09 | Topic naming and structure canonicalized | avoid duplicate naming and path drift | ad-hoc naming vs strict contract | `WORKING_NOTE.md` + `WRITEUP.qmd` + ordered `subtopics/*.qmd` | consistent maintenance and predictable sync | none |
+| D-002 | 2026-02-10 | QMD-first publication lane locked | website + citation-ready authoring required | md-first vs qmd-first | qmd-first with PDF outputs | single publishable source and stable render pipeline | prior md-first drafting |
+| D-003 | 2026-02-11 | docs IA retained with refined shell | user wanted modern look without losing docs navigation | full marketing shell vs docs shell | docs structure preserved, style modernized | lower IA disruption, faster iteration | early full-shell experiments |
+| D-004 | 2026-02-12 | MENU and TOC reliability prioritized over ornamental changes | navigation defects blocked usability | continue styling first vs fix interaction first | interaction reliability first | stable browsing experience | earlier style-heavy pass |
+| D-005 | 2026-02-14 | tracking system consolidated | reduce doc bloat while preserving traceability | multi-ledger vs single ledger | single `/ops/PROJECT_TRACKER.md` | simpler maintenance and clearer ownership | split ledger files |
+| D-006 | 2026-02-14 | QA artifact policy set to failure-only by default | screenshot evidence growth was disproportionate to value | keep all screenshots vs failure-only default + opt-in full | failure-only default, `SAVE_UI_SMOKE_SCREENSHOTS=1` opt-in full capture | lean ops storage with explicit high-evidence mode available when needed | prior latest-full-set behavior |
+
+## 4) Open Issues and Risk Register
+| issue_id | opened_date | area | description | impact | likelihood | owner | mitigation | status | target_date |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| R-001 | 2026-02-14 | tooling | MCP screenshot capture times out in current environment | low | medium | codex | rely on snapshot + click logs; retry after tooling updates | open | next tooling refresh |
+| R-002 | 2026-02-14 | deployment traceability | historical GitHub Actions run IDs not consistently recorded | low | medium | workspace maintainer | mandatory run-id entry for every future deploy action | open | immediate |
+| R-003 | 2026-02-14 | publishing scope | subtopic pages are mounted as source and currently not emitted as standalone HTML pages in `site/_site`; website navigation is writeup-first | low | medium | workspace maintainer | keep menu/sidebar navigation writeup-first; if standalone subtopic pages are required, do a dedicated render-path/citation-path refactor | open | next IA/publish iteration |
+
+## 5) Topic Verification Snapshot
+| topic | writeup_source | pdf_status | last_verified | notes |
+| --- | --- | --- | --- | --- |
+| topic00_landscape-briefing | `content/topics/topic00_landscape-briefing/WRITEUP.qmd` | synced | 2026-02-14 17:30 AEDT | baseline structure in contract |
+| topic01_copper | `content/topics/topic01_copper/WRITEUP.qmd` | synced | 2026-02-14 17:30 AEDT | strict harness + UI smoke revalidated |
+| topic02_iron-steel | `content/topics/topic02_iron-steel/WRITEUP.qmd` | synced | 2026-02-14 17:30 AEDT | placeholder structure remains intentional |
+| topic03_alumina-aluminium | `content/topics/topic03_alumina-aluminium/WRITEUP.qmd` | synced | 2026-02-14 17:30 AEDT | placeholder structure remains intentional |
+
+## 6) New Entry Template
+| date_time | area | activity | tools | target | result | status | evidence | follow_up |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| YYYY-MM-DD hh:mm |  |  |  |  |  | open/closed |  |  |

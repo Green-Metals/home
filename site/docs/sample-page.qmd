@@ -1,0 +1,89 @@
+---
+title: "Design Demo Page"
+subtitle: "Documentation Reading Experience Test"
+format:
+  html:
+    toc: true
+---
+
+## Why This Page Exists
+
+This page demonstrates the target reading experience for the knowledge site: strong hierarchy, generous spacing, and fast scanning. It includes typical documentation components so layout and typography can be checked quickly.
+
+### Reading Density
+
+The body column should keep line length within a comfortable range for sustained reading. Paragraph rhythm should be consistent across desktop and mobile, with no sudden jumps in measure or line-height.
+
+## Structured Content Patterns
+
+### Ordered Process
+
+1. Identify the topic scope and decision question.
+2. Collect and validate supporting evidence.
+3. Distill findings into the writeup and quality notes.
+
+### Unordered Summary
+
+- Keep findings concise and source-backed.
+- Use stable naming conventions across topics.
+- Maintain one canonical publishable artifact per topic.
+
+### Reference Table
+
+| Field | Purpose | Example |
+|---|---|---|
+| `topic_id` | Stable topic key | `topic01_copper` |
+| `writeup` | Canonical narrative source | `WRITEUP.qmd` |
+| `working_note` | Operational control file | `WORKING_NOTE.md` |
+
+## Callouts
+
+::: {.callout-note title="Note"}
+Use callouts sparingly for material that changes interpretation, priority, or confidence.
+:::
+
+::: {.callout-tip title="Tip"}
+Prefer small, repeatable updates over large unmanaged edits.
+:::
+
+::: {.callout-warning title="Warning"}
+Do not publish raw licensed source files to public repositories.
+:::
+
+## Figure Frame Pattern
+
+Use the `FigureFrame` wrapper for white-background visuals so they do not appear pasted into the page.
+
+::: {.figure-frame}
+![White Figure Example](assets/white-figure-example.svg)
+:::
+
+## Code Blocks
+
+```bash
+quarto render site
+quarto preview
+```
+
+```python
+def coverage_score(claims: int, anchored: int) -> float:
+    if claims == 0:
+        return 0.0
+    return anchored / claims
+```
+
+## Keyboard and TOC Check
+
+Use keyboard navigation to validate:
+
+- `Tab` reaches the skip link first.
+- `Tab` can reach sidebar links, search input, menu trigger, and TOC links.
+- Focus rings are visible on all interactive controls.
+
+## Responsive Check
+
+Resize to mobile width and verify:
+
+- Sidebar can be toggled without overlap issues.
+- Main content remains readable without horizontal scrolling.
+- Heading levels and spacing still show clear hierarchy.

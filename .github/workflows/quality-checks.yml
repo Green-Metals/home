@@ -1,15 +1,14 @@
-name: Quarto Publish
+name: Quality Checks
 
 on:
-  push:
-    branches: ["main"]
+  pull_request:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  build-deploy:
+  quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,14 +32,6 @@ jobs:
           npm ci
           npx playwright install chromium
 
-      - name: Run full checks (includes render)
+      - name: Run strict checks
         run: |
           RUN_UI_SMOKE=1 ./scripts/check_all.sh
-
-      - name: Publish to GitHub Pages
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
-          path: site/_site
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

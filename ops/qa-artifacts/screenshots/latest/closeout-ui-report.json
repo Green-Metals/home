@@ -1,0 +1,169 @@
+{
+  "generated_at": "2026-02-14T05:27:54.527Z",
+  "base_url": "http://127.0.0.1:8960",
+  "checks": [
+    {
+      "route": "/index.html",
+      "url": "http://127.0.0.1:8960/index.html",
+      "http_status": 200,
+      "title": "Home – CRM Hub",
+      "menu": {
+        "present": true,
+        "open_ok": true,
+        "close_ok": true,
+        "links_total": 7,
+        "links_missing_href": 0
+      },
+      "toc_links": 0,
+      "page_nav_links": 0,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-index-desktop.png",
+      "status": "pass"
+    },
+    {
+      "route": "/docs/sample-page.html",
+      "url": "http://127.0.0.1:8960/docs/sample-page.html",
+      "http_status": 200,
+      "title": "Design Demo Page – CRM Hub",
+      "menu": {
+        "present": true,
+        "open_ok": true,
+        "close_ok": true,
+        "links_total": 7,
+        "links_missing_href": 0
+      },
+      "toc_links": 22,
+      "page_nav_links": 2,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-docs__sample-page-desktop.png",
+      "status": "pass"
+    },
+    {
+      "route": "/docs/qa-checklist.html",
+      "url": "http://127.0.0.1:8960/docs/qa-checklist.html",
+      "http_status": 200,
+      "title": "QA Checklist – CRM Hub",
+      "menu": {
+        "present": true,
+        "open_ok": true,
+        "close_ok": true,
+        "links_total": 7,
+        "links_missing_href": 0
+      },
+      "toc_links": 14,
+      "page_nav_links": 2,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-docs__qa-checklist-desktop.png",
+      "status": "pass"
+    },
+    {
+      "route": "/topic00_landscape-briefing/WRITEUP.html",
+      "url": "http://127.0.0.1:8960/topic00_landscape-briefing/WRITEUP.html",
+      "http_status": 200,
+      "title": "Landscape Briefing: Critical Raw Materials for Australia – CRM Hub",
+      "menu": {
+        "present": true,
+        "open_ok": true,
+        "close_ok": true,
+        "links_total": 9,
+        "links_missing_href": 0
+      },
+      "toc_links": 24,
+      "page_nav_links": 2,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-topic00_landscape-briefing__WRITEUP-desktop.png",
+      "status": "pass"
+    },
+    {
+      "route": "/topic01_copper/WRITEUP.html",
+      "url": "http://127.0.0.1:8960/topic01_copper/WRITEUP.html",
+      "http_status": 200,
+      "title": "Australia-Focused Copper Evidence Review – CRM Hub",
+      "menu": {
+        "present": true,
+        "open_ok": true,
+        "close_ok": true,
+        "links_total": 16,
+        "links_missing_href": 0
+      },
+      "toc_links": 108,
+      "page_nav_links": 2,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-topic01_copper__WRITEUP-desktop.png",
+      "status": "pass"
+    },
+    {
+      "route": "/topic01_copper/subtopics/05_T5_policy-funding-programs.html",
+      "url": "http://127.0.0.1:8960/topic01_copper/subtopics/05_T5_policy-funding-programs.html",
+      "http_status": 404,
+      "title": "Error response",
+      "menu": {
+        "present": false,
+        "open_ok": false,
+        "close_ok": false,
+        "links_total": 0,
+        "links_missing_href": 0
+      },
+      "toc_links": 0,
+      "page_nav_links": 0,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-topic01_copper__subtopics__05_T5_policy-funding-programs-desktop.png",
+      "status": "pass"
+    },
+    {
+      "route": "/topic02_iron-steel/WRITEUP.html",
+      "url": "http://127.0.0.1:8960/topic02_iron-steel/WRITEUP.html",
+      "http_status": 200,
+      "title": "Topic 02 Iron and Steel – CRM Hub",
+      "menu": {
+        "present": true,
+        "open_ok": true,
+        "close_ok": true,
+        "links_total": 9,
+        "links_missing_href": 0
+      },
+      "toc_links": 14,
+      "page_nav_links": 2,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-topic02_iron-steel__WRITEUP-desktop.png",
+      "status": "pass"
+    },
+    {
+      "route": "/topic03_alumina-aluminium/WRITEUP.html",
+      "url": "http://127.0.0.1:8960/topic03_alumina-aluminium/WRITEUP.html",
+      "http_status": 200,
+      "title": "Topic 03 Alumina and Aluminium – CRM Hub",
+      "menu": {
+        "present": true,
+        "open_ok": true,
+        "close_ok": true,
+        "links_total": 9,
+        "links_missing_href": 0
+      },
+      "toc_links": 14,
+      "page_nav_links": 2,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-topic03_alumina-aluminium__WRITEUP-desktop.png",
+      "status": "pass"
+    },
+    {
+      "route": "/index.html",
+      "viewport": "mobile-iphone13",
+      "http_status": 200,
+      "menu_present": true,
+      "toc_links": 0,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-index-mobile.png",
+      "status": "pass"
+    },
+    {
+      "route": "/topic01_copper/WRITEUP.html",
+      "viewport": "mobile-iphone13",
+      "http_status": 200,
+      "menu_present": true,
+      "toc_links": 108,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-topic01_copper__WRITEUP-mobile.png",
+      "status": "pass"
+    },
+    {
+      "route": "/topic01_copper/subtopics/05_T5_policy-funding-programs.html",
+      "viewport": "mobile-iphone13",
+      "http_status": 404,
+      "menu_present": false,
+      "toc_links": 0,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout-topic01_copper__subtopics__05_T5_policy-funding-programs-mobile.png",
+      "status": "pass"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-02-14T06:16:39.133Z",
+  "checks": [
+    {
+      "route": "/index.html",
+      "menu_present": true,
+      "menu_links_total": 7,
+      "menu_qmd_links": 0,
+      "menu_links": [
+        {
+          "text": "Home",
+          "href": "http://127.0.0.1:8960/index.html"
+        },
+        {
+          "text": "Design Demo",
+          "href": "http://127.0.0.1:8960/docs/sample-page.html"
+        },
+        {
+          "text": "QA Checklist",
+          "href": "http://127.0.0.1:8960/docs/qa-checklist.html"
+        },
+        {
+          "text": "Landscape Briefing",
+          "href": "http://127.0.0.1:8960/topic00_landscape-briefing/WRITEUP.html"
+        },
+        {
+          "text": "Topic 01 Copper",
+          "href": "http://127.0.0.1:8960/topic01_copper/WRITEUP.html"
+        },
+        {
+          "text": "Topic 02 Iron-Steel",
+          "href": "http://127.0.0.1:8960/topic02_iron-steel/WRITEUP.html"
+        },
+        {
+          "text": "Topic 03 Alumina-Aluminium",
+          "href": "http://127.0.0.1:8960/topic03_alumina-aluminium/WRITEUP.html"
+        }
+      ],
+      "toc_links": 0,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout3-index-desktop.png"
+    },
+    {
+      "route": "/topic01_copper/WRITEUP.html",
+      "menu_present": true,
+      "menu_links_total": 8,
+      "menu_qmd_links": 0,
+      "menu_links": [
+        {
+          "text": "Home",
+          "href": "http://127.0.0.1:8960/index.html"
+        },
+        {
+          "text": "Design Demo",
+          "href": "http://127.0.0.1:8960/docs/sample-page.html"
+        },
+        {
+          "text": "QA Checklist",
+          "href": "http://127.0.0.1:8960/docs/qa-checklist.html"
+        },
+        {
+          "text": "Landscape Briefing",
+          "href": "http://127.0.0.1:8960/topic00_landscape-briefing/WRITEUP.html"
+        },
+        {
+          "text": "Topic 01 Copper",
+          "href": "http://127.0.0.1:8960/topic01_copper/WRITEUP.html"
+        },
+        {
+          "text": "Topic 02 Iron-Steel",
+          "href": "http://127.0.0.1:8960/topic02_iron-steel/WRITEUP.html"
+        },
+        {
+          "text": "Topic 03 Alumina-Aluminium",
+          "href": "http://127.0.0.1:8960/topic03_alumina-aluminium/WRITEUP.html"
+        },
+        {
+          "text": "Writeup",
+          "href": "http://127.0.0.1:8960/topic01_copper/WRITEUP.html"
+        }
+      ],
+      "toc_links": 108,
+      "screenshot": "ops/qa-artifacts/screenshots/latest/closeout3-topic01_copper__WRITEUP-desktop.png"
+    }
+  ]
+}
