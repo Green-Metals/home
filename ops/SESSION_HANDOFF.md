@@ -1,6 +1,6 @@
 # Session Handoff
 
-Updated: 2026-02-14 19:21 AEDT
+Updated: 2026-02-15 10:52 AEDT
 
 ## Current Baseline
 
@@ -16,7 +16,11 @@ Updated: 2026-02-14 19:21 AEDT
 - Branch protection status: `main` now requires `quality` status check + 1 approval + CODEOWNER review.
 - Fast-check lane status: `scripts/check_fast.sh` is the PR-speed gate; strict gate remains `scripts/check_all.sh`.
 - Local validation status: both `RUN_UI_SMOKE=1 ./scripts/check_fast.sh` and `RUN_UI_SMOKE=1 ./scripts/check_all.sh` pass.
-- Working tree status: fast-check implementation changes are present locally and need commit/PR to land on protected `main`.
+- PR status:
+  - open PR: `https://github.com/Green-Metals/home/pull/1`
+  - `quality` check: passed
+  - merge state: blocked pending required review
+  - operational blocker: `gh` token invalid in current session (`gh auth status` fails)
 - Topic outputs verified:
   - `site/_site/topic00_landscape-briefing/WRITEUP.html`
   - `site/_site/topic01_copper/WRITEUP.html`
@@ -62,6 +66,12 @@ Artifacts:
 - PR quality workflow now runs fast-check:
   - `RUN_UI_SMOKE=1 ./scripts/check_fast.sh`
   - changed-only scope detection with auto full fallback
+- Immediate release closeout remains pending:
+  - restore GitHub CLI auth (`gh auth login -h github.com`)
+  - get one required PR approval
+  - merge PR #1
+  - delete `codex/fast-check-pipeline` (local + remote)
+  - verify next `Quarto Publish` run result
 
 ## Start-Next-Session Command Set
 
@@ -81,6 +91,16 @@ Fast verification:
 2. Open `ops/qa-artifacts/screenshots/latest/ui-smoke-report.json`.
 3. If release-bound, run `RUN_UI_SMOKE=1 ./scripts/check_all.sh`.
 4. Commit and open PR for pending local fast-check changes (direct push to `main` is blocked by protection rules).
+
+PR closeout commands (once `gh` auth is restored):
+
+```bash
+gh pr view 1 --json url,state,mergeStateStatus,reviewDecision,statusCheckRollup
+gh pr merge 1 --squash --delete-branch
+git checkout main && git pull --ff-only
+git branch -d codex/fast-check-pipeline
+gh run list --workflow "Quarto Publish" --limit 1
+```
 
 Then open and continue from:
 
