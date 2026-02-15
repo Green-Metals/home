@@ -18,11 +18,12 @@ Updated: 2026-02-15 12:00 AEDT
 - Local validation status: both `RUN_UI_SMOKE=1 ./scripts/check_fast.sh` and `RUN_UI_SMOKE=1 ./scripts/check_all.sh` pass.
 - PR status:
   - open PR: `https://github.com/Green-Metals/home/pull/1`
-  - latest pushed commit on PR branch: `31c66b1`
+  - latest pushed commit on PR branch: `fcf4f56`
   - `quality` check: in progress for latest commit
   - merge state: blocked pending required review + passing `quality`
   - operational blocker: `gh` token invalid in current session (`gh auth status` fails)
   - merge automation blocker: repository auto-merge is currently disabled
+  - integration blocker: MCP GitHub app cannot submit approval reviews (`403 Resource not accessible by integration`)
 - Topic outputs verified:
   - `site/_site/topic00_landscape-briefing/WRITEUP.html`
   - `site/_site/topic01_copper/WRITEUP.html`
@@ -69,8 +70,8 @@ Artifacts:
   - `RUN_UI_SMOKE=1 ./scripts/check_fast.sh`
   - changed-only scope detection with auto full fallback
 - Immediate release closeout remains pending:
-  - restore GitHub CLI auth (`gh auth login -h github.com`)
-  - wait for `quality` to finish green on commit `31c66b1`
+  - restore GitHub CLI auth from user shell/browser session (`gh auth login -h github.com`)
+  - wait for `quality` to finish green on commit `fcf4f56`
   - get one required PR approval
   - merge PR #1
   - delete `codex/fast-check-pipeline` (local + remote)
