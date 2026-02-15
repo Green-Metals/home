@@ -109,6 +109,15 @@ Strict UI mode:
 RUN_UI_SMOKE=1 ./scripts/check_all.sh
 ```
 
+### 8.1) Playwright Usage Policy (CLI-First)
+- Manual browser debugging and reproducible one-off browser flows must use:
+  - `./scripts/pw.sh ...`
+- CI/release gate truth remains scripted Playwright via:
+  - `scripts/check_ui_smoke.sh` through `check_fast.sh` and `check_all.sh`
+- MCP Playwright is exploratory only. Any issue found via MCP must be reproduced via CLI/script before closure.
+- QA artifacts remain under:
+  - `ops/qa-artifacts/screenshots/latest/`
+
 Script responsibilities:
 - `scripts/check_content_contracts.sh`
 - `scripts/detect_changed_scope.sh`

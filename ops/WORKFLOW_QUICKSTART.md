@@ -77,6 +77,31 @@ Fast-check behavior:
 - Detects changed scope and targets render/UI routes accordingly.
 - Falls back to strict/full behavior when shared/core files changed.
 
+## 4.2) Playwright Usage (CLI-First)
+
+Use the repo wrapper for manual browser automation and debugging:
+
+```bash
+./scripts/pw.sh --help
+./scripts/pw.sh open https://playwright.dev --headed
+./scripts/pw.sh snapshot
+```
+
+Usage boundaries:
+
+- Manual debugging and reproducible one-off browser flows:
+  - use `./scripts/pw.sh ...`
+- Automated gate truth for PR/release:
+  - `RUN_UI_SMOKE=1 ./scripts/check_fast.sh`
+  - `RUN_UI_SMOKE=1 ./scripts/check_all.sh`
+- MCP Playwright:
+  - exploratory triage only; reproduce findings with CLI/script before closeout.
+
+Artifacts:
+
+- Keep smoke reports and screenshots under:
+  - `ops/qa-artifacts/screenshots/latest/`
+
 ## 5) Website Publishing
 
 GitHub workflow:

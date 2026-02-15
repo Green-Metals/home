@@ -4,6 +4,7 @@ site/_site/
 site/.quarto/
 .sass-cache/
 tools/playwright/node_modules/
+.playwright-cli/
 content/topics/topic*/refs/*
 !content/topics/topic*/refs/.gitkeep
 content/topics/topic*/meta/migration/legacy-md/
