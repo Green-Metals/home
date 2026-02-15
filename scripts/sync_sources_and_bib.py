@@ -100,6 +100,11 @@ def is_used_local_source(row: dict[str, str]) -> bool:
     return True
 
 
+def is_private_corpus_path(rel_path: str) -> bool:
+    rel = rel_path.strip()
+    return rel.startswith("content/topics/") and "/refs-sources/" in rel
+
+
 def build_ops_for_topic(topic_dir: Path) -> tuple[list[RenameOp], list[dict[str, str]], list[str]]:
     sources_path = topic_dir / "meta" / "sources.csv"
     rows, header = read_sources_csv(sources_path)
@@ -479,7 +484,9 @@ def run_validations(topics: list[Path], verbose: bool) -> list[str]:
                 f"[path-mismatch] {op.topic_dir.relative_to(ROOT)} source_key={op.source_key} path={op.old_path} expected={op.new_path}"
             )
         if not op.new_abs.exists():
-            errors.append(f"[missing-rename] file not found: {op.new_path}")
+            # refs-sources can be intentionally untracked/private in CI or shared repos.
+            if not is_private_corpus_path(op.new_path):
+                errors.append(f"[missing-rename] file not found: {op.new_path}")
 
     entries = load_bib_entries(BIB_PATH)
     bib_keys = {e.key for e in entries}
