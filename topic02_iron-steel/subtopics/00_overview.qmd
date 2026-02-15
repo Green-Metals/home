@@ -1,5 +1,0 @@
-# 00 Overview
-
-- Primary topic ID: `T0`
-
-Phase 1 placeholder module for topic02 iron-steel.
