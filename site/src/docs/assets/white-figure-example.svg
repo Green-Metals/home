@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">White figure example</title>
+  <desc id="desc">Minimal white-background figure with thin lines and labels.</desc>
+  <rect x="0" y="0" width="900" height="420" fill="#ffffff"/>
+  <line x1="60" y1="330" x2="840" y2="330" stroke="rgba(10,10,11,0.24)" stroke-width="1"/>
+  <line x1="60" y1="80" x2="60" y2="330" stroke="rgba(10,10,11,0.24)" stroke-width="1"/>
+  <polyline fill="none" stroke="#2563EB" stroke-width="3" points="80,300 220,260 360,210 500,180 640,130 780,100"/>
+  <circle cx="220" cy="260" r="4" fill="#2563EB"/>
+  <circle cx="500" cy="180" r="4" fill="#2563EB"/>
+  <circle cx="780" cy="100" r="4" fill="#2563EB"/>
+  <text x="80" y="356" font-family="Inter, Arial, sans-serif" font-size="14" fill="#52525B">Q1</text>
+  <text x="360" y="356" font-family="Inter, Arial, sans-serif" font-size="14" fill="#52525B">Q2</text>
+  <text x="640" y="356" font-family="Inter, Arial, sans-serif" font-size="14" fill="#52525B">Q3</text>
+  <text x="720" y="72" font-family="Inter, Arial, sans-serif" font-size="14" fill="#0A0A0B">Trend example</text>
+</svg>

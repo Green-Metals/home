@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "leases": [
+    {
+      "role": "topic03",
+      "agent_id": "codex",
+      "scope": "content/topics/topic03_alumina-aluminium",
+      "session_id": "2026-02-15-site-src-output-flatten",
+      "acquired_at": "2026-02-15T07:05:03.581339Z",
+      "expires_at": "2026-02-15T10:05:03.581339Z"
+    },
+    {
+      "role": "website",
+      "agent_id": "codex",
+      "scope": "site",
+      "session_id": "2026-02-15-site-src-output-flatten",
+      "acquired_at": "2026-02-15T07:05:03.620686Z",
+      "expires_at": "2026-02-15T10:05:03.620686Z"
+    },
+    {
+      "role": "ops-tooling",
+      "agent_id": "codex",
+      "scope": "scripts",
+      "session_id": "2026-02-15-site-src-output-flatten",
+      "acquired_at": "2026-02-15T07:05:03.664001Z",
+      "expires_at": "2026-02-15T10:05:03.664001Z"
+    },
+    {
+      "role": "integrator",
+      "agent_id": "codex",
+      "scope": "ops",
+      "session_id": "2026-02-15-site-src-output-flatten",
+      "acquired_at": "2026-02-15T07:05:03.705858Z",
+      "expires_at": "2026-02-15T10:05:03.705858Z"
+    },
+    {
+      "role": "topic01",
+      "agent_id": "codex",
+      "scope": "content/topics/topic01_copper",
+      "session_id": "2026-02-15-site-src-output-flatten",
+      "acquired_at": "2026-02-15T07:05:03.492227Z",
+      "expires_at": "2026-02-15T10:05:03.492227Z"
+    },
+    {
+      "role": "topic02",
+      "agent_id": "codex",
+      "scope": "content/topics/topic02_iron-steel",
+      "session_id": "2026-02-15-site-src-output-flatten",
+      "acquired_at": "2026-02-15T07:05:03.538929Z",
+      "expires_at": "2026-02-15T10:05:03.538929Z"
+    },
+    {
+      "role": "topic00",
+      "agent_id": "codex",
+      "scope": "content/topics/topic00_landscape-briefing",
+      "session_id": "2026-02-15-site-src-output-flatten",
+      "acquired_at": "2026-02-15T07:05:03.447647Z",
+      "expires_at": "2026-02-15T10:05:03.447647Z"
+    }
+  ],
+  "handoffs": [],
+  "conflicts": []
+}

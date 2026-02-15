@@ -1,0 +1,70 @@
+---
+title: "Home"
+body-classes: home-page
+page-navigation: false
+format:
+  html:
+    toc: false
+---
+
+::: {.page-hero}
+<p class="hero-kicker">CRM HUB</p>
+<h1 class="hero-word">unlock</h1>
+<p class="hero-subline">the evidence.</p>
+<div class="divider"></div>
+<p class="hero-meta">Australia-focused modular research briefings. Export to PDF. Contact: <a href="mailto:green-metals@monash.edu">green-metals@monash.edu</a>.</p>
+:::
+
+## Explore {.section-header}
+
+::: {.row-link-list}
+<a class="row-link" href="topic00_landscape-briefing/topic00_agent_writeup.html">
+  <span class="row-link-main">
+    <span class="row-link-title">Landscape Briefing</span>
+    <span class="row-link-desc">Cross-topic synthesis and framing for research prioritization.</span>
+  </span>
+  <span class="row-link-end">
+    <span class="tag row-link-tag">Briefing</span>
+    <span class="row-link-chevron" aria-hidden="true">›</span>
+  </span>
+</a>
+<a class="row-link" href="topic01_copper/topic01_agent_writeup.html">
+  <span class="row-link-main">
+    <span class="row-link-title">Topic 01 Copper</span>
+    <span class="row-link-desc">Demand, pathways, collaboration map, and evidence posture.</span>
+  </span>
+  <span class="row-link-end">
+    <span class="tag row-link-tag">Topic</span>
+    <span class="row-link-chevron" aria-hidden="true">›</span>
+  </span>
+</a>
+<a class="row-link" href="topic02_iron-steel/topic02_agent_writeup.html">
+  <span class="row-link-main">
+    <span class="row-link-title">Topic 02 Iron-Steel</span>
+    <span class="row-link-desc">Canonical placeholder structure for expansion and deep-dive build.</span>
+  </span>
+  <span class="row-link-end">
+    <span class="tag row-link-tag">Topic</span>
+    <span class="row-link-chevron" aria-hidden="true">›</span>
+  </span>
+</a>
+<a class="row-link" href="topic03_alumina-aluminium/topic03_agent_writeup.html">
+  <span class="row-link-main">
+    <span class="row-link-title">Topic 03 Alumina-Aluminium</span>
+    <span class="row-link-desc">Canonical placeholder structure for expansion and deep-dive build.</span>
+  </span>
+  <span class="row-link-end">
+    <span class="tag row-link-tag">Topic</span>
+    <span class="row-link-chevron" aria-hidden="true">›</span>
+  </span>
+</a>
+:::
+
+## Quick Actions {.section-header}
+
+::: {.quick-actions}
+<a class="pill-button secondary" href="topic00_landscape-briefing/topic00_agent_writeup.html">Start Landscape</a>
+<a class="pill-button secondary" href="topic01_copper/topic01_agent_writeup.html">Open Topic 01</a>
+<a class="pill-button secondary" href="topic01_copper/topic01_agent_writeup.pdf">Download Topic 01 PDF</a>
+<a class="pill-button secondary" href="docs/qa-checklist.html">QA Checklist</a>
+:::

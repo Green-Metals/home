@@ -12,28 +12,41 @@ TOPICS=(
 )
 
 echo "[site] rendering site..."
-quarto render site
+SYNC_WRITEUP_STRICT=1 quarto render site/src
 echo "[site] render OK"
+
+if [[ -d "site/_site" ]]; then
+  echo "[site][fail] deprecated output layer exists: site/_site (expected render output directly under site/)"
+  exit 1
+fi
 
 echo "[site] checking mount links..."
 for m in references "${TOPICS[@]}"; do
-  if [[ ! -L "site/$m" ]]; then
-    echo "[site][fail] site/$m is not a symlink mount"
+  if [[ ! -L "site/src/$m" ]]; then
+    echo "[site][fail] site/src/$m is not a symlink mount"
     exit 1
   fi
-  if [[ ! -e "site/$m" ]]; then
-    echo "[site][fail] site/$m is a broken symlink"
+  if [[ ! -e "site/src/$m" ]]; then
+    echo "[site][fail] site/src/$m is a broken symlink"
     exit 1
   fi
 done
 echo "[site] mount links OK"
 
 echo "[site] checking required outputs..."
-test -f "site/_site/index.html" || { echo "[site][fail] missing site/_site/index.html"; exit 1; }
+test -f "site/index.html" || { echo "[site][fail] missing site/index.html"; exit 1; }
 for t in "${TOPICS[@]}"; do
-  test -f "site/_site/$t/WRITEUP.html" || { echo "[site][fail] missing site/_site/$t/WRITEUP.html"; exit 1; }
-  test -f "site/_site/$t/WRITEUP.pdf" || { echo "[site][fail] missing site/_site/$t/WRITEUP.pdf"; exit 1; }
-  test -f "content/topics/$t/WRITEUP.pdf" || { echo "[site][fail] missing synced content/topics/$t/WRITEUP.pdf"; exit 1; }
+  topic_id="$(cut -d'_' -f1 <<<"$t")"
+  html_name="${topic_id}_agent_writeup.html"
+  pdf_name="${topic_id}_agent_writeup.pdf"
+  test -f "site/$t/$html_name" || { echo "[site][fail] missing site/$t/$html_name"; exit 1; }
+  test -f "site/$t/$pdf_name" || { echo "[site][fail] missing site/$t/$pdf_name"; exit 1; }
+  test -f "content/topics/$t/$html_name" || { echo "[site][fail] missing synced content/topics/$t/$html_name"; exit 1; }
+  test -f "content/topics/$t/$pdf_name" || { echo "[site][fail] missing synced content/topics/$t/$pdf_name"; exit 1; }
+  test ! -f "site/$t/WRITEUP.html" || { echo "[site][fail] deprecated site/$t/WRITEUP.html present"; exit 1; }
+  test ! -f "site/$t/WRITEUP.pdf" || { echo "[site][fail] deprecated site/$t/WRITEUP.pdf present"; exit 1; }
+  test ! -f "content/topics/$t/WRITEUP.html" || { echo "[site][fail] deprecated content/topics/$t/WRITEUP.html present"; exit 1; }
+  test ! -f "content/topics/$t/WRITEUP.pdf" || { echo "[site][fail] deprecated content/topics/$t/WRITEUP.pdf present"; exit 1; }
 done
 echo "[site] output checks OK"
 
@@ -43,8 +56,11 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlparse
 
-root = Path("site/_site").resolve()
-html_files = sorted(root.rglob("*.html"))
+root = Path("site").resolve()
+html_files = sorted(
+    f for f in root.rglob("*.html")
+    if not f.relative_to(root).parts[:1] == ("src",)
+)
 
 class Parser(HTMLParser):
     def __init__(self):
@@ -95,8 +111,8 @@ print("[site] local link integrity OK")
 PY
 
 echo "[site] checking menu drawer script guardrails..."
-if rg -n '\\.qmd' site/includes/nav-drawer.js | grep -q .; then
-  if ! rg -n 'skip source-only qmd|Include only rendered pages' site/includes/nav-drawer.js >/dev/null; then
+if rg -n '\\.qmd' site/src/includes/nav-drawer.js | grep -q .; then
+  if ! rg -n 'skip source-only qmd|Include only rendered pages' site/src/includes/nav-drawer.js >/dev/null; then
     echo "[site][fail] nav-drawer.js references .qmd without source-skip guard"
     exit 1
   fi

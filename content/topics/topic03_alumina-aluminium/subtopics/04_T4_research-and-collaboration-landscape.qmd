@@ -1,0 +1,14 @@
+# 04 T4 Research and Collaboration Landscape
+
+## Baseline Synthesis
+This section maps where research depth, pilot capability, and cross-institution collaboration can accelerate credible industrial deployment.
+
+### T4.1 Capability Map
+- Australian research groups and infrastructure linked to alumina and aluminium pathways.
+- Industry collaborators and translational capacity.
+- International counterparts with strategic relevance.
+
+### T4.2 Collaboration Gaps
+- Missing capability links between lab, pilot, and commercial scales.
+- Areas where standards, testing, or qualification bottlenecks slow adoption.
+- Candidate collaboration structures for faster translation.

@@ -1,0 +1,21 @@
+# 02 T2 Processing Pathways
+
+## Purpose
+Compare processing routes by export relevance, buildability, and dependency risk over 0-10 years.
+
+## Evidence Snapshot
+- `C-002` (`E-002`): IEA roadmap frames route transition as central, with steel at about `8%` of global final energy demand and `7%` of energy-sector CO2 emissions.
+- `C-004` (`E-004`): Competitiveness for hydrogen-linked routes is tied to low-cost clean electricity (IEA reference point `USD 20-30/MWh` for renewable power access).
+- `C-005` (`E-005`): Enabling-system demand is material; IEA transition framing includes around `720 TWh` additional electricity demand by 2050 for hydrogen pathway deployment.
+
+## Working Pathway Lens
+- Baseline route stack for comparison: BF-BOF improvement, DRI/HBI-linked pathways, and EAF-linked pathways.
+- Evaluate routes with paired dependency tests:
+  - power profile and reliability,
+  - reductant and reagent access,
+  - logistics and port throughput,
+  - qualification and offtake timelines.
+
+## Decision Use
+- Use pre-2030 and post-2030 windows to avoid overstating near-term deployability.
+- Treat power-system readiness and hydrogen/reagent availability as explicit pass-fail gates before route ranking.

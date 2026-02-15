@@ -1,7 +1,7 @@
 # Quantitative Claim Audit (T6 Closure Pass)
 
 ## Scope
-- Target file: `content/topics/topic01_copper/WRITEUP.qmd`
+- Target file: `content/topics/topic01_copper/topic01_agent_writeup.qmd`
 - Policy: local corpus only
 - Coverage: retained quantitative claims (body + tables + Appendix A quantitative rows)
 

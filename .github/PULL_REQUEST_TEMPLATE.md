@@ -16,7 +16,7 @@
 - [ ] Ran `./scripts/check_all.sh`
 - [ ] Ran strict gate `RUN_UI_SMOKE=1 ./scripts/check_all.sh` (required for infra/UI/CI changes)
 - [ ] Confirmed no stale paths or deprecated filename regressions
-- [ ] Confirmed expected outputs (`site/_site/*.html`, topic `WRITEUP.pdf` sync where applicable)
+- [ ] Confirmed expected outputs (`site/*.html`, topic `topicXX_agent_writeup.{html,pdf}` sync where applicable)
 
 ## Code Review
 
@@ -26,7 +26,8 @@
 
 ## Ops Logging
 
-- [ ] Added/updated entry in `ops/PROJECT_TRACKER.md`
+- [ ] Added/updated role row(s) in `ops/PROJECT_TRACKER.md` (`## 2) Role Activity Ledger`) with `session_id`, `role`, and `agent_id`
+- [ ] Added/updated integrator coordination row when cross-lane (`## 3) Integrator Coordination Log`)
 - [ ] Updated topic verification snapshot if topic-impacting
 
 ## Notes for Reviewer

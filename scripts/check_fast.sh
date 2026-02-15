@@ -71,17 +71,45 @@ if [[ "${#RENDER_QMD[@]}" -eq 0 ]]; then
   exit 1
 fi
 
+SYNC_TOPICS=()
+for rel in "${RENDER_QMD[@]}"; do
+  if [[ "$rel" =~ ^(topic[0-9]{2}[^/]+)/topic[0-9]{2}_agent_writeup\.qmd$ ]]; then
+    topic="${BASH_REMATCH[1]}"
+    seen=0
+    for existing_topic in "${SYNC_TOPICS[@]}"; do
+      if [[ "$existing_topic" == "$topic" ]]; then
+        seen=1
+        break
+      fi
+    done
+    if [[ "$seen" -eq 0 ]]; then
+      SYNC_TOPICS+=("$topic")
+    fi
+  fi
+done
+
 echo "[fast] targeted render..."
 for rel in "${RENDER_QMD[@]}"; do
-  qmd_path="site/${rel}"
+  qmd_path="site/src/${rel}"
   if [[ ! -f "$qmd_path" ]]; then
     echo "[fast][fail] render target missing: $qmd_path"
     exit 1
   fi
   echo "[fast] render -> $qmd_path"
-  quarto render "$qmd_path"
+  if [[ "$rel" =~ ^(topic[0-9]{2}[^/]+)/topic[0-9]{2}_agent_writeup\.qmd$ ]]; then
+    topic="${BASH_REMATCH[1]}"
+    SYNC_WRITEUP_STRICT=1 SYNC_WRITEUP_TOPICS="$topic" quarto render "$qmd_path"
+  else
+    SYNC_WRITEUP_STRICT=0 SYNC_WRITEUP_TOPICS="" quarto render "$qmd_path"
+  fi
 done
-./scripts/sync_writeup_pdfs.sh
+if [[ "${#SYNC_TOPICS[@]}" -gt 0 ]]; then
+  sync_args=()
+  for topic in "${SYNC_TOPICS[@]}"; do
+    sync_args+=(--topic "$topic")
+  done
+  SYNC_WRITEUP_STRICT=1 ./scripts/sync_writeup_pdfs.sh "${sync_args[@]}"
+fi
 echo "[fast] targeted render OK"
 
 echo "[fast] targeted site integrity checks..."

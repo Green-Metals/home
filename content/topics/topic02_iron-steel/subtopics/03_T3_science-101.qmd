@@ -1,0 +1,15 @@
+# 03 T3 Science 101
+
+## Purpose
+Provide the minimum technical grounding required to interpret pathway claims in `T2` consistently.
+
+## Baseline Concepts
+- Route-level emissions and cost are driven by reduction chemistry, energy vector, and feed quality.
+- Metallisation route choice changes downstream process windows, energy demand, and impurity management.
+- Process integration quality (energy, heat, and materials loops) strongly influences practical competitiveness.
+
+## Evidence Link
+- `C-002` (`E-002`) is the baseline reference for pathway framing and technology transition logic.
+
+## Use Rule
+Treat science notes as decision support for pathway screening, not as standalone ranking evidence.

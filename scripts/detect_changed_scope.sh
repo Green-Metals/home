@@ -59,13 +59,25 @@ topics = [
     "topic02_iron-steel",
     "topic03_alumina-aluminium",
 ]
+writeup_by_topic = {
+    "topic00_landscape-briefing": "topic00_agent_writeup.qmd",
+    "topic01_copper": "topic01_agent_writeup.qmd",
+    "topic02_iron-steel": "topic02_agent_writeup.qmd",
+    "topic03_alumina-aluminium": "topic03_agent_writeup.qmd",
+}
+writeup_route_by_topic = {
+    "topic00_landscape-briefing": "/topic00_landscape-briefing/topic00_agent_writeup.html",
+    "topic01_copper": "/topic01_copper/topic01_agent_writeup.html",
+    "topic02_iron-steel": "/topic02_iron-steel/topic02_agent_writeup.html",
+    "topic03_alumina-aluminium": "/topic03_alumina-aluminium/topic03_agent_writeup.html",
+}
 
 fallback_prefixes = (
-    "site/_quarto.yml",
-    "site/includes/",
-    "site/styles/",
-    "site/index.qmd",
-    "site/docs/",
+    "site/src/_quarto.yml",
+    "site/src/includes/",
+    "site/src/styles/",
+    "site/src/index.qmd",
+    "site/src/docs/",
     "scripts/check_",
     "tools/playwright/",
     ".github/workflows/",
@@ -89,7 +101,7 @@ changed_topics = set()
 render_qmd = set()
 ui_routes = set()
 
-topic_re = re.compile(r"^(?:content/topics|site)/(topic[0-9]{2}[^/]+)/(.+)$")
+topic_re = re.compile(r"^(?:content/topics|site/src)/(topic[0-9]{2}[^/]+)/(.+)$")
 
 def qmd_to_html_route(rel_qmd: str) -> str:
     route = "/" + rel_qmd
@@ -98,12 +110,12 @@ def qmd_to_html_route(rel_qmd: str) -> str:
     return route
 
 for path in changed:
-    if path == "site/index.qmd":
+    if path == "site/src/index.qmd":
         render_qmd.add("index.qmd")
         ui_routes.add("/index.html")
         continue
-    if path.startswith("site/docs/") and path.endswith(".qmd"):
-        rel = path[len("site/"):]
+    if path.startswith("site/src/docs/") and path.endswith(".qmd"):
+        rel = path[len("site/src/"):]
         render_qmd.add(rel)
         ui_routes.add(qmd_to_html_route(rel))
         continue
@@ -115,8 +127,8 @@ for path in changed:
     if topic not in topics:
         continue
     changed_topics.add(topic)
-    render_qmd.add(f"{topic}/WRITEUP.qmd")
-    ui_routes.add(f"/{topic}/WRITEUP.html")
+    render_qmd.add(f"{topic}/{writeup_by_topic[topic]}")
+    ui_routes.add(writeup_route_by_topic[topic])
     if subpath.startswith("subtopics/") and subpath.endswith(".qmd"):
         render_qmd.add(f"{topic}/{subpath}")
 
@@ -124,16 +136,16 @@ for path in changed:
 # so CI has concrete outputs and menu/TOC checks still run.
 if mode == "targeted" and not render_qmd:
     render_qmd.add("index.qmd")
-    render_qmd.add("topic01_copper/WRITEUP.qmd")
+    render_qmd.add("topic01_copper/topic01_agent_writeup.qmd")
     ui_routes.add("/index.html")
-    ui_routes.add("/topic01_copper/WRITEUP.html")
+    ui_routes.add(writeup_route_by_topic["topic01_copper"])
     if not reason:
         reason = "no topic/docs qmd changes; using minimal baseline routes"
 
 # Always include at least one writeup route in targeted mode.
-if mode == "targeted" and not any(r.endswith("/WRITEUP.html") for r in ui_routes):
-    ui_routes.add("/topic01_copper/WRITEUP.html")
-    render_qmd.add("topic01_copper/WRITEUP.qmd")
+if mode == "targeted" and not any(r.endswith("_agent_writeup.html") for r in ui_routes):
+    ui_routes.add(writeup_route_by_topic["topic01_copper"])
+    render_qmd.add("topic01_copper/topic01_agent_writeup.qmd")
     if not reason:
         reason = "added baseline writeup route for smoke continuity"
 
@@ -154,4 +166,3 @@ if reason:
 if payload["changed_topics"]:
     print(f"[fast-scope] changed_topics={','.join(payload['changed_topics'])}")
 PY
-

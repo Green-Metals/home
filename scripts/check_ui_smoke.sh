@@ -34,7 +34,7 @@ trap cleanup EXIT
 
 if [[ -z "$BASE_URL" ]]; then
   echo "[ui] starting local server on port $PORT..."
-  python3 -m http.server "$PORT" -d site/_site >/tmp/ui_smoke_server.log 2>&1 &
+  python3 -m http.server "$PORT" -d site >/tmp/ui_smoke_server.log 2>&1 &
   SERVER_PID="$!"
   sleep 1
   BASE_URL="http://127.0.0.1:${PORT}"
@@ -56,10 +56,10 @@ const defaultPages = [
   "/index.html",
   "/docs/sample-page.html",
   "/docs/qa-checklist.html",
-  "/topic00_landscape-briefing/WRITEUP.html",
-  "/topic01_copper/WRITEUP.html",
-  "/topic02_iron-steel/WRITEUP.html",
-  "/topic03_alumina-aluminium/WRITEUP.html",
+  "/topic00_landscape-briefing/topic00_agent_writeup.html",
+  "/topic01_copper/topic01_agent_writeup.html",
+  "/topic02_iron-steel/topic02_agent_writeup.html",
+  "/topic03_alumina-aluminium/topic03_agent_writeup.html",
 ];
 const routesFile = process.env.UI_SMOKE_ROUTES_FILE || "";
 const routesCsv = process.env.UI_SMOKE_ROUTES || "";
@@ -169,7 +169,7 @@ async function checkDrawer(page, route) {
       if (row.menu_qmd_links > 0) {
         throw new Error(`menu contains source .qmd links for ${route}`);
       }
-      if (route.includes("/WRITEUP.html") && row.toc_links === 0) {
+      if (/_agent_writeup\.html($|[?#])/.test(route) && row.toc_links === 0) {
         throw new Error(`no TOC links found on writeup page ${route}`);
       }
       if (saveAllScreenshots) {
@@ -194,11 +194,11 @@ async function checkDrawer(page, route) {
   if (pages.includes("/index.html")) {
     mobileRoutes.push("/index.html");
   }
-  const firstTopicRoute = pages.find((r) => /^\/topic[0-9]{2}[^/]+\/WRITEUP\.html$/.test(r));
+  const firstTopicRoute = pages.find((r) => /^\/topic[0-9]{2}[^/]+\/topic[0-9]{2}_agent_writeup\.html$/.test(r));
   if (firstTopicRoute) {
     mobileRoutes.push(firstTopicRoute);
   } else {
-    mobileRoutes.push("/topic01_copper/WRITEUP.html");
+    mobileRoutes.push("/topic01_copper/topic01_agent_writeup.html");
   }
   const uniqueMobileRoutes = [...new Set(mobileRoutes)];
 

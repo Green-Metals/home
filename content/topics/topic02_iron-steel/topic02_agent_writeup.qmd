@@ -1,0 +1,99 @@
+---
+title: "Topic 02 Iron and Steel"
+bibliography: ../../references/references.bib
+csl: ../../../site/src/styles/harvard.csl
+format:
+  html:
+    output-file: topic02_agent_writeup.html
+    toc: true
+    number-sections: false
+  pdf:
+    output-file: topic02_agent_writeup.pdf
+    toc: true
+    number-sections: false
+---
+
+[Download PDF](topic02_agent_writeup.pdf)
+
+This writeup is the canonical publishable synthesis for Topic 02 (iron and steel). The current version is a documented baseline aligned to the export and geopolitical-leverage screen used in Topic 00.
+
+## Module Source Map
+- Overview module: `subtopics/00_overview.qmd`
+- T1 module: `subtopics/01_T1_demand-pull-and-value-chain-structure.qmd`
+- T2 module: `subtopics/02_T2_processing-pathways.qmd`
+- T3 module: `subtopics/03_T3_science-101.qmd`
+- T4 module: `subtopics/04_T4_research-and-collaboration-landscape.qmd`
+- T5 module: `subtopics/05_T5_policy-funding-and-programs.qmd`
+- T6 module: `subtopics/06_T6_evidence-quality-gaps-and-confidence.qmd`
+
+## T1. Demand Pull + Value-Chain Structure
+This section frames demand and market structure for export-facing iron and steel pathways.
+
+Evidence snapshot:
+- `C-001` (`E-001`): IEA framing indicates demand pressure remains material, with growth shifts concentrated in selected emerging regions.
+- `C-006` (`E-006`): USGS MCS 2026 reports 2025 world raw steel output at about `1,900 Mt` (China about `980 Mt`) and provides iron ore baseline context.
+- `C-007` (`E-007`): REQ Dec 2025 reports Australia iron ore export earnings moving from `A$116.4b` (2024-25) to `A$107.4b` (2026-27) while volumes trend toward `~1,007 Mt`.
+- `C-003` (`E-003`): Topic00 continues to rank green iron as a core export-leverage anchor under this demand profile.
+
+Current focus:
+- Keep the demand lens export-first and leverage-aware.
+- Revalidate concentration and trade baselines before updating rank decisions.
+
+## T2. Processing Pathways
+This section compares route families by buildability, dependency risk, and export relevance over a 0-10 year horizon.
+
+Evidence snapshot:
+- `C-002` (`E-002`): IEA roadmap framing treats route transition as central; steel is about `8%` of global final energy demand and `7%` of energy-sector CO2 emissions.
+- `C-004` (`E-004`): Power cost and reliability are first-order constraints, with IEA highlighting low-cost clean electricity as critical for hydrogen-linked competitiveness.
+- `C-005` (`E-005`): Enabling dependencies remain decisive; IEA transition framing includes around `720 TWh` additional electricity demand by 2050 for hydrogen pathway deployment.
+
+Current focus:
+- Apply paired pathway-dependency tests (power, reductants, logistics, qualification).
+- Separate pre-2030 and post-2030 readiness windows.
+
+## T3. Science 101
+This section sets the minimum technical baseline needed for consistent interpretation of pathway claims.
+
+Early evidence snapshot:
+- `C-002` (`E-002`): IEA roadmap framing is used as the baseline source for route-transition logic.
+
+Current focus:
+- Link reduction chemistry, feed quality, and process integration assumptions directly to `T2` rankings.
+
+## T4. Research and Collaboration Landscape
+This section maps partner and capability requirements for execution.
+
+Early evidence snapshot:
+- `C-009` (`E-009`): Geospatial project-mapping assets are useful for hub-level opportunity screening.
+- `C-010` (`E-010`): Topic02 is not yet partner-shortlist ready and needs deeper extraction.
+
+Current focus:
+- Build hub-by-hub partner archetype inventories and tie them to route families.
+
+## T5. Policy, Funding, and Programs
+This section evaluates policy and finance settings that affect pathway bankability and execution timing.
+
+Evidence snapshot:
+- `C-008` (`E-008`): The 2023-2030 strategy explicitly prioritizes resilient supply chains, sovereign processing capability, and enabling infrastructure/services.
+- `C-007` (`E-007`): REQ market outlook shows iron ore earnings pressure under softer prices, supporting policy focus on value-lift rather than volume-only exposure.
+- `C-004` (`E-004`): Infrastructure readiness (especially power and logistics) remains a practical gating condition.
+
+Current focus:
+- Build route-linked policy matrix (instrument, mechanism, time window, affected pathway).
+
+## T6. Evidence Quality, Gaps, and Confidence
+This section records the current confidence posture and unresolved uncertainties.
+
+Current confidence snapshot:
+- `C-001` to `C-005`: `medium` (directional strength is adequate; project-level economics are still thin).
+- `C-006` to `C-008`: `high` (quantitative extraction completed with anchored source notes).
+- `C-009`: `high` (method applicability is clear and operational).
+- `C-010`: `high` (explicit self-audit of evidence maturity).
+
+Current key gaps:
+- Project-level route economics for pre-2030 decision use.
+- Hub-level partner inventory for execution-ready mapping.
+
+Evidence and sources:
+- `content/topics/topic02_iron-steel/meta/evidence_register.csv`
+- `content/topics/topic02_iron-steel/meta/sources.csv`

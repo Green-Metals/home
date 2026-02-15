@@ -1,5 +1,13 @@
 # 00 Overview
 
-- Primary topic ID: `T0`
+This topic covers alumina and aluminium pathways that can strengthen Australia's export position and industrial resilience within a practical 0-10 year horizon.
 
-Phase 1 placeholder module for topic03 alumina-aluminium.
+## Focus Boundaries
+- Upstream to midstream chain: bauxite -> alumina -> primary aluminium -> selected downstream products.
+- Priority lens: market pull, processing routes, energy and emissions exposure, and strategic market access.
+- Exclusions for this pass: exhaustive company profiling and project-level valuation modeling.
+
+## Working Output for This Phase
+- Establish evidence-backed framing for `T1` to `T6`.
+- Build a traceable source base in `meta/sources.csv` and `meta/evidence_register.csv`.
+- Keep `topic03_agent_writeup.qmd` synchronized as the publication-ready synthesis layer.

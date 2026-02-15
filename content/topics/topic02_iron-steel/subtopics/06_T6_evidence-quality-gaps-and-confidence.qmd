@@ -1,0 +1,17 @@
+# 06 T6 Evidence Quality Gaps and Confidence
+
+## Confidence Posture
+- `C-001` to `C-005`: `medium` (directional framing is strong; project-level quantitative pathway economics still limited).
+- `C-006` to `C-008`: `high` (chapter-level and table-level quantitative extraction completed and verified).
+- `C-009`: `high` (tooling purpose is explicit and directly applicable).
+- `C-010`: `high` (self-audit of current evidence depth).
+
+## Key Gaps
+- Missing project-level pathway economics for pre-2030 versus post-2030 decisions.
+- Missing partner and project inventory sufficient for hub-level execution mapping.
+- Missing route-level cost and financing comparators tied to specific Australian hub conditions.
+
+## Next Validation Pass
+1. Build first partner archetype shortlist by hub and route family.
+2. Add route-level economics for BF-BOF improvement, DRI/HBI-linked pathways, and EAF-linked pathways.
+3. Re-rate claims after project-level extraction and contradiction check.
