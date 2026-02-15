@@ -1,0 +1,17 @@
+# 05 T5 Policy Funding and Programs
+
+## Purpose
+Frame policy and finance as execution constraints/enablers rather than background context.
+
+## Evidence Snapshot
+- `C-008` (`E-008`): The 2023-2030 strategy explicitly targets resilient supply chains, sovereign processing capability, and enabling infrastructure/services.
+- `C-007` (`E-007`): REQ indicates iron ore remains over `25%` of resource and energy export earnings while price softness is expected (`US$93/t` in 2024 to `US$82/t` by 2027), reinforcing the value-lift policy case.
+- `C-004` (`E-004`): Infrastructure constraints, especially power cost and reliability, materially shape bankability and route timing.
+
+## Working Policy Lens
+- Evaluate whether policy settings close the competitiveness gap for export-facing lower-emissions routes.
+- Separate market-access policy effects from domestic production-support effects.
+- Keep financing analysis coupled to dependency readiness (power, ports, and input chains).
+
+## Near-Term Documentation Need
+Add an explicit policy-instrument matrix (measure, mechanism, time window, route relevance) and link each instrument to pre-2030 versus post-2030 pathway windows.

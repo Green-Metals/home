@@ -1,5 +1,22 @@
 # 00 Overview
 
-- Primary topic ID: `T0`
+- Primary topic ID: `topic02_iron-steel`
 
-Phase 1 placeholder module for topic02 iron-steel.
+This module records the first documented baseline for Topic 02 under the export and leverage screen used by Topic 00.
+
+## Current Status
+- Topic structure and render contracts are in place.
+- `T1` to `T6` subtopic modules are now populated with baseline synthesis.
+- Source corpus and evidence register are initialized:
+  - `meta/sources.csv`
+  - `meta/evidence_register.csv`
+
+## Baseline Framing
+- Scope: mineral-derived iron and steel pathways that can lift Australian export value and strategic leverage.
+- Horizon: 0-10 years.
+- Decision order: export potential, geopolitical leverage, then readiness/adjacency.
+
+## Next Extraction Priorities
+1. Extract chapter-level quantitative baselines from `USGS_MCS_2026.pdf` and `AU_REQ_DEC_2025.pdf`.
+2. Add project-location and partner candidates per hub in `T4`.
+3. Tighten pathway comparison with pre-2030 vs post-2030 readiness split.

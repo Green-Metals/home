@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T07:31:24.073Z",
+  "generated_at": "2026-02-15T07:06:34.723Z",
   "base_url": "http://127.0.0.1:8960",
   "screenshot_policy": "failures-only",
   "desktop": [
@@ -37,48 +37,48 @@
       "toc_links": 14
     },
     {
-      "route": "/topic00_landscape-briefing/WRITEUP.html",
+      "route": "/topic00_landscape-briefing/topic00_agent_writeup.html",
       "status": "pass",
       "http_status": 200,
       "menu_present": true,
       "menu_open_ok": true,
       "menu_close_ok": true,
-      "menu_links_total": 8,
+      "menu_links_total": 7,
       "menu_qmd_links": 0,
-      "toc_links": 24
+      "toc_links": 26
     },
     {
-      "route": "/topic01_copper/WRITEUP.html",
+      "route": "/topic01_copper/topic01_agent_writeup.html",
       "status": "pass",
       "http_status": 200,
       "menu_present": true,
       "menu_open_ok": true,
       "menu_close_ok": true,
-      "menu_links_total": 8,
+      "menu_links_total": 7,
       "menu_qmd_links": 0,
       "toc_links": 108
     },
     {
-      "route": "/topic02_iron-steel/WRITEUP.html",
+      "route": "/topic02_iron-steel/topic02_agent_writeup.html",
       "status": "pass",
       "http_status": 200,
       "menu_present": true,
       "menu_open_ok": true,
       "menu_close_ok": true,
-      "menu_links_total": 8,
+      "menu_links_total": 7,
       "menu_qmd_links": 0,
       "toc_links": 14
     },
     {
-      "route": "/topic03_alumina-aluminium/WRITEUP.html",
+      "route": "/topic03_alumina-aluminium/topic03_agent_writeup.html",
       "status": "pass",
       "http_status": 200,
       "menu_present": true,
       "menu_open_ok": true,
       "menu_close_ok": true,
-      "menu_links_total": 8,
+      "menu_links_total": 7,
       "menu_qmd_links": 0,
-      "toc_links": 14
+      "toc_links": 18
     }
   ],
   "mobile": [
@@ -90,11 +90,11 @@
       "toc_links": 0
     },
     {
-      "route": "/topic01_copper/WRITEUP.html",
+      "route": "/topic00_landscape-briefing/topic00_agent_writeup.html",
       "status": "pass",
       "http_status": 200,
       "menu_present": true,
-      "toc_links": 108
+      "toc_links": 26
     }
   ]
 }

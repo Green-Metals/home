@@ -1,0 +1,40 @@
+# 06 T6 Evidence Quality, Gaps, and Confidence
+
+## Baseline Synthesis
+This section defines confidence levels for major claims and makes unresolved uncertainty explicit so decision-makers can see what is known, uncertain, and contradicted.
+
+## Confidence Rules
+- `high`: directly supported by primary sources with low ambiguity.
+- `medium`: supported but with material caveats or partial triangulation.
+- `low`: limited support, conflicting signals, or high scenario dependence.
+
+## Gap Register Priorities
+- Data gaps that block robust demand and competitiveness comparisons.
+- Contradictions between sources that affect core conclusions.
+- Evidence needed to promote low-confidence claims to medium or high confidence.
+
+## Current Confidence Snapshot (2026-02-15)
+- `C-001`: `medium` (supported by IEA demand-growth and concentration indicators, but still requires deeper product-segment demand disaggregation).
+- `C-002`: `high` (directly supported by IEA cost-emissions evidence and IAI trend data).
+- `C-003`: `medium` (technology effect direction is supported, but commercial deployment evidence remains incomplete).
+- `C-004`: `medium` (Australia capability/export orientation is supported by industry primary data; government trade-stat triangulation still needed).
+- `C-005`: `high` (explicit budget instrument and timing windows are documented in primary government policy material).
+- `C-006`: `high` (EU regulatory timeline and sector coverage are explicit in primary regulator documentation).
+- `C-007`: `medium` (strong historical synthesis evidence that implementation barriers persist, but current-state status requires updated validation).
+- `C-008`: `medium` (inventory and growth values are clearly stated in the source, but they are 2009-era figures and time-sensitive).
+- `C-009`: `medium` (framework value is high for structuring analysis, but direct commercial applicability must be tested with current data).
+- `C-010`: `high` (research-gap and priority table is explicit and directly useful for planning).
+- `C-011`: `high` (implementation-support requirements are explicit and align with observed policy/market deployment logic).
+- `C-012`: `medium` (strong directional demand framing, but depends on referenced external scenarios that require direct follow-up review).
+- `C-013`: `medium` (trade and concentration framing is plausible and data-rich, but should be triangulated with independent official datasets).
+- `C-014`: `high` (constraint statement is explicit and consistent with broader pathway evidence).
+- `C-015`: `medium` (technology timing is credible but forecast-dependent and sensitive to project execution and policy conditions).
+- `C-016`: `medium` (premium signal is useful but market evidence is partly observational and should be independently quantified).
+- `C-017`: `high` (policy package is explicitly stated in the submission and internally coherent).
+- `C-018`: `medium` (investment magnitude framing is decision-useful but methodology-sensitive and requires source triangulation).
+
+## Temporal Caveat
+- The DMR-3609 source is a high-value framework reference from 2009; all quantitative baseline values derived from it must be treated as historical unless refreshed by current primary data.
+
+## Source-Positioning Caveat
+- The AAC 2024 green-metals paper is an industry submission. It is treated as a high-value primary source for stated constraints and proposed policy mechanisms, but quantitative claims should be cross-checked against independent datasets before promotion to high-confidence neutral conclusions.

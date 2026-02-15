@@ -1,0 +1,24 @@
+# 01 T1 Demand Pull and Value-Chain Structure
+
+## Baseline Synthesis
+The topic should first separate demand into product classes that matter for export margin and strategic leverage, then map where Australia can defend value capture rather than only volume.
+
+## Scope for First Evidence Pass
+- Demand segmentation: alumina, primary metal, and selected fabricated-product pull.
+- Geographic pull: domestic, regional Asia-Pacific, and allied-market demand channels.
+- Value-chain leverage points: refining, smelting, alloying, and quality-certified supply interfaces.
+
+## Evidence Priorities
+- Global and regional demand trajectory by product class.
+- Trade concentration and market-access constraints.
+- Margin and competitiveness indicators linked to route, energy, and logistics.
+
+## Pass 2 Early Findings (2026-02-15)
+- `C-001` (`E-002`): IEA reports global aluminium demand rose by nearly 3% in 2022 and that China accounted for around 60% of global primary aluminium production, indicating a demand-and-supply landscape where concentration risk is structurally important.
+- `C-004` (`E-006`): Australian Aluminium Council data indicates a large export orientation (about 90% of alumina and 86% of bauxite production exported), so value-chain strategy is tightly linked to external market conditions and trade access.
+- `C-012` (`E-014`): The 2024 Australian Aluminium Council green-metals submission states demand may nearly double by 2050 and argues recycling alone will not remove the need for additional primary aluminium supply.
+- `C-013` (`E-015`): The same submission highlights concentration risk in global supply chains and frames Australia as highly export-linked across bauxite, alumina, and aluminium value streams.
+
+## Immediate Implication for Topic03
+- The `T1` decision frame should prioritize which product segments and destination markets can tolerate concentration risk, carbon-border exposure, and logistics volatility while still supporting defensible Australian value capture.
+- Demand scenarios should explicitly test concentration and trade-exposure stress cases, not only base-case volume growth.

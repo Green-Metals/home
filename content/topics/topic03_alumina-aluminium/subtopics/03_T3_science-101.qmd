@@ -1,0 +1,21 @@
+# 03 T3 Science 101
+
+## Baseline Synthesis
+The technical primer should explain only the scientific fundamentals that determine pathway feasibility, cost structure, and quality outcomes for alumina and aluminium value chains.
+
+## Scope for First Evidence Pass
+- Core chemistry and thermodynamics relevant to refining and smelting.
+- Process-property links that influence product quality and downstream applicability.
+- Material and impurity considerations that shape process risk.
+
+## Evidence Priorities
+- Primary technical references for process fundamentals.
+- Parameter ranges that are repeatedly used in pathway comparisons.
+- Clear caveats where operating performance is site-specific.
+
+## Pass 2 Early Findings (2026-02-15)
+- `C-007` (`E-009`): The CSIRO DMR-3609 review highlights soda and alkalinity management plus handling or immobilization of heavy metals and NORM as central technical-risk constraints in residue-use pathways.
+- `C-010` (`E-012`): The report identifies a specific research gap in detailed speciation and physicochemical behavior of metal species and complexes across application conditions.
+
+## Immediate Implication for Topic03
+- The `T3` science chapter should explicitly connect residue chemistry (alkali systems, metal speciation, and immobilization behavior) to pathway feasibility claims in `T2` and risk assessments in `T6`.

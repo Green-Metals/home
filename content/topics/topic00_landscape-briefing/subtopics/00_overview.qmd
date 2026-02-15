@@ -6,6 +6,27 @@ title: "Topic 00 Overview"
 
 This module summarizes the cross-topic landscape framing and points to the canonical writeup.
 
-- Canonical writeup: `topic00_landscape-briefing/WRITEUP.qmd`
-- Source index: `topic00_landscape-briefing/meta/sources.csv`
-- Evidence register: `topic00_landscape-briefing/meta/crm_evidence_register.csv`
+- Canonical writeup: `content/topics/topic00_landscape-briefing/topic00_agent_writeup.qmd`
+- Source index: `content/topics/topic00_landscape-briefing/meta/sources.csv`
+- Evidence register: `content/topics/topic00_landscape-briefing/meta/crm_evidence_register.csv`
+
+## New Source Intake (2026-02-15)
+
+Source added:
+- `content/topics/topic00_landscape-briefing/refs-sources/raabe_2023_the_materials_science_behind_sustainable_metals_and_alloys_pdf.pdf`
+
+High-value extracted points for Topic 00 framing:
+- The review reports that metal production accounts for around 40% of industrial greenhouse gas emissions, 10% of global energy use, and 3.2 billion tonnes of minerals mined annually (Raabe, 2023, p. 2436).
+- The review argues circularity alone is insufficient at current demand growth: market demand exceeds available scrap by about two-thirds, and at least one-third of metals will remain primary even under favorable circular conditions (Raabe, 2023, p. 2436).
+- Steel decarbonisation remains central: global-average emissions are cited around 1.9-2.2 tCO2/t steel and the sector contributes roughly 8% of global emissions (Raabe, 2023, p. 2472).
+- Copper remains a strategic bottleneck for electrification: pyrometallurgy still accounts for over 80% of primary supply, with potential shortage risk up to 10 Mt by 2030 if new mines do not come online (Raabe, 2023, p. 2478).
+- Copper circular pathways are material but constrained: end-of-life recycling is cited around 30-40%, while secondary production can reduce energy demand by roughly 30-80% relative to primary routes (Raabe, 2023, p. 2479).
+- Battery mineral intensity remains high: an indicative 1000 kg/120 kWh EV pack can contain approximately 15 kg Li, 80 kg Ni, 25 kg Mn, 27 kg Co, and up to 250 kg graphite (Raabe, 2023, p. 2482).
+
+## Evidence Deepening Update (2026-02-15)
+
+- `E-011` to `E-016` in `content/topics/topic00_landscape-briefing/meta/crm_evidence_register.csv` are now `verified` with explicit locator notes.
+- `C-016` source has been replaced from a weak proxy to a sector-primary source:
+  - `content/topics/topic00_landscape-briefing/refs-sources/iea_iron_and_steel_technology_roadmap_2020.html`
+- Source capture status in `content/topics/topic00_landscape-briefing/meta/sources.csv` remains intentionally unresolved for one row:
+  - `mineral_potential_mapping_eftf_2024` is retained as `unresolved` with Cloudflare/manual-capture blocker notes.

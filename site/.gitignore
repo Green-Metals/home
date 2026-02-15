@@ -1,1 +1,13 @@
 /.quarto/
+/src/.quarto/
+/_site/
+/.DS_Store
+/index.html
+/search.json
+/docs/
+/site_libs/
+/styles/
+/topic00_landscape-briefing/
+/topic01_copper/
+/topic02_iron-steel/
+/topic03_alumina-aluminium/

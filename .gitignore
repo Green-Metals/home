@@ -4,8 +4,11 @@ site/_site/
 site/.quarto/
 .sass-cache/
 tools/playwright/node_modules/
-content/topics/topic*/refs/*
-!content/topics/topic*/refs/.gitkeep
+.playwright-cli/
+scripts/__pycache__/
+tools/python/.venv/
+content/topics/topic*/refs-sources/*
+!content/topics/topic*/refs-sources/.gitkeep
 content/topics/topic*/meta/migration/legacy-md/
 content/topics/topic*/meta/migration/legacy-md-manifest.csv
 ops/qa-artifacts/screenshots/latest/*.png

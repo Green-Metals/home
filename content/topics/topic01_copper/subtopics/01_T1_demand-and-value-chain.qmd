@@ -32,7 +32,7 @@ An Australia-focused research strategy becomes much stronger when it can point t
 This report provides a first-pass structural-node map and identifies the baseline tables required to quantify the hypotheses in `T2`.
 
 #### T1.4.2 Public baseline signal (export value)
-A public Australian baseline provides an outlook for copper export value (nominal) rising from **A$12.565b (2024-25)** to **A$17.648b (2026-27f)** [@disr-2025, p. 60]. This supports urgency, but it does not answer where value is captured (or lost) across processing, refining, and circular upgrading steps.
+A public Australian baseline provides an outlook for copper export value (nominal) rising from **A$12.565b (2024-25)** to **A$17.648b (2026-27f)** [@AU_REQ_DEC_2025, p. 60]. This supports urgency, but it does not answer where value is captured (or lost) across processing, refining, and circular upgrading steps.
 
 #### T1.4.3 Structural nodes (analysis-facing, non-exhaustive)
 | Node | Why it matters for the research strategy | Evidence |

@@ -86,20 +86,20 @@ This table is the audit trail for retained quantitative claims used in the repor
 | C-006 | Co-product-aware refining residues matter | Dong et al. (2020) | pp. 1, 5 | Boundary condition; Mission B (co-products) |
 
 ## Appendix B: Local Corpus Used (Bounded)
-The following files in `topic01_copper/refs/` were treated as the bounded corpus for this report:
-- AEMO and Oxford Economics - 2025 - Australia Data Centre Energy Consumption Report.pdf
-- DISR - 2025 - Resources and Energy Quarterly December 2025.pdf
-- Dong et al. - 2020 - Comprehensive Recoveries of Selenium Copper Gold Silver and Lead from a Copper Anode Slime with a Clean and Economical Hydrometallurgical Process.pdf
-- EU Publications Office - 2024 - Critical Raw Materials Act.pdf
-- Lane et al. - 2016 - Selective Leaching of Penalty Elements from Copper Concentrates A Review.pdf
-- S&P Global - 2026 - Copper in the Age of AI Challenges of Electrification.pdf
-- Torrubia et al. - 2024 - Recovery of Copper from Electronic Waste An Energy Transition Approach to Decarbonise the Industry.pdf
-- Wood Mackenzie - 2025 - High-wire Act Is Soaring Copper Demand an Obstacle to Future Growth.pdf
-- Wu et al. - 2025 - Scaling Bioleaching from Lab to Industry A Life Cycle Assessment of Cathode Copper Production.pdf
-- Yang et al. - 2024 - Towards Resource Regeneration A Focus on Copper Recovery from Electronic Waste.pdf
+The following files in `content/topics/topic01_copper/refs-sources/` were treated as the bounded corpus for this report:
+- aemo_and_oxford_economics_2025_australia_data_centre_energy_consumption_report_pdf.pdf
+- disr_2025_resources_and_energy_quarterly_december_2025_pdf.pdf
+- dong_et_al_2020_comprehensive_recoveries_of_selenium_copper_gold_silver_and_lead_from_a_copper_anode_slime_with_a_clean_and_economical_hydrometallurgical_process_pdf.pdf
+- eu_publications_office_2024_critical_raw_materials_act_pdf.pdf
+- lane_et_al_2016_selective_leaching_of_penalty_elements_from_copper_concentrates_a_review_pdf.pdf
+- s_p_global_2026_copper_in_the_age_of_ai_challenges_of_electrification_pdf.pdf
+- torrubia_et_al_2024_recovery_of_copper_from_electronic_waste_an_energy_transition_approach_to_decarbonise_the_industry_pdf.pdf
+- wood_mackenzie_2025_high_wire_act_is_soaring_copper_demand_an_obstacle_to_future_growth_pdf.pdf
+- wu_et_al_2025_scaling_bioleaching_from_lab_to_industry_a_life_cycle_assessment_of_cathode_copper_production_pdf.pdf
+- yang_et_al_2024_towards_resource_regeneration_a_focus_on_copper_recovery_from_electronic_waste_pdf.pdf
 
 ## Appendix C: Australia Collaboration Register (Operational Artifact)
-- File: `topic01_copper/meta/au_copper_value_chain_collaboration_register.csv`
+- File: `content/topics/topic01_copper/meta/au_copper_value_chain_collaboration_register.csv`
 - As-of point: current review cycle snapshot.
 - Scope: Australia-local copper value-chain collaborations with named leads, partner institutions, and subsidy/funding signals.
 - Stage coverage: mixed coverage across upstream, midstream, and circular stages.  

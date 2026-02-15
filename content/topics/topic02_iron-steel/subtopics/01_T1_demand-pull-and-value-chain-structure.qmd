@@ -1,0 +1,15 @@
+# 01 T1 Demand Pull and Value-Chain Structure
+
+## Purpose
+Establish where demand pull and market structure justify an Australian value-lift strategy beyond ore exports.
+
+## Evidence Snapshot
+- `C-001` (`E-001`): IEA framing indicates continued steel-demand pressure with growth shifts outside China.
+- `C-006` (`E-006`): USGS MCS 2026 reports 2025 world raw steel output at about `1,900 Mt`, with China at about `980 Mt` (PDF p.107).
+- `C-007` (`E-007`): REQ Dec 2025 shows Australia iron ore export earnings easing from `A$116.4b` (2024-25) to `A$107.4b` (2026-27) while volumes rise toward `~1,007 Mt` by 2026-27 (PDF p.8, p.21-p.22, p.25).
+- `C-003` (`E-003`): Topic00 ranking keeps green iron in the top export-leverage tier, consistent with these scale signals.
+
+## Working Implications
+- Keep the demand lens export-first: current earnings exposure is large even under softer price outlooks.
+- Separate near-term value-lift plays (iron intermediates and upgrading) from longer-cycle specialty steel ambitions.
+- Refresh concentration and trade baselines on each major USGS/REQ cycle before changing rank order.

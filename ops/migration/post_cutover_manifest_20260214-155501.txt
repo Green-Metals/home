@@ -562,11 +562,11 @@
 ./.DS_Store|8196|145691cc2858222f747013e22215939e886104c6a6b9c3944e9ec5d53bf61c23
 ./content/references/references.bib|7972|f8751273c8075a2d38b2c51d0f6a95f1f14e63b1508e2e0ef3ece341aa7e5075
 ./content/topics/topic02_iron-steel/meta/sources.csv|54|9f81e1d16e619083e6a22d58629dcada2f36be539f2c9671e890ae44f3e76c12
-./content/topics/topic02_iron-steel/WRITEUP.qmd|735|dcfea6b8e71684bbd0badcf5dfdc3bf6086b10e795bc9d6eee49553a95e2f629
+./content/topics/topic02_iron-steel/topic02_agent_writeup.qmd|735|dcfea6b8e71684bbd0badcf5dfdc3bf6086b10e795bc9d6eee49553a95e2f629
 ./content/topics/topic02_iron-steel/refs/.gitkeep|0|e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 ./content/topics/topic02_iron-steel/subtopics/00_overview.qmd|92|7300195f8d41c54893e4783551bc2e81f8fc3d7825768613f890e00e41f3e614
 ./content/topics/topic02_iron-steel/WRITEUP.pdf|18492|5c787cd7cb8dbfa313ab7b7fa3cb8aba348bcb3cc2ee4fad0e851a7c089d736c
-./content/topics/topic02_iron-steel/WORKING_NOTE.md|151|6faef732868c5714222b40d3cbef41659138f50e566f97c2bbd51e97e17cf4fa
+./content/topics/topic02_iron-steel/topic02_agent_working_note.md|151|6faef732868c5714222b40d3cbef41659138f50e566f97c2bbd51e97e17cf4fa
 ./content/topics/topic00_landscape-briefing/meta/crm_top12_hub_partner_map.csv|7206|ad4f3a894b9246678b6f874e02e50163c6f962cd2bf96d97c75084b42276d603
 ./content/topics/topic00_landscape-briefing/meta/crm_evidence_register.csv|6969|acbe651584b7a1c38b07fc7eeda936e74817572738bd9e60a3f2d855a8b63c62
 ./content/topics/topic00_landscape-briefing/meta/crm_topics_master.csv|12402|a659b6e5800ea7ecd65c58dc2c6a6610d1a9c2b9349c42481beb26aab44ecc93
@@ -585,7 +585,7 @@
 ./content/topics/topic00_landscape-briefing/meta/migration/path_map.csv|6508|55571db6439b59a20b10e33339f219ff1496e888b786e63daf82c73ab4c60281
 ./content/topics/topic00_landscape-briefing/meta/migration/verification_report.md|290|713efb1187b286d47ffecc1fdc8309d1edc75d49f35714a6658274f8ecd99af4
 ./content/topics/topic00_landscape-briefing/meta/sources.csv|3546|6bf1c439af9ed239257cfa131892ccd02e82c6b662d488619e1300ca31af70f6
-./content/topics/topic00_landscape-briefing/WRITEUP.qmd|13242|499045c652954990639a5444de3c54ed0f155a3eca8b2481685c75c37ab75c16
+./content/topics/topic00_landscape-briefing/topic00_agent_writeup.qmd|13242|499045c652954990639a5444de3c54ed0f155a3eca8b2481685c75c37ab75c16
 ./content/topics/topic00_landscape-briefing/refs/Publications and portals - 2025.html|23715|53eb1afbead219b4daa140f3d9d1efb67ef811c5cb2dac57687f5d0b9ec30669
 ./content/topics/topic00_landscape-briefing/refs/AEMO and Oxford Economics - 2025 - Australia Data Centre Energy Consumption Report.pdf|1456524|ce1fdf34b28cb89f804d97b9dbb0d2b72df488f3905319f263500c82dd022820
 ./content/topics/topic00_landscape-briefing/refs/DISR - 2025 - Resources and Energy Quarterly December 2025.pdf|4823991|0efa28b5b6733bf006742885575ecccca2ec3c31ff9fbaf7353904284f18db73
@@ -599,7 +599,7 @@
 ./content/topics/topic00_landscape-briefing/refs/Dong et al. - 2020 - Comprehensive Recoveries of Selenium Copper Gold Silver and Lead from a Copper Anode Slime with a Clean and Economical Hydrometallurgical Process.pdf|9686633|231dbe57df8384aeef731d6946d4bf9c5a42267db609489f1589db34751c1e57
 ./content/topics/topic00_landscape-briefing/subtopics/00_overview.qmd|348|45e6eccc0aead4e580f607626505ea78cc9225ccb4549913239b0ccec5c9c6dd
 ./content/topics/topic00_landscape-briefing/WRITEUP.pdf|44946|1615c4e21f71e0faa60202bdff40cbad01f6a247cf62994b5f7a6bb5647a657a
-./content/topics/topic00_landscape-briefing/WORKING_NOTE.md|620|7d1d8263c5f06d8ef9f8cc826cd2b25549e47169c57ab75953b103a968c67d75
+./content/topics/topic00_landscape-briefing/topic00_agent_working_note.md|620|7d1d8263c5f06d8ef9f8cc826cd2b25549e47169c57ab75953b103a968c67d75
 ./content/topics/topic01_copper/meta/quantitative_claim_audit.md|3447|0fc645dce3cde3b37853c3d4f0b41eb3b4d4683e4eec381ec8cd9c2998ddb79f
 ./content/topics/topic01_copper/meta/quantitative_claim_audit.csv|5780|4a9283dfb0715d75f7b49a93b6ec3d9c5a7bad108f121ae49e913acbbff3f4bf
 ./content/topics/topic01_copper/meta/TOPIC_INDEX_AND_CROSSWALK.md|5472|7723f1950c28c39a4ff265b5415d76400c8e836869ccc65e4c8f94a99590d60c
@@ -616,7 +616,7 @@
 ./content/topics/topic01_copper/meta/migration/legacy-md/subtopics/00_overview.md|8940|3db8bc72caecdca227563d4a03b1c0a456e99f9671618864eaebbc4cb4541cd4
 ./content/topics/topic01_copper/meta/migration/legacy-md/subtopics/90_references-and-appendices.md|11035|36136a4e4694bf3f9da5a4385a332a90fd95cf6f96195cc6a20757f0acf853d0
 ./content/topics/topic01_copper/meta/sources.csv|6095|87efa08e487e6d7527c743116209ebb074acb0c15ad66f7ceef11f086a9b7217
-./content/topics/topic01_copper/WRITEUP.qmd|68528|81d24f3cb89893d9d445a28e7f1bea9e17c1857f8609f7a31666a266ffe609f6
+./content/topics/topic01_copper/topic01_agent_writeup.qmd|68528|81d24f3cb89893d9d445a28e7f1bea9e17c1857f8609f7a31666a266ffe609f6
 ./content/topics/topic01_copper/refs/Fastmarkets - 2024 - Copper Cathode Premium Methodology and Price Specifications.pdf|129309|14b0595fb4be121fd94d53c5fbb2cc0ad4f323a39f70a9b4f97e3bff1cd4871b
 ./content/topics/topic01_copper/refs/AEMO and Oxford Economics - 2025 - Australia Data Centre Energy Consumption Report.pdf|1456524|ce1fdf34b28cb89f804d97b9dbb0d2b72df488f3905319f263500c82dd022820
 ./content/topics/topic01_copper/refs/DISR - 2025 - Resources and Energy Quarterly December 2025.pdf|4823991|0efa28b5b6733bf006742885575ecccca2ec3c31ff9fbaf7353904284f18db73
@@ -642,13 +642,13 @@
 ./content/topics/topic01_copper/subtopics/03_T3_science-101.qmd|16635|b72a1d54e579cbdb47f984b3a2c441af14464e480b13bffd205a1cf30c6f6844
 ./content/topics/topic01_copper/subtopics/02_T2_processing-pathways.qmd|15244|3068560d696844cd3531b50ea3edf6452a1e21124ff1aa96d9e0842debab4a95
 ./content/topics/topic01_copper/WRITEUP.pdf|144214|df3aff56d5d1de15521f5bde21212c67a25ec51c66e56297a59d27033f89995d
-./content/topics/topic01_copper/WORKING_NOTE.md|58030|38650281557264a50b63fe0d944ce2c31a9d2c081b433f3c0fcb95730acb7290
+./content/topics/topic01_copper/topic01_agent_working_note.md|58030|38650281557264a50b63fe0d944ce2c31a9d2c081b433f3c0fcb95730acb7290
 ./content/topics/topic03_alumina-aluminium/meta/sources.csv|54|9f81e1d16e619083e6a22d58629dcada2f36be539f2c9671e890ae44f3e76c12
-./content/topics/topic03_alumina-aluminium/WRITEUP.qmd|742|b17235446cc89aefc56e334977c6eaecec1de76936973fa62066077c5ad0c683
+./content/topics/topic03_alumina-aluminium/topic03_agent_writeup.qmd|742|b17235446cc89aefc56e334977c6eaecec1de76936973fa62066077c5ad0c683
 ./content/topics/topic03_alumina-aluminium/refs/.gitkeep|0|e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 ./content/topics/topic03_alumina-aluminium/subtopics/00_overview.qmd|99|8c3e42a3a950145c7155365034044257147bf79194efbcc0e047f11813e0f034
 ./content/topics/topic03_alumina-aluminium/WRITEUP.pdf|18587|8e5e95028ae01be3a254a960d334c1f2faef077d9f4732781617f14ece05ffd1
-./content/topics/topic03_alumina-aluminium/WORKING_NOTE.md|151|6faef732868c5714222b40d3cbef41659138f50e566f97c2bbd51e97e17cf4fa
+./content/topics/topic03_alumina-aluminium/topic03_agent_working_note.md|151|6faef732868c5714222b40d3cbef41659138f50e566f97c2bbd51e97e17cf4fa
 ./.gitignore|267|89406c0423ad4fc7ee30589a5342c2669c1ed500477a1f9ac64355a9ab1db022
 ./scripts/render_site.sh|141|ccec07c88999cc27db3a65253a0bae937a725cc2ee259fddf3616f970d067c01
 ./scripts/sync_writeup_pdfs.sh|404|f05753140f31f584f3c7ff8a3cfd992f3bfd6ebcac4449eb48104f7c405a98aa
@@ -755,12 +755,12 @@
 ./site/.quarto/xref/95943bb8|54|87290bfe181946a71a9afb56d24933487dfc29db3d55ee6137726771f3fb4117
 ./site/.quarto/xref/7bfd7d7c|68|41b6c6579f102d6353d01383f424a7cb5295f484522b1d699efead58758649e2
 ./site/.quarto/idx/index.qmd.json|11593|d442ffd61b862140e6ff61d8f62929fe67829121f58bb1a47eca568c1a1f0279
-./site/.quarto/idx/topic02_iron-steel/WRITEUP.qmd.json|13567|7087cde99904f69303b7f04659739c174b00e474ea39be64f8015f2d8ad25764
+./site/.quarto/idx/topic02_iron-steel/topic02_agent_writeup.qmd.json|13567|7087cde99904f69303b7f04659739c174b00e474ea39be64f8015f2d8ad25764
 ./site/.quarto/idx/docs/sample-page.qmd.json|11254|c94858cf6f3b15ddb552328c1aeb9d79fe80e3e2952112ff4847ccfeb17af005
 ./site/.quarto/idx/docs/qa-checklist.qmd.json|9065|e352da3f96900a486fd9edeba9fa71c227c3db7b463a7451d8c13a9cf18a1998
-./site/.quarto/idx/topic00_landscape-briefing/WRITEUP.qmd.json|39079|fcdc3557f0a873666b680b5a12d7fc8f25aac4a5d4e084baf2586ac56f1eedaf
-./site/.quarto/idx/topic01_copper/WRITEUP.qmd.json|150290|a1de48ff9007f1f889cf412a51b870f356b1850ea2be4451063d4c4550c59319
-./site/.quarto/idx/topic03_alumina-aluminium/WRITEUP.qmd.json|13595|2edcb95719514b4c039a2243298c8c67fa5fe35b20f1973a1403a23c10cd0032
+./site/.quarto/idx/topic00_landscape-briefing/topic00_agent_writeup.qmd.json|39079|fcdc3557f0a873666b680b5a12d7fc8f25aac4a5d4e084baf2586ac56f1eedaf
+./site/.quarto/idx/topic01_copper/topic01_agent_writeup.qmd.json|150290|a1de48ff9007f1f889cf412a51b870f356b1850ea2be4451063d4c4550c59319
+./site/.quarto/idx/topic03_alumina-aluminium/topic03_agent_writeup.qmd.json|13595|2edcb95719514b4c039a2243298c8c67fa5fe35b20f1973a1403a23c10cd0032
 ./site/.quarto/project-cache/dfe9b72de9eb17e968d476638667fcf2|25816|638ac6176fd4a90fa1816a121d6ab326a0c78197893528b10169bf0597cca5a1
 ./site/.quarto/project-cache/efb0c620c38ca7c31075f463c90f647b|28756|8f4a758927169a6b7125d09f4bcce9974f0d466138f67b8047c947e7de599206
 ./site/.quarto/project-cache/7b4acf9cc69c7599b7f1f834bab996b7|25816|2368edd38785ce07228a495868d97ad598f5e0f37dd4e8609da273a3694a4c14

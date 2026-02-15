@@ -1,0 +1,20 @@
+# 04 T4 Research and Collaboration Landscape
+
+## Purpose
+Map the capability and partner architecture needed to move from ranked themes to executable projects.
+
+## Evidence Snapshot
+- `C-009` (`E-009`): Geoscience Australia map products support hub-location screening and project-status context.
+- `C-010` (`E-010`): Current evidence depth is not yet sufficient for partner-level shortlisting.
+
+## Capability Mapping Directions
+- Build hub-by-hub inventory structure for:
+  - operators,
+  - EPC integrators,
+  - technology licensors,
+  - offtakers,
+  - financiers.
+- Start with geographically plausible nodes, then tie to route-specific dependencies from `T2`.
+
+## Gap to Close
+Topic02 still needs a structured partner register with source-backed role assignment.

@@ -1,0 +1,27 @@
+# 02 T2 Processing Pathways
+
+## Baseline Synthesis
+This section compares pathway competitiveness from bauxite to alumina and aluminium, including route choices that materially change cost, emissions, and bankability.
+
+## Scope for First Evidence Pass
+- Refining pathways and operating constraints for alumina production.
+- Smelting pathway assumptions, including power quality and carbon exposure.
+- Integration options across refining, smelting, and selected downstream steps.
+
+## Evidence Priorities
+- Process performance envelopes (yield, energy intensity, and reliability constraints).
+- CAPEX and OPEX sensitivity drivers by pathway.
+- Emissions and compliance implications across major customer markets.
+
+## Pass 2 Early Findings (2026-02-15)
+- `C-002` (`E-003`, `E-004`): IEA identifies electricity as around 60% of aluminium production cost, and IAI reports a 4.2% decline in global emissions intensity from 2019 to 2024, together indicating that pathway competitiveness is highly sensitive to power cost and power carbon intensity.
+- `C-003` (`E-005`): IEA reports inert anode technology can reduce direct process emissions by around 15% at the cell level, but deployment depends on clean-electricity availability and industrial-scale implementation readiness.
+- `C-007` (`E-009`) and `C-008` (`E-010`): The CSIRO DMR-3609 synthesis indicates that residue-use implementation has historically been blocked by a combined volume/performance/cost/risk barrier set, and that strategy must be location-specific despite very large aggregate inventories.
+- `C-009` (`E-011`): The same source provides a practical 3-value-opportunity/9-KPA prioritization framework that can be used to structure pathway screening.
+- `C-014` (`E-016`): The 2024 AAC submission identifies reliable firm low-emissions electricity at internationally competitive delivered cost as the dominant near-term transition constraint for both refining and smelting.
+- `C-015` (`E-017`): The same submission indicates key technology rollouts (including inert anodes and key alumina-abatement options) are mainly expected around or after 2030.
+
+## Immediate Implication for Topic03
+- The `T2` comparison should treat technology route choice and energy-system assumptions as coupled decisions, not independent variables, when ranking pathway bankability.
+- Residue-utilization options should be ranked with explicit barrier scoring (volume, performance, cost, risk) and site-specific implementation logic rather than global-theory assumptions.
+- Pathway ranking should use readiness gates that distinguish what is deployable pre-2030 versus post-2030 under realistic power and grid-delivery assumptions.
