@@ -56,10 +56,9 @@ jobs:
           echo "stage_dir=${STAGE_DIR}" >> "$GITHUB_OUTPUT"
           find "${STAGE_DIR}" -maxdepth 3 -mindepth 1 | sort | sed -n '1,200p'
 
-      - name: Publish to GitHub Pages
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Publish staged artifact to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          target: gh-pages
-          path: ${{ steps.stage_publish.outputs.stage_dir }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ${{ steps.stage_publish.outputs.stage_dir }}
