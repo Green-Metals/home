@@ -7,6 +7,9 @@ cd "$ROOT_DIR"
 SCOPE_FILE="${FAST_SCOPE_FILE:-/tmp/crm-fast-scope.json}"
 ROUTES_FILE="${FAST_ROUTES_FILE:-/tmp/crm-fast-routes.txt}"
 
+echo "[fast] checking prerequisites..."
+./scripts/check_prereqs.sh --for fast
+
 echo "[fast] running content contracts..."
 ./scripts/check_content_contracts.sh
 

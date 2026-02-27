@@ -15,11 +15,12 @@
 - Prioritize independent corroboration for advocacy-style sources before confidence uplift.
 - Refresh legacy quantitative baselines from older references with current primary datasets.
 - Keep `meta/evidence_register.csv` and `meta/sources.csv` synchronized with retained claims.
+- Keep overview framing and canonical writeup intro language aligned when scope emphasis changes.
 
 ## Current Lease and Session
 - lease_role: `topic03`
 - agent_id: `codex`
-- session_id: `2026-02-15-site-src-output-flatten`
+- session_id: `2026-02-27-multi-agent-ready`
 - scope_claim: `content/topics/topic03_alumina-aluminium/`
 - lease_expires_at: `managed via ops/tracker/coordination.json`
 

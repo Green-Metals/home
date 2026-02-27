@@ -4,6 +4,17 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
+require_cmd() {
+  local cmd="$1"
+  if ! command -v "$cmd" >/dev/null 2>&1; then
+    echo "[site-fast][fail] missing required command: $cmd"
+    echo "[site-fast][hint] install '$cmd' locally (CI installs it automatically)"
+    exit 1
+  fi
+}
+
+require_cmd rg
+
 SCOPE_FILE="${1:-${FAST_SCOPE_FILE:-/tmp/crm-fast-scope.json}}"
 
 if [[ ! -f "$SCOPE_FILE" ]]; then

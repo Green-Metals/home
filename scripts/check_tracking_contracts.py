@@ -86,7 +86,6 @@ def detect_changed_files(base_ref: str | None) -> list[str]:
         ref = f"origin/{os.environ['GITHUB_BASE_REF']}"
         collect(["git", "diff", "--name-only", f"{ref}...HEAD"])
     else:
-        collect(["git", "diff", "--name-only", "HEAD~1..HEAD"])
         collect(["git", "diff", "--name-only"])
         collect(["git", "diff", "--name-only", "--cached"])
     collect(["git", "ls-files", "--others", "--exclude-standard"])
@@ -153,6 +152,29 @@ def active_lease_by_role(state: dict) -> dict[str, dict]:
             continue
         role = lease.get("role", "")
         if role and role not in out:
+            out[role] = lease
+    return out
+
+
+def latest_lease_by_role(state: dict) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for lease in state.get("leases", []):
+        role = lease.get("role", "")
+        if not role:
+            continue
+        current = out.get(role)
+        if current is None:
+            out[role] = lease
+            continue
+        try:
+            cur_ts = parse_iso(current.get("acquired_at", ""))
+        except Exception:
+            cur_ts = datetime.min.replace(tzinfo=timezone.utc)
+        try:
+            new_ts = parse_iso(lease.get("acquired_at", ""))
+        except Exception:
+            new_ts = datetime.min.replace(tzinfo=timezone.utc)
+        if new_ts >= cur_ts:
             out[role] = lease
     return out
 
@@ -282,32 +304,41 @@ def main() -> int:
 
         state = load_coord_state()
         validate_coord_state(state, errors)
-        active_by_role = active_lease_by_role(state)
+        live_lease_mode = not args.base_ref and not os.environ.get("GITHUB_BASE_REF") and bool(changed)
+        lease_by_role = active_lease_by_role(state) if live_lease_mode else latest_lease_by_role(state)
+        if args.verbose:
+            print(f"[tracking] live_lease_mode={'1' if live_lease_mode else '0'}")
         for role in sorted(roles_touched):
-            lease = active_by_role.get(role)
-            if lease is None:
-                errors.append(f"missing_or_expired_lease:{role}")
-                continue
-            session_id = lease.get("session_id", "")
-            agent_id = lease.get("agent_id", "")
             if role not in rows_by_role_session_agent:
                 errors.append(f"missing_role_activity:{role}")
                 continue
-            if (session_id, agent_id) not in rows_by_role_session_agent[role]:
-                errors.append(f"session_or_agent_mismatch:{role}:{session_id}:{agent_id}")
+            lease = lease_by_role.get(role)
+            if live_lease_mode:
+                if lease is None:
+                    errors.append(f"missing_or_expired_lease:{role}")
+                    continue
+                session_id = lease.get("session_id", "")
+                agent_id = lease.get("agent_id", "")
+                if (session_id, agent_id) not in rows_by_role_session_agent[role]:
+                    errors.append(f"session_or_agent_mismatch:{role}:{session_id}:{agent_id}")
 
         lane_roles = sorted(role for role in roles_touched if role in OWNED_LANE_ROLES)
         if len(lane_roles) > 1:
-            lease = active_by_role.get("integrator")
-            if lease is None:
-                errors.append("missing_or_expired_lease:integrator")
-            elif "integrator" not in rows_by_role_session_agent:
+            lease = lease_by_role.get("integrator")
+            if "integrator" not in rows_by_role_session_agent:
                 errors.append("missing_integrator_coordination")
-            else:
+            elif live_lease_mode:
+                if lease is None:
+                    errors.append("missing_or_expired_lease:integrator")
+                else:
+                    i_sid = lease.get("session_id", "")
+                    i_agent = lease.get("agent_id", "")
+                    if (i_sid, i_agent) not in rows_by_role_session_agent["integrator"]:
+                        errors.append(f"session_or_agent_mismatch:integrator:{i_sid}:{i_agent}")
+            elif lease is not None and args.verbose:
                 i_sid = lease.get("session_id", "")
                 i_agent = lease.get("agent_id", "")
-                if (i_sid, i_agent) not in rows_by_role_session_agent["integrator"]:
-                    errors.append(f"session_or_agent_mismatch:integrator:{i_sid}:{i_agent}")
+                print(f"[tracking] historical mode integrator lease={i_sid}:{i_agent}")
 
     if errors:
         print("[tracking][fail] tracking contract violations")

@@ -17,11 +17,12 @@
 - Keep home/docs links aligned with canonical topic PDF filenames.
 - Verify drawer/sidebar/navigation behavior after site-shell changes.
 - Keep UI smoke routes and checklist language aligned with output contracts.
+- Keep homepage topic-card descriptions synchronized with latest topic scope positioning.
 
 ## Current Lease and Session
 - lease_role: `website`
 - agent_id: `codex`
-- session_id: `2026-02-15-site-src-output-flatten`
+- session_id: `2026-02-27-multi-agent-ready`
 - scope_claim: `site/`
 - lease_expires_at: `managed via ops/tracker/coordination.json`
 

@@ -15,7 +15,7 @@ format:
 
 [Download PDF](topic03_agent_writeup.pdf)
 
-This writeup is the canonical publishable synthesis for Topic 03 (alumina and aluminium). The current version is a structured baseline for evidence intake, pathway comparison, and policy-facing analysis.
+This writeup is the canonical publishable synthesis for Topic 03 (alumina and aluminium). The current version is a structured baseline for evidence intake, pathway comparison, decarbonization-readiness framing, and policy-facing analysis.
 
 ## Module Source Map
 - Overview module: `subtopics/00_overview.qmd`

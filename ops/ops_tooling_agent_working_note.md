@@ -13,11 +13,12 @@
 - Keep sync/check tooling enforcing `topicXX_agent_writeup.html` + `topicXX_agent_writeup.pdf`.
 - Keep `scripts/agent_coord.py` and `scripts/check_tracking_contracts.py` in lockstep with AGENTS policy.
 - Maintain extraction/tooling setup docs and scripts for repeatable runs.
+- Harden local preflight behavior (explicit `rg` requirement) and reduce false tracking failures for non-live/historical diffs.
 
 ## Current Lease and Session
 - lease_role: `ops-tooling`
 - agent_id: `codex`
-- session_id: `2026-02-15-site-src-output-flatten`
+- session_id: `2026-02-27-multi-agent-ready`
 - scope_claim: `scripts/` or `tools/` or `ops/tracker/`
 - lease_expires_at: `managed via ops/tracker/coordination.json`
 

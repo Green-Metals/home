@@ -4,6 +4,9 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
+echo "[checks] checking prerequisites..."
+./scripts/check_prereqs.sh --for all
+
 echo "[checks] running content contracts..."
 ./scripts/check_content_contracts.sh
 

@@ -4,6 +4,17 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
+require_cmd() {
+  local cmd="$1"
+  if ! command -v "$cmd" >/dev/null 2>&1; then
+    echo "[content][fail] missing required command: $cmd"
+    echo "[content][hint] install '$cmd' locally (CI installs it automatically)"
+    exit 1
+  fi
+}
+
+require_cmd rg
+
 TOPICS=(
   "content/topics/topic00_landscape-briefing"
   "content/topics/topic01_copper"
