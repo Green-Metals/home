@@ -37,6 +37,21 @@ Primary operator runbook for day-to-day execution.
 6. Release lease:
    - `python3 scripts/agent_coord.py --release --role <role> --agent-id <id>`
 
+Optional wrapper for scripted sessions:
+
+```bash
+./scripts/agent_run.sh \
+  --agent-id <agent-id> \
+  --session-id <session-id> \
+  --lease <role>:<scope> \
+  --lease <role>:<scope> \
+  -- <command>
+```
+
+Tracking mode reference:
+- Fast/strict gates run tracking checks in live mode via `TRACKING_CHECK_MODE=live`.
+- Manual historical audit example: `python3 scripts/check_tracking_contracts.py --check --mode historical --base-ref <ref>`.
+
 ## 4) Source and Bibliography Sync
 When source files or `meta/sources.csv` change:
 
@@ -52,6 +67,7 @@ Validation only:
 
 ## 5) Coordination State Files
 - Lease/handoff state: `ops/tracker/coordination.json`
+- Tracking ownership contract: `ops/tracker/contracts.json`
 - Integrator handoff: `ops/SESSION_HANDOFF_AGENT.md`
 - Master tracker: `ops/PROJECT_TRACKER.md`
 

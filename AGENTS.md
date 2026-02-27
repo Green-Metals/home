@@ -180,7 +180,7 @@ RUN_UI_SMOKE=1 ./scripts/check_all.sh
 Stateless worker rule:
 - Agents are stateless workers.
 - Do not rely on transient chat memory for coordination.
-- Coordination state must be repo-resident (`ops/tracker/coordination.json`, `ops/PROJECT_TRACKER.md`, lane notes).
+- Coordination state must be repo-resident (`ops/tracker/coordination.json`, `ops/tracker/contracts.json`, `ops/PROJECT_TRACKER.md`, lane notes).
 - Every claim/handoff must include explicit `agent_id` and `session_id` (never `manual-session`).
 
 Use:
@@ -207,6 +207,12 @@ Status:
 python3 scripts/agent_coord.py --status --json
 ```
 
+Optional orchestration wrapper:
+
+```bash
+./scripts/agent_run.sh --agent-id <id> --session-id <sid> --lease <role>:<scope> -- <command>
+```
+
 ### 13.4) Conflict Handling
 - If lease conflict occurs, stop writes in conflicting scope.
 - Escalate to `integrator` only.
@@ -229,6 +235,10 @@ python3 scripts/agent_coord.py --handoff --from-role <role> --to-role <role> --s
 
 ## 15) Tracking and Contract Validation
 - `scripts/check_tracking_contracts.py --check` is mandatory and called by `scripts/check_content_contracts.sh`.
+- Tracking check modes:
+  - `--mode live`: enforce active lease/session matching.
+  - `--mode historical`: skip active lease requirement for non-live/base-ref audits.
+  - `--mode auto`: inferred behavior (default).
 - Validation fails on:
   - missing role activity row in `ops/PROJECT_TRACKER.md`,
   - missing `agent_id` / `session_id` alignment between tracker and active lease state,

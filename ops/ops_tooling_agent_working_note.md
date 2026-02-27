@@ -14,11 +14,13 @@
 - Keep `scripts/agent_coord.py` and `scripts/check_tracking_contracts.py` in lockstep with AGENTS policy.
 - Maintain extraction/tooling setup docs and scripts for repeatable runs.
 - Harden local preflight behavior (explicit `rg` requirement) and reduce false tracking failures for non-live/historical diffs.
+- Keep machine-readable tracking contract (`ops/tracker/contracts.json`) aligned with checker defaults.
+- Provide a safe lease orchestration wrapper for repeatable claim/check/release flows.
 
 ## Current Lease and Session
 - lease_role: `ops-tooling`
 - agent_id: `codex`
-- session_id: `2026-02-27-multi-agent-ready`
+- session_id: `2026-02-27-orchestration`
 - scope_claim: `scripts/` or `tools/` or `ops/tracker/`
 - lease_expires_at: `managed via ops/tracker/coordination.json`
 

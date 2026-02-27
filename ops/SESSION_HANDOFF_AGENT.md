@@ -1,6 +1,6 @@
 # Agent Session Handoff (Integrator)
 
-Updated: 2026-02-15
+Updated: 2026-02-27
 
 ## 1) Role Topology
 - `integrator`: cross-lane arbitration, governance, final gates.
@@ -12,6 +12,7 @@ Updated: 2026-02-15
 - Agents are stateless workers.
 - Coordination is valid only when persisted in repo state:
   - `ops/tracker/coordination.json`
+  - `ops/tracker/contracts.json`
   - `ops/PROJECT_TRACKER.md`
   - lane `*_agent_working_note.md` files
 - `agent_id` and `session_id` are mandatory for lease and handoff events.
@@ -29,6 +30,9 @@ Updated: 2026-02-15
 5. Release lease at closeout:
    - `python3 scripts/agent_coord.py --release --role <role> --agent-id "$AGENT_ID"`
 
+Optional orchestration wrapper:
+- `./scripts/agent_run.sh --agent-id "$AGENT_ID" --session-id "$AGENT_SESSION_ID" --lease <role>:<scope> -- <command>`
+
 ## 4) Reporting to Integrator (Mandatory)
 - Every topic agent change must add/update a role row in `ops/PROJECT_TRACKER.md` (`## 2) Role Activity Ledger`).
 - Any multi-lane session must add/update an integrator row in `## 3) Integrator Coordination Log`.
@@ -40,6 +44,11 @@ Updated: 2026-02-15
 - `missing_or_expired_lease:<role>`
 - `session_or_agent_mismatch:<role>:<session_id>:<agent_id>`
 - `missing_integrator_coordination`
+
+Tracking mode controls:
+- `--mode live` for active local edit sessions.
+- `--mode historical` for base-ref/history audits.
+- `--mode auto` for inferred behavior (default).
 
 Release checks:
 - `RUN_UI_SMOKE=1 ./scripts/check_fast.sh`
