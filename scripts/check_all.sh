@@ -8,7 +8,7 @@ echo "[checks] checking prerequisites..."
 ./scripts/check_prereqs.sh --for all
 
 echo "[checks] running content contracts..."
-./scripts/check_content_contracts.sh
+TRACKING_CHECK_MODE=live ./scripts/check_content_contracts.sh
 
 echo "[checks] running site integrity..."
 ./scripts/check_site_integrity.sh

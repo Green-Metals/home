@@ -208,7 +208,7 @@ echo "[content] checking refs-sources and bibliography sync..."
 python3 scripts/sync_sources_and_bib.py --check
 
 echo "[content] checking multi-agent tracking contracts..."
-python3 scripts/check_tracking_contracts.py --check
+python3 scripts/check_tracking_contracts.py --check --mode "${TRACKING_CHECK_MODE:-auto}"
 
 echo "[content] checking .DS_Store hygiene..."
 if find content site -name ".DS_Store" | grep -q .; then

@@ -11,7 +11,7 @@ echo "[fast] checking prerequisites..."
 ./scripts/check_prereqs.sh --for fast
 
 echo "[fast] running content contracts..."
-./scripts/check_content_contracts.sh
+TRACKING_CHECK_MODE=live ./scripts/check_content_contracts.sh
 
 echo "[fast] detecting changed scope..."
 ./scripts/detect_changed_scope.sh "$SCOPE_FILE"

@@ -1,0 +1,61 @@
+{
+  "role_order": [
+    "topic00",
+    "topic01",
+    "topic02",
+    "topic03",
+    "website",
+    "ops-tooling",
+    "integrator"
+  ],
+  "owned_lane_roles": [
+    "topic00",
+    "topic01",
+    "topic02",
+    "topic03",
+    "website",
+    "ops-tooling"
+  ],
+  "lane_note_by_role": {
+    "topic00": "content/topics/topic00_landscape-briefing/topic00_agent_working_note.md",
+    "topic01": "content/topics/topic01_copper/topic01_agent_working_note.md",
+    "topic02": "content/topics/topic02_iron-steel/topic02_agent_working_note.md",
+    "topic03": "content/topics/topic03_alumina-aluminium/topic03_agent_working_note.md",
+    "website": "site/website_agent_working_note.md",
+    "ops-tooling": "ops/ops_tooling_agent_working_note.md"
+  },
+  "ignored_prefixes": [
+    "ops/qa-artifacts/",
+    "ops/migration/",
+    ".playwright-cli/",
+    "site/.quarto/",
+    "site/_site/",
+    "scripts/__pycache__/"
+  ],
+  "ignored_site_output_prefixes": [
+    "site/docs/",
+    "site/site_libs/",
+    "site/styles/",
+    "site/topic00_landscape-briefing/",
+    "site/topic01_copper/",
+    "site/topic02_iron-steel/",
+    "site/topic03_alumina-aluminium/"
+  ],
+  "ignored_site_output_files": [
+    "site/index.html",
+    "site/search.json",
+    "site/topic00_landscape-briefing",
+    "site/topic01_copper",
+    "site/topic02_iron-steel",
+    "site/topic03_alumina-aluminium"
+  ],
+  "legacy_website_source_files": [
+    "site/_quarto.yml",
+    "site/index.qmd",
+    "site/references",
+    "content/topics/includes"
+  ],
+  "legacy_website_source_prefixes": [
+    "site/includes/"
+  ]
+}

@@ -14,53 +14,81 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT_TRACKER = ROOT / "ops" / "PROJECT_TRACKER.md"
 COORD_STATE = ROOT / "ops" / "tracker" / "coordination.json"
+TRACKING_CONTRACT = ROOT / "ops" / "tracker" / "contracts.json"
 HUMAN_QUICKSTART = ROOT / "ops" / "HUMAN_QUICKSTART.md"
 AGENT_HANDOFF = ROOT / "ops" / "SESSION_HANDOFF_AGENT.md"
 
-ROLE_ORDER = ["topic00", "topic01", "topic02", "topic03", "website", "ops-tooling", "integrator"]
-OWNED_LANE_ROLES = {"topic00", "topic01", "topic02", "topic03", "website", "ops-tooling"}
-LANE_NOTE_BY_ROLE = {
-    "topic00": "content/topics/topic00_landscape-briefing/topic00_agent_working_note.md",
-    "topic01": "content/topics/topic01_copper/topic01_agent_working_note.md",
-    "topic02": "content/topics/topic02_iron-steel/topic02_agent_working_note.md",
-    "topic03": "content/topics/topic03_alumina-aluminium/topic03_agent_working_note.md",
-    "website": "site/website_agent_working_note.md",
-    "ops-tooling": "ops/ops_tooling_agent_working_note.md",
+DEFAULT_TRACKING_CONTRACT = {
+    "role_order": ["topic00", "topic01", "topic02", "topic03", "website", "ops-tooling", "integrator"],
+    "owned_lane_roles": ["topic00", "topic01", "topic02", "topic03", "website", "ops-tooling"],
+    "lane_note_by_role": {
+        "topic00": "content/topics/topic00_landscape-briefing/topic00_agent_working_note.md",
+        "topic01": "content/topics/topic01_copper/topic01_agent_working_note.md",
+        "topic02": "content/topics/topic02_iron-steel/topic02_agent_working_note.md",
+        "topic03": "content/topics/topic03_alumina-aluminium/topic03_agent_working_note.md",
+        "website": "site/website_agent_working_note.md",
+        "ops-tooling": "ops/ops_tooling_agent_working_note.md",
+    },
+    "ignored_prefixes": [
+        "ops/qa-artifacts/",
+        "ops/migration/",
+        ".playwright-cli/",
+        "site/.quarto/",
+        "site/_site/",
+        "scripts/__pycache__/",
+    ],
+    "ignored_site_output_prefixes": [
+        "site/docs/",
+        "site/site_libs/",
+        "site/styles/",
+        "site/topic00_landscape-briefing/",
+        "site/topic01_copper/",
+        "site/topic02_iron-steel/",
+        "site/topic03_alumina-aluminium/",
+    ],
+    "ignored_site_output_files": [
+        "site/index.html",
+        "site/search.json",
+        "site/topic00_landscape-briefing",
+        "site/topic01_copper",
+        "site/topic02_iron-steel",
+        "site/topic03_alumina-aluminium",
+    ],
+    "legacy_website_source_files": [
+        "site/_quarto.yml",
+        "site/index.qmd",
+        "site/references",
+        "content/topics/includes",
+    ],
+    "legacy_website_source_prefixes": ["site/includes/"],
 }
-IGNORED_PREFIXES = (
-    "ops/qa-artifacts/",
-    "ops/migration/",
-    ".playwright-cli/",
-    "site/.quarto/",
-    "site/_site/",
-    "scripts/__pycache__/",
-)
-IGNORED_SITE_OUTPUT_PREFIXES = (
-    "site/docs/",
-    "site/site_libs/",
-    "site/styles/",
-    "site/topic00_landscape-briefing/",
-    "site/topic01_copper/",
-    "site/topic02_iron-steel/",
-    "site/topic03_alumina-aluminium/",
-)
-IGNORED_SITE_OUTPUT_FILES = {
-    "site/index.html",
-    "site/search.json",
-    "site/topic00_landscape-briefing",
-    "site/topic01_copper",
-    "site/topic02_iron-steel",
-    "site/topic03_alumina-aluminium",
-}
-LEGACY_WEBSITE_SOURCE_FILES = {
-    "site/_quarto.yml",
-    "site/index.qmd",
-    "site/references",
-    "content/topics/includes",
-}
-LEGACY_WEBSITE_SOURCE_PREFIXES = (
-    "site/includes/",
-)
+
+
+def load_tracking_contract() -> dict:
+    if not TRACKING_CONTRACT.exists():
+        return DEFAULT_TRACKING_CONTRACT
+    try:
+        data = json.loads(TRACKING_CONTRACT.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"[tracking][fail] invalid tracking contract JSON: {TRACKING_CONTRACT} ({exc})")
+    contract = dict(DEFAULT_TRACKING_CONTRACT)
+    contract.update({k: v for k, v in data.items() if v is not None})
+    contract["lane_note_by_role"] = {
+        **DEFAULT_TRACKING_CONTRACT["lane_note_by_role"],
+        **(data.get("lane_note_by_role") or {}),
+    }
+    return contract
+
+
+TRACKING = load_tracking_contract()
+ROLE_ORDER = TRACKING["role_order"]
+OWNED_LANE_ROLES = set(TRACKING["owned_lane_roles"])
+LANE_NOTE_BY_ROLE = TRACKING["lane_note_by_role"]
+IGNORED_PREFIXES = tuple(TRACKING["ignored_prefixes"])
+IGNORED_SITE_OUTPUT_PREFIXES = tuple(TRACKING["ignored_site_output_prefixes"])
+IGNORED_SITE_OUTPUT_FILES = set(TRACKING["ignored_site_output_files"])
+LEGACY_WEBSITE_SOURCE_FILES = set(TRACKING["legacy_website_source_files"])
+LEGACY_WEBSITE_SOURCE_PREFIXES = tuple(TRACKING["legacy_website_source_prefixes"])
 
 
 def sh(cmd: list[str]) -> str:
@@ -255,6 +283,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Validate tracking + coordination contracts.")
     parser.add_argument("--check", action="store_true", help="Run validation checks.")
     parser.add_argument("--base-ref", help="Optional git base ref for diff detection.")
+    parser.add_argument(
+        "--mode",
+        choices=["auto", "live", "historical"],
+        default="auto",
+        help="Lease strictness mode. auto=detect, live=require active lease/session, historical=skip active lease requirement.",
+    )
     parser.add_argument("--verbose", action="store_true", help="Print diagnostics.")
     args = parser.parse_args()
 
@@ -304,7 +338,12 @@ def main() -> int:
 
         state = load_coord_state()
         validate_coord_state(state, errors)
-        live_lease_mode = not args.base_ref and not os.environ.get("GITHUB_BASE_REF") and bool(changed)
+        if args.mode == "live":
+            live_lease_mode = True
+        elif args.mode == "historical":
+            live_lease_mode = False
+        else:
+            live_lease_mode = not args.base_ref and not os.environ.get("GITHUB_BASE_REF") and bool(changed)
         lease_by_role = active_lease_by_role(state) if live_lease_mode else latest_lease_by_role(state)
         if args.verbose:
             print(f"[tracking] live_lease_mode={'1' if live_lease_mode else '0'}")
